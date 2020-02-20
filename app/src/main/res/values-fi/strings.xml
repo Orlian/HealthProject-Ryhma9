@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="login_button">Kirjaudu / Rekisteröidy</string>
+    <string name="login_button">Kirjaudu</string>
     <string name="start_button">Miltä sinusta tuntuu?</string>
     <string name="stats_button">Tilastot</string>
     <string name="app_name">TerveysProjekti</string>
+    <string name="username_text">Käyttäjätunnus</string>
+    <string name="password_text">Salasana</string>
+    <string name="login_register_button">Kirjaudu / Rekisteröidy</string>
 </resources>

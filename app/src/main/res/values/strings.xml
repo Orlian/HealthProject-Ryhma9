@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">HealthProject</string>
-    <string name="login_button">Login / Register</string>
+    <string name="login_register_button">Login / Register</string>
     <string name="stats_button">Statistics</string>
     <string name="start_button">How do you feel?</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="login_button">Login</string>
 </resources>
