@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    public boolean loggedIn;
+    private boolean loggedIn = false;
     public static final String EXTRA_MESSAGE = "Need to log in";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +19,15 @@ public class MainActivity extends AppCompatActivity {
         if(v == findViewById(R.id.loginRegisterButton)){
             //Tänne siirtyminen MainLogin aktiviteettiin
             Intent loginIntent = new Intent(MainActivity.this, MainLogin.class);
+            loginIntent.putExtra(EXTRA_MESSAGE, loggedIn);
             startActivity(loginIntent);
 
         } else if(v == findViewById(R.id.mainButton)){
-            //Tänne siirtyminen MainQuestions aktiviteettiin (eli päätoiminto)
+            //Tänne siirtyminen MainQuestions aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             if(loggedIn){
                 Intent questionsIntent = new Intent(MainActivity.this, MainQuestions.class);
                 startActivity(questionsIntent);
-            }else if(!loggedIn){
+            }else{
                 Intent loginIntent = new Intent(MainActivity.this, MainLogin.class);
                 loginIntent.putExtra(EXTRA_MESSAGE, loggedIn);
                 startActivity(loginIntent);
