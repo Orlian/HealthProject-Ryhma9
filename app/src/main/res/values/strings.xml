@@ -6,6 +6,24 @@
     <string name="username_text">Username</string>
     <string name="password_text">Password</string>
     <string name="login_button">Login</string>
-    <string name="not_logged_in">You need to log in to use the app</string>
-    <string name="register_button">Register</string>
+    <string name="question1">Do you feel sad / unhappy?</string>
+    <string name="question2">Are you uninterested / unsatisfied?</string>
+    <string name="question3">Do you feel more tired than usually?</string>
+    <string name="question4">Do you feel like you get enough sleep?</string>
+    <string name="question5">Do you feel guilt?</string>
+    <string name="question6">Do you feel like failure?</string>
+    <string name="question7">Do you get tired more easily than before?</string>
+    <string name="question8">Can you fuction as well as before?</string>
+    <string name="question9">Is it difficult to make decisions?</string>
+    <string name="question10">Can you concentrate as well as before?</string>
+    <string name="question11">Is your apetite same as before?</string>
+    <string name="question12">Do you think your health as much as before?</string>
+    <string name="question13">Has your interest to sexual activity got worse?</string>
+    <string name="quesion14">Do you fell you have enough meaningful relationships?</string>
+    <string name="question15">Have you paid attetition dietary habbits?</string>
+    <string name="question16">Do you feel healthy?</string>
+    <string name="question17">Have you had unusually amount of headaches?</string>
+    <string name="question18">Do you feel unactractive?</string>
+    <string name="question19">Have cried more than usually? (5 if you can not cry anymore)</string>
+    <string name="question20">Do want to self-harm?</string>
 </resources>
