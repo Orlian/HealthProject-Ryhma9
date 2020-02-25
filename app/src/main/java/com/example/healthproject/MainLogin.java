@@ -3,6 +3,7 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainLogin extends AppCompatActivity {
@@ -17,6 +18,15 @@ public class MainLogin extends AppCompatActivity {
         if(!loginError){
             TextView tv = findViewById(R.id.loginErrorMessage);
             tv.setText(R.string.not_logged_in);
+        }
+    }
+    public void onClick(View v){
+        if(v == findViewById(R.id.loginButton)){
+            //Siirtyy takaisin MainActivityyn, jos käyttäjänimi ja salasana täsmäävät
+
+        }else if(v == findViewById(R.id.registerButton)){
+            //Siirtyy takaisin MainActivityyn, jos käyttäjänimi on vapaana
+
         }
     }
 }
