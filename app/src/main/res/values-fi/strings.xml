@@ -7,4 +7,5 @@
     <string name="username_text">Käyttäjätunnus</string>
     <string name="password_text">Salasana</string>
     <string name="login_register_button">Kirjaudu / Rekisteröidy</string>
+    <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
 </resources>
