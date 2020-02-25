@@ -29,4 +29,5 @@
     <string name="question20">Haluatko vahingoittaa itseäsi?</string>
     <string name="register_button">Rekisteröidy</string>
     <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
+    <string name="save_button">Tallenna</string>
 </resources>

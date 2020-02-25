@@ -28,4 +28,5 @@
     <string name="question20">Do want to self-harm?</string>
     <string name="register_button">Register</string>
     <string name="not_logged_in">You need to log in to use the app</string>
+    <string name="save_button">Save</string>
 </resources>
