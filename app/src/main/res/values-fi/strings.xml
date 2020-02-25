@@ -27,4 +27,6 @@
     <string name="question18">Tunnetko olevasi epäviehättävä?</string>
     <string name="question19">Oletko itkenyt tavallista enemmän? (5 jos et enään pysty itkemään)</string>
     <string name="question20">Haluatko vahingoittaa itseäsi?</string>
+    <string name="register_button">Rekisteröidy</string>
+    <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
 </resources>

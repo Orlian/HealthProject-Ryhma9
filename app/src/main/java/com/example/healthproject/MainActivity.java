@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    private boolean loggedIn = false;
+    private boolean loggedIn = true;
     public static final String EXTRA_MESSAGE = "Need to log in";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

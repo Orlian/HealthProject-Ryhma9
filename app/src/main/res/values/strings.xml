@@ -26,4 +26,6 @@
     <string name="question18">Do you feel unactractive?</string>
     <string name="question19">Have cried more than usually? (5 if you can not cry anymore)</string>
     <string name="question20">Do want to self-harm?</string>
+    <string name="register_button">Register</string>
+    <string name="not_logged_in">You need to log in to use the app</string>
 </resources>
