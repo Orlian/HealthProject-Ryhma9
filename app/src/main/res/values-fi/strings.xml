@@ -30,4 +30,6 @@
     <string name="register_button">Rekisteröidy</string>
     <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
     <string name="save_button">Tallenna</string>
+    <string name="number1">1</string>
+    <string name="number5">5</string>
 </resources>
