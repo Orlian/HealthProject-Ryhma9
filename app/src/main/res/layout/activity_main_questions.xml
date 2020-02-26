@@ -41,40 +41,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <TableRow
+                <RadioGroup
+                    android:id="@+id/question1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/textView24"
+                    <RadioButton
+                        android:id="@+id/rb11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="7dp"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginEnd="290dp"
-                        android:text="@string/number1"
-                        android:textSize="18sp" />
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
 
-                    <TextView
-                        android:id="@+id/textView25"
+                    <RadioButton
+                        android:id="@+id/rb12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:text="@string/number5"
-                        android:textSize="18sp" />
-                </TableRow>
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
 
-                <SeekBar
-                    android:id="@+id/seekBar2"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="24dp"
-                    android:indeterminate="false"
-                    android:max="4"
-                    android:progress="0"
-                    android:scrollbarAlwaysDrawHorizontalTrack="false" />
+                    <RadioButton
+                        android:id="@+id/rb13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView3"
@@ -85,15 +97,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar3"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb25"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView4"
@@ -104,16 +153,53 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar4"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
 
+                <RadioGroup
+                    android:id="@+id/question3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb31"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb33"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r34"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView5"
@@ -124,15 +210,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar5"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb41"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb43"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb45"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView6"
@@ -143,15 +266,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar6"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb51"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb52"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb53"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r54"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb55"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView7"
@@ -162,15 +322,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar7"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question6"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb61"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb62"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb63"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r64"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb65"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView8"
@@ -181,15 +378,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar8"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question7"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb71"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb72"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb73"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r74"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb75"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView9"
@@ -200,15 +434,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar9"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb81"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb82"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb83"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r84"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb85"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView10"
@@ -219,15 +490,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar10"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question9"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb91"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb92"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb93"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/r94"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb95"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView11"
@@ -238,15 +546,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar11"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question10"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb101"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb102"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb103"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb104"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb105"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView12"
@@ -257,15 +602,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar12"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question11"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb111"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb112"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb113"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb114"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb115"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView13"
@@ -276,15 +658,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar13"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question12"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb121"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb122"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb123"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb124"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb125"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView14"
@@ -295,15 +714,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar14"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question13"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb131"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb132"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb133"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb134"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb135"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView15"
@@ -314,15 +770,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar15"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question14"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb141"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb142"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb143"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb144"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb145"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView16"
@@ -333,15 +826,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar16"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question15"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb151"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb152"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb153"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb154"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb155"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView17"
@@ -352,15 +882,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar17"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question16"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb161"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb162"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb163"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb164"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb165"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView18"
@@ -371,15 +938,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar18"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question17"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb171"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb172"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb173"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb174"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb175"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView19"
@@ -390,15 +994,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar19"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question18"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb181"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb182"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb183"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb184"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb185"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView20"
@@ -409,15 +1050,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar20"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question19"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb191"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb192"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb193"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb194"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb195"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <TextView
                     android:id="@+id/textView21"
@@ -428,15 +1106,52 @@
                     android:textColor="#000000"
                     android:textSize="18sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar21"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                <RadioGroup
+                    android:id="@+id/question20"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="48dp"
-                    android:max="4"
-                    android:progress="0" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb201"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number1" />
+
+                    <RadioButton
+                        android:id="@+id/rb202"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number2" />
+
+                    <RadioButton
+                        android:id="@+id/rb203"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number3" />
+
+                    <RadioButton
+                        android:id="@+id/rb204"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number4" />
+
+                    <RadioButton
+                        android:id="@+id/rb205"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="@string/number5" />
+                </RadioGroup>
 
                 <Button
                     android:id="@+id/saveButton"
