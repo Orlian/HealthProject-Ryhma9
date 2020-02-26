@@ -66,5 +66,19 @@ public class MainQuestions extends AppCompatActivity {
         //}
 
     }
+/* Listajuttu
 
+
+ArrayList<ArrayList<String>> listOLists = new ArrayList<ArrayList<String>>();
+ArrayList<String> singleList = new ArrayList<String>();
+singleList.add("hello");
+singleList.add("world");
+listOLists.add(singleList);
+
+ArrayList<String> anotherList = new ArrayList<String>();
+anotherList.add("this is another list");
+listOLists.add(anotherList);
+
+
+ */
 
