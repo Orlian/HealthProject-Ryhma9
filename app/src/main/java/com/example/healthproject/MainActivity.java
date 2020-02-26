@@ -7,17 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import static com.example.healthproject.MainLogin.EXTRA_LOGIN_STATUS;
-import static com.example.healthproject.MainLogin.EXTRA_NO_LOGIN;
 
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn;
-    private UserList userList;
+    private DataList dataList;
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.userList = new UserList();
+        this.dataList = new DataList();
         Bundle login = getIntent().getExtras();
         if(login == null){
 
