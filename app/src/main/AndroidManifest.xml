@@ -9,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainStatistics"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".MainLogin"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MainQuestions"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".MainResults"></activity>
+        <activity
+            android:name=".MainStatistics"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainLogin"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainQuestions"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

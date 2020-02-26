@@ -50,7 +50,8 @@
                     android:layout_marginBottom="48dp"
                     android:indeterminate="false"
                     android:max="4"
-                    android:progress="0" />
+                    android:progress="0"
+                    android:scrollbarAlwaysDrawHorizontalTrack="false" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -89,6 +90,7 @@
                     android:layout_marginBottom="48dp"
                     android:max="4"
                     android:progress="0" />
+
 
                 <TextView
                     android:id="@+id/textView5"
