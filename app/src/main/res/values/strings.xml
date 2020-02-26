@@ -29,4 +29,6 @@
     <string name="register_button">Register</string>
     <string name="not_logged_in">You need to log in to use the app</string>
     <string name="save_button">Save</string>
+    <string name="number1">1</string>
+    <string name="number5">5</string>
 </resources>
