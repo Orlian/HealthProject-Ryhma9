@@ -6,6 +6,7 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -56,6 +57,14 @@ public class MainQuestions extends AppCompatActivity {
         });
 
     }
+    // Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
+    // yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
+    // keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
+    //public void onClick(View x){
+      //  for (int values : tulevalista){
+        //    tulevalista.add(values);
+        //}
 
     }
+
 
