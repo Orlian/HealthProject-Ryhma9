@@ -1,21 +1,28 @@
 package com.example.healthproject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Käyttäjä-luokka, joka sisältää aplikaation käyttäjän oleelliset tiedot
+ * Käyttäjä-luokka, joka sisältää aplikaation käyttäjän oleelliset tiedot ja tallentaa
+ * tietyn käyttäjän vastausdatan omaan listaan.
  * @author Joonas Lehtoranta
  * @version 1.0
  */
 public class User {
     private String userName, password;
+    private List<Integer> dataList;
 
     /**
-     * User-luokan perusrakentaja, joka asettaa käyttäjätunnuksen ja salasanan käyttäjälle
+     * User-luokan perusrakentaja, joka asettaa käyttäjätunnuksen ja salasanan käyttäjälle,
+     * sekä luo listan johon tulevat vastaukset tallennetaan.
      * @param userName Käyttäjätunnus
      * @param password Salasana
      */
     public User(String userName, String password){
         this.userName = userName;
         this.password = password;
+        this.dataList = new ArrayList<>();
     }
 
     /**
@@ -64,6 +71,15 @@ public class User {
     @Override
     public String toString(){
         return this.userName;
+    }
+
+    /**
+     * Palauttaa tietyn käyttäjän datalistan tietyn arvon.
+     * @param i Indeksi, jolla määritetään mitä listan lukua haetaan
+     * @return int dataList value at index
+     */
+    public int getDataListValue(int i){
+        return this.dataList.get(i);
     }
 
 }
