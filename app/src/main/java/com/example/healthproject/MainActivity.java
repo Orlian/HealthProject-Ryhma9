@@ -9,7 +9,7 @@ import android.view.View;
 import static com.example.healthproject.MainLogin.EXTRA_LOGIN_STATUS;
 
 public class MainActivity extends AppCompatActivity {
-    private boolean loggedIn;
+    private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
     private DataList dataList;
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
     @Override
