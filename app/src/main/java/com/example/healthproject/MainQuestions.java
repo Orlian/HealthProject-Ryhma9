@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
  * @author Joonas Soininen
@@ -13,6 +17,8 @@ import android.widget.RadioGroup;
  */
 public class MainQuestions extends AppCompatActivity {
     int answer1=0, answer2=0;
+
+    HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,3 +119,10 @@ listOLists.add(anotherList);
 
  */
 
+/*
+
+
+
+
+
+ */
