@@ -19,7 +19,7 @@ public class MainQuestions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_questions);
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.questionText1);
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.question1);
         int chekedRadioButtonID = radioGroup.getCheckedRadioButtonId();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
