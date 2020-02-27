@@ -2,14 +2,10 @@ package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
-import android.view.View;
 import android.widget.RadioGroup;
-import android.widget.SeekBar;
-import android.widget.Toast;
+
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
  * @author Joonas Soininen
@@ -23,7 +19,7 @@ public class MainQuestions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_questions);
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.question1);
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.questionText1);
         int chekedRadioButtonID = radioGroup.getCheckedRadioButtonId();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
