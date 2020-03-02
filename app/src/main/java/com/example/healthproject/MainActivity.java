@@ -10,13 +10,11 @@ import static com.example.healthproject.LoginActivity.EXTRA_LOGIN_STATUS;
 
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
-    private DataList dataList;
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.dataList = new DataList();
         Bundle login = getIntent().getExtras();
         if(login == null){
 

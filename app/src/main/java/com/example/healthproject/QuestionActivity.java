@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
@@ -16,14 +18,20 @@ import java.util.HashMap;
  * @version 1.1
  */
 public class QuestionActivity extends AppCompatActivity {
-    int answer1=0, answer2=0;
+    int answer1 = 0, answer2 = 0;
 
-    HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_questions);
+        final Button button1 = (Button) findViewById(R.id.saveButton);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setEnabled(false);
+            }
+        });
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -36,27 +44,27 @@ public class QuestionActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.rb11:
                         Log.v("DEBUG", "Ykkönen");
-                        answer1=1;
+                        answer1 = 1;
                         break;
                     case R.id.rb12:
                         Log.v("DEBUG", "Kakkonen");
-                        answer1=2;
+                        answer1 = 2;
                         break;
                     case R.id.rb13:
                         Log.v("DEBUG", "Kolmonen");
-                        answer1=3;
+                        answer1 = 3;
                         break;
                     case R.id.rb14:
                         Log.v("DEBUG", "Nelonen");
-                        answer1=4;
+                        answer1 = 4;
                         break;
                     case R.id.rb15:
                         Log.v("DEBUG", "Vitonen");
-                        answer1=5;
+                        answer1 = 5;
                         break;
                     default:
                         Log.v("DEBUG", "Ei mitteen");
-                        answer1=0;
+                        answer1 = 0;
                         break;
                 }
             }
@@ -68,41 +76,60 @@ public class QuestionActivity extends AppCompatActivity {
                 switch (checkedId2) {
                     case R.id.rb21:
                         Log.v("DEBUG", "Ykkönen2");
-                        answer2=1;
+                        answer2 = 1;
                         break;
                     case R.id.rb22:
                         Log.v("DEBUG", "Kakkonen2");
-                        answer2=2;
+                        answer2 = 2;
                         break;
                     case R.id.rb23:
                         Log.v("DEBUG", "Kolmonen2");
-                        answer2=3;
+                        answer2 = 3;
                         break;
                     case R.id.rb24:
                         Log.v("DEBUG", "Nelonen2");
-                        answer2=4;
+                        answer2 = 4;
                         break;
                     case R.id.rb25:
                         Log.v("DEBUG", "Vitonen2");
-                        answer2=5;
+                        answer2 = 5;
                         break;
                     default:
                         Log.v("DEBUG", "Ei mitteen2");
-                        answer2=0;
+                        answer2 = 0;
                         break;
                 }
             }
         });
     }
+}
     // Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
     // yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
     // keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
-    //public void onClick(View x){
+    //Hashmap lajittelee päivittäin saadut kysymysten vastaukset
+    //Date oliolla saadaan päivämäärä
+    // Date date = new Date();
+    //HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
+    //
+    //
+    //public void onClick(View v){
       //  for (int values : tulevalista){
         //    tulevalista.add(values);
         //}
 
-    }
+    //}
+    //v == findViewById(R.id.saveButton)){
+    //            //Tänne siirtyminen Results aktiviteettiin (*ei vielä luotu*)
+    //            Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
+    //            //Extrana tänne kyseisen käyttäjän vastausdatan!
+    //              intent.putExtra(EXTRA_GROUP1, group1);
+    //              intent.putExtra(EXTRA_GROUP2, group2);
+    //              intent.putExtra(EXTRA_GROUP3, group3);
+    //              intent.putExtra(EXTRA_GROUP4, group4);
+    //              intent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
+    //            startActivity(resultsIntent);
+    //
+
 /* Listajuttu
 
 
