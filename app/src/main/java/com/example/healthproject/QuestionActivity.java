@@ -32,7 +32,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 button1.setEnabled(false);
             }
-        })
+        });
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -112,7 +112,7 @@ public class QuestionActivity extends AppCompatActivity {
     //HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
     //
     //
-    //public void onClick(View x){
+    //public void onClick(View v){
       //  for (int values : tulevalista){
         //    tulevalista.add(values);
         //}
