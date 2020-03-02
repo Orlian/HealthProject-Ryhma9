@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import static com.example.healthproject.MainLogin.EXTRA_LOGIN_STATUS;
+import static com.example.healthproject.LoginActivity.EXTRA_LOGIN_STATUS;
 
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
@@ -27,25 +27,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View v){
         if(v == findViewById(R.id.loginRegisterButton)){
-            //Tänne siirtyminen MainLogin aktiviteettiin
-            Intent loginIntent = new Intent(MainActivity.this, MainLogin.class);
+            //Tänne siirtyminen LoginActivity aktiviteettiin
+            Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
             startActivity(loginIntent);
 
         } else if(v == findViewById(R.id.mainButton)){
-            //Tänne siirtyminen MainQuestions aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
+            //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             if(this.loggedIn){
-                Intent questionsIntent = new Intent(MainActivity.this, MainQuestions.class);
+                Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
             }else{
-                Intent loginIntent = new Intent(MainActivity.this, MainLogin.class);
+                Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                 loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
                 startActivity(loginIntent);
             }
 
         } else if(v == findViewById(R.id.statsButton)){
             //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
-            Intent statsIntent = new Intent(MainActivity.this, MainStatistics.class);
+            Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
             //Extrana tänne kyseisen käyttäjän vastausdatan!
             startActivity(statsIntent);
         }

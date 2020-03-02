@@ -15,11 +15,10 @@ import java.util.HashMap;
  * @author Joonas Soininen
  * @version 1.1
  */
-
-public class MainQuestions extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
     int answer1=0, answer2=0;
 
-
+    HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,9 +97,6 @@ public class MainQuestions extends AppCompatActivity {
     // Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
     // yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
     // keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
-    //    Date date = new Date();
-    //
-    //    HashMap<date, ArrayList<User>>  dateResults = new HashMap<>();
     //public void onClick(View x){
       //  for (int values : tulevalista){
         //    tulevalista.add(values);
