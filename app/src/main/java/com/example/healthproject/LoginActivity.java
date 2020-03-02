@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 
-public class MainLogin extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private DataList dataList;
     public static final String EXTRA_LOGIN_STATUS = "Login data";
     public static final String EXTRA_NO_LOGIN = "No login data";
@@ -40,7 +40,7 @@ public class MainLogin extends AppCompatActivity {
             /*for(int i = 0; this.dataList.getDataList().size() > i ; i++){
                 if(this.dataList.getUser(i).equals(userInput)){
                     boolean loginStatus = true;
-                    Intent loginSuccess = new Intent(MainLogin.this, MainActivity.class);
+                    Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                     loginSuccess.putExtra(EXTRA_LOGIN_STATUS, loginStatus);
                     startActivity(loginSuccess);
                 }
@@ -51,7 +51,7 @@ public class MainLogin extends AppCompatActivity {
 
     }else if(v == findViewById(R.id.registerButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi on vapaana
-            Intent temporaryIntent = new Intent(MainLogin.this, MainActivity.class);
+            Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(temporaryIntent);
 
         }

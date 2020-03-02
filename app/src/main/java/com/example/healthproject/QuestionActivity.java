@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
  * @author Joonas Soininen
  * @version 1.1
  */
-public class MainQuestions extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity {
     int answer1=0, answer2=0;
 
     @Override
