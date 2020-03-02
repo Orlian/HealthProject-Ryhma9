@@ -1,11 +1,23 @@
 <resources>
+    //App name
     <string name="app_name">HealthProject</string>
+
+    //User input
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+
+    //Buttons
     <string name="login_register_button">Login / Register</string>
     <string name="stats_button">Statistics</string>
     <string name="start_button">How do you feel?</string>
-    <string name="username_text">Username</string>
-    <string name="password_text">Password</string>
+    <string name="register_button">Register</string>
+    <string name="not_logged_in">You need to log in to use the app</string>
+    <string name="save_button">Save</string>
     <string name="login_button">Login</string>
+    <string name="mainmenu_button">Main Menu</string>
+    <string name="exit_button" translatable="false">EXIT</string>
+
+    //Questions
     <string name="question1">Do you feel sad or unhappy? \n(1= very unhappy, 5=happy)</string>
     <string name="question2">Are you reluctant or unsatisfied? \n(1=reluctant/unsatisfied, 5=satisfied)</string>
     <string name="question3">Do you feel more tired than usual? \n(1=very tired, 5=not tired that usual)</string>
@@ -26,12 +38,48 @@
     <string name="question18">Do you feel ugly/unattractive? \n(1=yes, 5=no)</string>
     <string name="question19">Have cried more than usual? \n(1=cannot cry anymore, 5=no)</string>
     <string name="question20">Do you want to harm yourself? \n(1=yes, 5=no)</string>
-    <string name="register_button">Register</string>
-    <string name="not_logged_in">You need to log in to use the app</string>
-    <string name="save_button">Save</string>
+
+    //Radiobutton numbers
     <string name="number1">1</string>
     <string name="number2">2</string>
     <string name="number3">3</string>
     <string name="number4">4</string>
     <string name="number5">5</string>
+
+    //Group results
+    <string name="group1head">Deep feelings</string>
+    <string name="group2head">How you felt</string>
+    <string name="group3head">Physical attribute</string>
+    <string name="group4head">Human relations</string>
+    <string name="group5head">Median</string>
+    <string name="group1text" translatable="false"></string>
+    <string name="group2text" translatable="false"></string>
+    <string name="group3text" translatable="false"></string>
+    <string name="group4text" translatable="false"></string>
+    <string name="group5text" translatable="false"></string>
+
+    //Group feedback
+    <string name="group1critical">Mental state critical, please go to the closest emergency room and get some help. For first aid you can call Finnish mental health service 0925250113</string>
+    <string name="group1alarm">Your mental state seems to be worryingly low. Professional help could be in order. In need for someone to talk with you can call Finnish mental health service 0925250113</string>
+    <string name="group1good">Looking good! Still you should keep your mental healt in mind as it seems you are suffering from mild depression.</string>
+    <string name="group1excellent">Your mental state seems really good! :)</string>
+    <string name="group2critical">Your result is really alarming. I recommend that you contact your local health care or call the Finnish mental health service: 0925250113</string>
+    <string name="group2alarm">It seems that your mental state is more to the dark side. You should talk to someone about your mental state. You can always contact the Finnish mental health service: 0925250113</string>
+    <string name="group2midway">Slightly unbalance mental state, but nothing too alarming. You should ponder on the possibility to talk with a therapist.</string>
+    <string name="group2good">Seems good. You should study your feelings as you might start sinking into depression.</string>
+    <string name="group2excellent">All seems good with your feelings! :)</string>
+    <string name="group3critical">Really worrying. You should take care of your physical well being also. I recommend you contact your local health care or call the Finnish mental health service: 0925250113</string>
+    <string name="group3alarm">Alarming mental state. I recommend consulting a professional about your mental health. You also can contact Finnish mental health service: 0925250113</string>
+    <string name="group3midway">Balanced mental state is good, but unfortunately this is not it. I do recommend to contact a professional therapist.</string>
+    <string name="group3good">Seems alright! Still you have work to get your mental health to the best possible!</string>
+    <string name="group3excellent">All good! Keep it up you happy chap! :)</string>
+    <string name="group4critical">Seems worrying, you should talk with someone about your problems. You can contact Finnish mental health service 0925250113</string>
+    <string name="group4midway">Bit worrying I am here. Try to talk with someone.</string>
+    <string name="group4excellent">Awesome! It seems you are doing well! :)</string>
+    <string name="group5critical">Critical situation! Please go to the ER or call Finnsih mental health service 0925250113</string>
+    <string name="group5alarm">Looks alarming,not good. Get some professional help or call Finnsih mental health service 0925250113</string>
+    <string name="group5midway">Not good, not bad. You should try and talk with someone.</string>
+    <string name="group5good">Looking good! Not the best possible situation, but keep it up and you will get there!</string>
+    <string name="group5excellent">Awesome! You are in a good mental health! :)</string>
+
 </resources>
