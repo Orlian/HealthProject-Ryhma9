@@ -11,7 +11,7 @@ import android.widget.TextView;
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 
 public class LoginActivity extends AppCompatActivity {
-    private DataList dataList;
+    private User testUser;
     public static final String EXTRA_LOGIN_STATUS = "Login data";
     public static final String EXTRA_NO_LOGIN = "No login data";
     @Override
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi ja salasana täsmäävät
             EditText userNameInput = (EditText) findViewById(R.id.usernameField);
             String userInput = userNameInput.getText().toString();
-            //HUOM! Tämä ei toimi ennen kuin toimiva dataList olio on implementoitu tähän luokkaan
+            //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
             /*for(int i = 0; this.dataList.getDataList().size() > i ; i++){
                 if(this.dataList.getUser(i).equals(userInput)){
                     boolean loginStatus = true;
@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }else if(v == findViewById(R.id.registerButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi on vapaana
+            //Luo User-olion ja samalla sille oman dataListan
             Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(temporaryIntent);
 
