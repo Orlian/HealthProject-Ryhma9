@@ -15,12 +15,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Bundle login = getIntent().getExtras();
-        if(login == null){
-
-        } else if(login.containsKey(EXTRA_LOGIN_STATUS)){
-            this.loggedIn = login.getBoolean(EXTRA_LOGIN_STATUS, true);
-        }
     }
 
     public void onClick(View v){
@@ -32,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if(v == findViewById(R.id.mainButton)){
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
-            if(this.loggedIn){
+            if(this.loggedIn = getIntent().getBooleanExtra(EXTRA_LOGIN_STATUS, false)){
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
             }else{
