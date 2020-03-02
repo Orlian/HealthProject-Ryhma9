@@ -6,26 +6,26 @@
     <string name="username_text">Username</string>
     <string name="password_text">Password</string>
     <string name="login_button">Login</string>
-    <string name="question1">Do you feel sad / unhappy?</string>
-    <string name="question2">Are you uninterested / unsatisfied?</string>
-    <string name="question3">Do you feel more tired than usually?</string>
-    <string name="question4">Do you feel like you get enough sleep?</string>
-    <string name="question5">Do you feel guilt?</string>
-    <string name="question6">Do you feel like failure?</string>
-    <string name="question7">Do you get tired more easily than before?</string>
-    <string name="question8">Can you fuction as well as before?</string>
-    <string name="question9">Is it difficult to make decisions?</string>
-    <string name="question10">Can you concentrate as well as before?</string>
-    <string name="question11">Is your apetite same as before?</string>
-    <string name="question12">Do you think your health as much as before?</string>
-    <string name="question13">Has your interest to sexual activity got worse?</string>
-    <string name="question14">Do you fell you have enough meaningful relationships?</string>
-    <string name="question15">Have you paid attetition dietary habbits?</string>
-    <string name="question16">Do you feel healthy?</string>
-    <string name="question17">Have you had unusually amount of headaches?</string>
-    <string name="question18">Do you feel unactractive?</string>
-    <string name="question19">Have cried more than usually? (5 if you can not cry anymore)</string>
-    <string name="question20">Do want to self-harm?</string>
+    <string name="question1">Do you feel sad or unhappy? \n(1= very unhappy, 5=happy)</string>
+    <string name="question2">Are you reluctant or unsatisfied? \n(1=reluctant/unsatisfied, 5=satisfied)</string>
+    <string name="question3">Do you feel more tired than usual? \n(1=very tired, 5=not tired that usual)</string>
+    <string name="question4">Do you feel like you get enough sleep? \n(1=not enough, 5=plenty enough)</string>
+    <string name="question5">Do you feel guilt? \n(1=constant guilt, 5=no guilt)</string>
+    <string name="question6">Do you feel like you have failed as a person? \n(1=I have failed, 5=no, I feel fine)</string>
+    <string name="question7">Do you get tired quicker that usual? \n(1=yes, I wake up tired, 5=no, I feel fine)</string>
+    <string name="question8">Are you as functional as you used to? \n(1=I cannot function at all, 5=I feel fine)</string>
+    <string name="question9">Are you feeling indecisive? \n(1=yes, I cannot decide anything, 5=no)</string>
+    <string name="question10">Are you unable to concentrate as you used to? \n(1=yes, I cannot concentrate, 5=no)</string>
+    <string name="question11">Has there been changes in you appetite? \n(1=yes a lot, 5=no changes)</string>
+    <string name="question12">Has your views on your own health changed? \n(1=Yes, I don not care anymore, 5=no change)</string>
+    <string name="question13">Do you feel that you are less interested in sexual activities? \n(1=yes, no interest, 5=no)</string>
+    <string name="question14">Do you feel you have enough meaningful relationships? \n(1=I feel that I am alone, 5=I do) </string>
+    <string name="question15">Have you been paying attention to your diet? \n(1=I don not care, 5=yes, I eat healthy)</string>
+    <string name="question16">Do you feel healthy? \n(1=no, 5=yes)</string>
+    <string name="question17">Have you had more headaches than usually? \n(1=yes, 5=no)</string>
+    <string name="question18">Do you feel ugly/unattractive? \n(1=yes, 5=no)</string>
+    <string name="question19">Have cried more than usual? \n(1=cannot cry anymore, 5=no)</string>
+    <string name="question20">Do you want to harm yourself? \n(1=yes, 5=no)</string>
     <string name="register_button">Register</string>
     <string name="not_logged_in">You need to log in to use the app</string>
     <string name="save_button">Save</string>
