@@ -82,14 +82,5 @@ public class User {
         return this.dataList.get(i);
     }
 
-    public int getFullDataList(){
-        int allValuesList =0;
-        for(int i = 0; i < this.dataList.size() ; i++){
-            int allValues = this.dataList.get(i);
-        }
-        //Väliaikainen ratkaisu
-        return allValuesList;
-
-    }
 
 }
