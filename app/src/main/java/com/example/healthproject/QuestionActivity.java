@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
@@ -24,6 +26,13 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_questions);
+        final Button button1 = (Button) findViewById(R.id.saveButton);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button1.setEnabled(false);
+            }
+        })
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -101,6 +110,8 @@ public class QuestionActivity extends AppCompatActivity {
     //Date oliolla saadaan päivämäärä
     // Date date = new Date();
     //HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
+    //
+    //
     //public void onClick(View x){
       //  for (int values : tulevalista){
         //    tulevalista.add(values);
