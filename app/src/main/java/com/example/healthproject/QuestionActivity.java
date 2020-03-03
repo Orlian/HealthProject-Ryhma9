@@ -19,7 +19,10 @@ import java.util.HashMap;
  * @version 1.1
  */
 public class QuestionActivity extends AppCompatActivity {
-    int answer1 = 0, answer2 = 0;
+    int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
+    int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
+    int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
+    int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
     int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;
     public static final String EXTRA_GROUP1 = "group1score";
     public static final String EXTRA_GROUP2 = "group2score";
@@ -128,15 +131,17 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 }
-    // Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
-    // yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
-    // keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
-    //Hashmap lajittelee päivittäin saadut kysymysten vastaukset
-    //Date oliolla saadaan päivämäärä
-    // Date date = new Date();
-    //HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
-/* Listajuttu
+    /*
+    Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
+    yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
+    keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
+    Hashmap lajittelee päivittäin saadut kysymysten vastaukset
+    Date oliolla saadaan päivämäärä
+    Date date = new Date();
+    HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
+    */
 
+/* Listajuttu
 
 ArrayList<ArrayList<String>> listOLists = new ArrayList<ArrayList<String>>();
 ArrayList<String> singleList = new ArrayList<String>();
@@ -148,13 +153,4 @@ ArrayList<String> anotherList = new ArrayList<String>();
 anotherList.add("this is another list");
 listOLists.add(anotherList);
 
-
- */
-
-/*
-
-
-
-
-
- */
+*/
