@@ -3,32 +3,39 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 
 public class LoginActivity extends AppCompatActivity {
     private User testUser;
-    public static final String EXTRA_LOGIN_STATUS = "Login data";
-    public static final String EXTRA_NO_LOGIN = "No login data";
+    private boolean loginStatus;
+    private HashMap<Date, User> hashMap;
+    private UserList userList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
         //Jos käyttäjä ei ole kirjautunut sisään, näytetään login/register ruudun yllä virheviesti
-        Bundle b = getIntent().getExtras();
-        if(!b.containsKey(EXTRA_NEED_LOGIN)){
+        //Mutta vain silloin, jos käyttäjä on yrittänyt päästä päävalikosta kysymyksiin kirjautumatta!
+        if(!getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", true) &&
+        getIntent().getBooleanExtra(EXTRA_NEED_LOGIN, true)){
 
-        } else {
-            boolean loginStatus = b.getBoolean(EXTRA_NEED_LOGIN, false);
-            if(!loginStatus){
-                TextView tv = findViewById(R.id.loginErrorMessage);
-                tv.setText(R.string.not_logged_in);
-            }
+            TextView tv = findViewById(R.id.loginErrorMessage);
+            tv.setText(R.string.not_logged_in);
         }
+
 
     }
     public void onClick(View v){
@@ -36,21 +43,29 @@ public class LoginActivity extends AppCompatActivity {
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi ja salasana täsmäävät
             EditText userNameInput = (EditText) findViewById(R.id.usernameField);
             String userInput = userNameInput.getText().toString();
+            EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
+            String userPassword = userPasswordInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
-            //HUOM! Tarvitsee vielä kysymysaktiviteetissa luodun hashmapin käyttöönsä!
-            /*for(int i = 0; this.dataList.getDataList().size() > i ; i++){
-                if(this.dataList.getUser(i).equals(userInput)){
-                    boolean loginStatus = true;
+            //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
+            for(int i = 0; i < this.userList.getUserList().size(); i++){
+                //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
+                this.testUser = this.userList.getUser(i);
+                if(this.testUser.getUserName().equals(userInput)){
+                    loginStatus = true;
+                    SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+                    SharedPreferences.Editor loginEdit = loginPrefs.edit();
+                    loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
+                    loginEdit.commit();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
-                    loginSuccess.putExtra(EXTRA_LOGIN_STATUS, loginStatus);
                     startActivity(loginSuccess);
                 }
             }
-             */
             TextView tv = findViewById(R.id.loginErrorMessage);
             tv.setText("Invalid username or password");
 
-    }else if(v == findViewById(R.id.registerButton)){
+
+
+        }else if(v == findViewById(R.id.registerButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi on vapaana
             //Luo User-olion ja samalla sille oman dataListan
             EditText userRegisterInput = (EditText) findViewById(R.id.usernameField);
@@ -58,8 +73,8 @@ public class LoginActivity extends AppCompatActivity {
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
             User user = new User(userInputName, userInputPassword);
+            this.userList.getUserList().add(user);
             Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
-            temporaryIntent.putExtra(EXTRA_LOGIN_STATUS, true);
             startActivity(temporaryIntent);
 
         }

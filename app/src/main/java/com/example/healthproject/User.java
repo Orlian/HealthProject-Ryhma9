@@ -82,5 +82,9 @@ public class User {
         return this.dataList.get(i);
     }
 
+    public List<Integer> getDataList(){
+        return getDataList();
+    }
+
 
 }
