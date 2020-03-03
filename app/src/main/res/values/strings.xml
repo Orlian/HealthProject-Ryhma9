@@ -76,10 +76,11 @@
     <string name="group4critical">Seems worrying, you should talk with someone about your problems. You can contact Finnish mental health service 0925250113</string>
     <string name="group4midway">Bit worrying I am here. Try to talk with someone.</string>
     <string name="group4excellent">Awesome! It seems you are doing well! :)</string>
-    <string name="group5critical">Critical situation! Please go to the ER or call Finnsih mental health service 0925250113</string>
-    <string name="group5alarm">Looks alarming,not good. Get some professional help or call Finnsih mental health service 0925250113</string>
+    <string name="group5critical">Critical situation! Please go to the ER or call Finnish mental health service 0925250113</string>
+    <string name="group5alarm">Looks alarming,not good. Get some professional help or call Finnish mental health service 0925250113</string>
     <string name="group5midway">Not good, not bad. You should try and talk with someone.</string>
     <string name="group5good">Looking good! Not the best possible situation, but keep it up and you will get there!</string>
     <string name="group5excellent">Awesome! You are in a good mental health! :)</string>
 
 </resources>
+

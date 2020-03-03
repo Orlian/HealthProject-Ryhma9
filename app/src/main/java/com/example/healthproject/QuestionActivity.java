@@ -2,6 +2,7 @@ package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +20,12 @@ import java.util.HashMap;
  */
 public class QuestionActivity extends AppCompatActivity {
     int answer1 = 0, answer2 = 0;
-
+    int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;
+    public static final String EXTRA_GROUP1 = "group1score";
+    public static final String EXTRA_GROUP2 = "group2score";
+    public static final String EXTRA_GROUP3 = "group3score";
+    public static final String EXTRA_GROUP4 = "group4score";
+    public static final String EXTRA_GROUP_AVERAGE = "group5score";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +108,25 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
     }
+    public void onClick(View v){
+     /*
+     lista tuloksista, joka tallennetaan kun nappia painetaan
+     for (int values : tulevalista){
+        tulevalista.add(values);
+    }*/
+        if(v == findViewById(R.id.saveButton)){
+            //Tänne siirtyminen Results aktiviteettiin (*ei vielä luotu*)
+            Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
+            //Extrana tänne kyseisen käyttäjän vastausdatan!
+            statsIntent.putExtra(EXTRA_GROUP1, group1);
+            statsIntent.putExtra(EXTRA_GROUP2, group2);
+            statsIntent.putExtra(EXTRA_GROUP3, group3);
+            statsIntent.putExtra(EXTRA_GROUP4, group4);
+            statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
+            startActivity(statsIntent);
+        }
+
+    }
 }
     // Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
     // yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
@@ -110,26 +135,6 @@ public class QuestionActivity extends AppCompatActivity {
     //Date oliolla saadaan päivämäärä
     // Date date = new Date();
     //HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
-    //
-    //
-    //public void onClick(View v){
-      //  for (int values : tulevalista){
-        //    tulevalista.add(values);
-        //}
-
-    //}
-    //v == findViewById(R.id.saveButton)){
-    //            //Tänne siirtyminen Results aktiviteettiin (*ei vielä luotu*)
-    //            Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
-    //            //Extrana tänne kyseisen käyttäjän vastausdatan!
-    //              intent.putExtra(EXTRA_GROUP1, group1);
-    //              intent.putExtra(EXTRA_GROUP2, group2);
-    //              intent.putExtra(EXTRA_GROUP3, group3);
-    //              intent.putExtra(EXTRA_GROUP4, group4);
-    //              intent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-    //            startActivity(resultsIntent);
-    //
-
 /* Listajuttu
 
 

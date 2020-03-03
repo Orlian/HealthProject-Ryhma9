@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP3;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP4;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
+
 public class ResultsActivity extends AppCompatActivity {
 
     @Override
@@ -13,28 +19,29 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_results);
 
-    /*
-        Intent intent = getIntent();
-        int group1 = intent.getIntExtra(QuestionActivity.EXTRA_GROUP1);
-        int group2 = intent.getIntExtra(QuestionActivity.EXTRA_GROUP2);
-        int group3 = intent.getIntExtra(QuestionActivity.EXTRA_GROUP3);
-        int group4 = intent.getIntExtra(QuestionActivity.EXTRA_GROUP4);
-        int groupAverage = intent.getIntExtra(QuestionActivity.EXTRA_GROUP_AVERAGE);
 
-        if(group1<5){
-          TextView textView1 = findViewById(R.id.group1Text);
-          textView1.setText(R.string.group1critical);
-        } else if(group1<15){
-          TextView textView2 = findViewById(R.id.group1Text);
-          textView2.setText(R.string.group1alarm);
-        } else if(group1<20){
-          TextView textView3 = findViewById(R.id.group1Text);
-          textView3.setText(R.string.group1good);
-          } else {
-           TextView textView4 = findViewById(R.id.group1Text);
-           textView4.setText(R.string.group1excellent);
-          }
+        Intent intent = getIntent();
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        int group2 = intent.getIntExtra(EXTRA_GROUP2,0);
+        int group3 = intent.getIntExtra(EXTRA_GROUP3,0);
+        int group4 = intent.getIntExtra(EXTRA_GROUP4,0);
+        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE,0);
+
+        if (group1 < 5) {
+            TextView textView1 = findViewById(R.id.group1Text);
+            textView1.setText(R.string.group1critical);
+        } else if (group1 < 15) {
+            TextView textView2 = findViewById(R.id.group1Text);
+            textView2.setText(R.string.group1alarm);
+        } else if (group1 < 20) {
+            TextView textView3 = findViewById(R.id.group1Text);
+            textView3.setText(R.string.group1good);
+        } else {
+            TextView textView4 = findViewById(R.id.group1Text);
+            textView4.setText(R.string.group1excellent);
         }
+
+
 
          if(group2<8){
          TextView textView1 = (TextView) findViewById(R.id.group2Text);
@@ -49,10 +56,10 @@ public class ResultsActivity extends AppCompatActivity {
          TextView textView4 = (TextView) findViewById(R.id.group2Text);
          textView4.setText(R.string.group2good);
          } else {
-         TextView textView4 = (TextView) findViewById(R.id.group2Text);
-         textView4.setText(R.string.group2excellent);
+         TextView textView5 = (TextView) findViewById(R.id.group2Text);
+         textView5.setText(R.string.group2excellent);
          }
-         }
+
 
          if(group3<8){
          TextView textView1 = (TextView) findViewById(R.id.group3Text);
@@ -67,10 +74,10 @@ public class ResultsActivity extends AppCompatActivity {
          TextView textView4 = (TextView) findViewById(R.id.group3Text);
          textView4.setText(R.string.group3good);
          } else {
-         TextView textView4 = (TextView) findViewById(R.id.group3Text);
-         textView4.setText(R.string.group3excellent);
+         TextView textView5 = (TextView) findViewById(R.id.group3Text);
+         textView5.setText(R.string.group3excellent);
          }
-         }
+
 
          if(group4<3){
          TextView textView1 = (TextView) findViewById(R.id.group4Text);
@@ -79,10 +86,10 @@ public class ResultsActivity extends AppCompatActivity {
          TextView textView2 = (TextView) findViewById(R.id.group4Text);
          textView2.setText(R.string.group4midway);
          } else {
-         TextView textView4 = (TextView) findViewById(R.id.group4Text);
-         textView4.setText(R.string.group4excellent);
+         TextView textView3 = (TextView) findViewById(R.id.group4Text);
+         textView3.setText(R.string.group4excellent);
          }
-         }
+
 
          if(groupAverage<21){
          TextView textView1 = (TextView) findViewById(R.id.group5Text);
@@ -94,18 +101,11 @@ public class ResultsActivity extends AppCompatActivity {
          TextView textView3 = (TextView) findViewById(R.id.group5Text);
          textView3.setText(R.string.group5midway);
          } else if(groupAverage<81){
-         TextView textView3 = (TextView) findViewById(R.id.group5Text);
-         textView3.setText(R.string.group5good);
-         } else {
          TextView textView4 = (TextView) findViewById(R.id.group5Text);
-         textView4.setText(R.string.group5excellent);
+         textView4.setText(R.string.group5good);
+         } else {
+         TextView textView5 = (TextView) findViewById(R.id.group5Text);
+         textView5.setText(R.string.group5excellent);
          }
-         }
-    */
-
-
-
-
-
     }
 }
