@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * Päävalikon nappien onClick-metodi, joka sisältää koodia kolmen eri napin id:lle
+     * @param v aktiivinen View-olio
+     */
     public void onClick(View v){
         if(v == findViewById(R.id.loginRegisterButton)){
             //Tänne siirtyminen LoginActivity aktiviteettiin

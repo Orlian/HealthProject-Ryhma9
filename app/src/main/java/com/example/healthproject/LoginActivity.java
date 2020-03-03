@@ -53,7 +53,13 @@ public class LoginActivity extends AppCompatActivity {
     }else if(v == findViewById(R.id.registerButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi on vapaana
             //Luo User-olion ja samalla sille oman dataListan
+            EditText userRegisterInput = (EditText) findViewById(R.id.usernameField);
+            String userInputName = userRegisterInput.getText().toString();
+            EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
+            String userInputPassword = userPasswordInput.getText().toString();
+            User user = new User(userInputName, userInputPassword);
             Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
+            temporaryIntent.putExtra(EXTRA_LOGIN_STATUS, true);
             startActivity(temporaryIntent);
 
         }
