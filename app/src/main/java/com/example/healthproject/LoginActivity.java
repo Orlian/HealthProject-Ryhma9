@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             EditText userNameInput = (EditText) findViewById(R.id.usernameField);
             String userInput = userNameInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
+            //HUOM! Tarvitsee vielä kysymysaktiviteetissa luodun hashmapin käyttöönsä!
             /*for(int i = 0; this.dataList.getDataList().size() > i ; i++){
                 if(this.dataList.getUser(i).equals(userInput)){
                     boolean loginStatus = true;
