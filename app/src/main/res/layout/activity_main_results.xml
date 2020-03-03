@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".ResultsActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kaki" />
+        app:srcCompat="@drawable/rentouttavakuva" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -174,28 +176,30 @@
             <TextView
                 android:id="@+id/group5Text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginStart="143dp"
                 android:layout_marginLeft="143dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/group5text"
                 android:textAlignment="center"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/statisticsButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/group5Head" />
 
             <Button
                 android:id="@+id/mainMenuButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="84dp"
+                android:layout_height="38dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="16dp"
                 android:onClick="onClick"
                 android:text="@string/mainmenu_button"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -204,13 +208,13 @@
 
             <Button
                 android:id="@+id/statisticsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="94dp"
+                android:layout_height="38dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="16dp"
                 android:onClick="onClick"
                 android:text="@string/stats_button"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -219,13 +223,13 @@
 
             <Button
                 android:id="@+id/exitButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="84dp"
+                android:layout_height="38dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="16dp"
                 android:onClick="onClick"
                 android:text="@string/exit_button"
                 app:layout_constraintBottom_toBottomOf="parent"
