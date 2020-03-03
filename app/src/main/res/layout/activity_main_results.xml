@@ -29,8 +29,8 @@
 
             <TextView
                 android:id="@+id/group1Head"
-                android:layout_width="139dp"
-                android:layout_height="35dp"
+                android:layout_width="170dp"
+                android:layout_height="39dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="16dp"
@@ -61,8 +61,8 @@
 
             <TextView
                 android:id="@+id/group2Head"
-                android:layout_width="137dp"
-                android:layout_height="32dp"
+                android:layout_width="158dp"
+                android:layout_height="39dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="32dp"
@@ -125,8 +125,8 @@
 
             <TextView
                 android:id="@+id/group4Head"
-                android:layout_width="146dp"
-                android:layout_height="38dp"
+                android:layout_width="185dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="32dp"
