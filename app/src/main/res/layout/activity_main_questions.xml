@@ -1160,7 +1160,7 @@
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="32dp"
                     android:layout_marginBottom="32dp"
-                    android:onClick="onClick"
+                    android:onClick="sendButton"
                     android:text="@string/save_button" />
 
             </LinearLayout>
