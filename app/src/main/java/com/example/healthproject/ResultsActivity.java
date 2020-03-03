@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -108,4 +109,22 @@ public class ResultsActivity extends AppCompatActivity {
             textView5.setText(R.string.group5excellent);
         }
     }
+
+        public void onClick(View a){
+
+            if(a == findViewById(R.id.mainMenuButton)){
+                Intent mainIntent = new Intent(ResultsActivity.this, MainActivity.class);
+                startActivity(mainIntent);
+
+            } else if(a == findViewById(R.id.statisticsButton)){
+                Intent statsIntent = new Intent(ResultsActivity.this, StatisticsActivity.class);
+                startActivity(statsIntent);
+
+
+            } else if(a == findViewById(R.id.exitButton)){
+                finish();
+                System.exit(0);
+            }
+
+        }
 }
