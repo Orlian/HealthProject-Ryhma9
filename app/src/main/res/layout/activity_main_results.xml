@@ -26,7 +26,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/group1Head"
                 android:layout_width="139dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="110dp"
@@ -34,7 +34,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
-                android:text="TextView"
+                android:text="@string/group1head"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/resultView1"
+                android:id="@+id/group1Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
@@ -50,15 +50,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
-                android:text="TextView"
+                android:text="@string/group1text"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                app:layout_constraintTop_toBottomOf="@+id/group1Head" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/group2Head"
                 android:layout_width="137dp"
                 android:layout_height="32dp"
                 android:layout_marginStart="110dp"
@@ -66,15 +66,15 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
-                android:text="TextView"
+                android:text="@string/group2head"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultView1" />
+                app:layout_constraintTop_toBottomOf="@+id/group1Text" />
 
             <TextView
-                android:id="@+id/resultView2"
+                android:id="@+id/group2Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
@@ -82,15 +82,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
-                android:text="TextView"
+                android:text="@string/group2text"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                app:layout_constraintTop_toBottomOf="@+id/group2Head" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/group3Head"
                 android:layout_width="139dp"
                 android:layout_height="37dp"
                 android:layout_marginStart="110dp"
@@ -98,15 +98,15 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
-                android:text="TextView"
+                android:text="@string/group3head"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultView2" />
+                app:layout_constraintTop_toBottomOf="@+id/group2Text" />
 
             <TextView
-                android:id="@+id/resultView3"
+                android:id="@+id/group3Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
@@ -114,15 +114,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
-                android:text="TextView"
+                android:text="@string/group3text"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                app:layout_constraintTop_toBottomOf="@+id/group3Head" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/group4Head"
                 android:layout_width="146dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="110dp"
@@ -130,15 +130,15 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
-                android:text="TextView"
+                android:text="@string/group4head"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultView3" />
+                app:layout_constraintTop_toBottomOf="@+id/group3Text" />
 
             <TextView
-                android:id="@+id/resultView4"
+                android:id="@+id/group4Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
@@ -146,15 +146,15 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
-                android:text="TextView"
+                android:text="@string/group4text"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+                app:layout_constraintTop_toBottomOf="@+id/group4Head" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/group5Head"
                 android:layout_width="148dp"
                 android:layout_height="42dp"
                 android:layout_marginStart="110dp"
@@ -162,15 +162,15 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="110dp"
                 android:layout_marginRight="110dp"
-                android:text="TextView"
+                android:text="@string/group5head"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/resultView4" />
+                app:layout_constraintTop_toBottomOf="@+id/group4Text" />
 
             <TextView
-                android:id="@+id/resultAverage"
+                android:id="@+id/group5Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
@@ -178,12 +178,12 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="143dp"
                 android:layout_marginRight="143dp"
-                android:text="TextView"
+                android:text="@string/group5text"
                 android:textAlignment="center"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                app:layout_constraintTop_toBottomOf="@+id/group5Head" />
 
             <Button
                 android:id="@+id/mainMenuButton"
@@ -194,13 +194,13 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="40dp"
-                android:text="Button"
+                android:text="@string/mainmenu_button"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/statsButton"
+                app:layout_constraintEnd_toStartOf="@+id/statisticsButton"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/statsButton"
+                android:id="@+id/statisticsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -208,7 +208,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="40dp"
-                android:text="Button"
+                android:text="@string/stats_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/exitButton"
                 app:layout_constraintStart_toEndOf="@+id/mainMenuButton" />
@@ -222,10 +222,10 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="40dp"
-                android:text="Button"
+                android:text="@string/exit_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/statsButton" />
+                app:layout_constraintStart_toEndOf="@+id/statisticsButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
