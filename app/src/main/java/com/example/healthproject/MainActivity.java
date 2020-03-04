@@ -45,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
             Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
             //Extrana tänne kyseisen käyttäjän vastausdatan!
             startActivity(statsIntent);
+        } else if(v == findViewById(R.id.settingsButton)){
+            Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(settingsIntent);
         }
     }
 }
