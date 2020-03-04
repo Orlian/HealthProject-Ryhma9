@@ -89,9 +89,9 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer1 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1);
-                group1 = answer1 + answer2;
-                Log.v("DEBUG2","Arvo1: " +group1);
+                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //TESTIKOOD
+                group1 = answer1 + answer2; //TESTIKOODI
+                Log.v("DEBUG2","Arvo1: " +group1); //TESTIKOODI
             }
         });
 
@@ -125,9 +125,9 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer2 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 2 arvo: " +answer2);
-                group1 = answer1 + answer2;
-                Log.v("DEBUG2","Arvo2: " +group1);
+                Log.v("DEBUG2","Kysymys 2 arvo: " +answer2); //TESTIKOODI
+                group1 = answer1 + answer2; //TESTIKOODI
+                Log.v("DEBUG2","Arvo2: " +group1); //TESTIKOODI
             }
         });
 
@@ -142,7 +142,8 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void sendButton(View v){
-        Log.v("DEBUG3","SendButton");
+        group1=answer1+answer2; //TESTIKOODI
+        Log.v("DEBUG3","SendButton" +group1); //TESITKOODI
 
      /*
      lista tuloksista, joka tallennetaan kun nappia painetaan
@@ -156,6 +157,7 @@ public class QuestionActivity extends AppCompatActivity {
             group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
             group4 = answer13 + answer14;
             groupAverage = group1 + group2 + group3 + group4;
+            Log.v("DEBUG3","IF LAUSE "+group1+groupAverage); //TESTIKOODI
 
 
             Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);

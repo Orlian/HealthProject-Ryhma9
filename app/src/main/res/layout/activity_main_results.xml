@@ -98,8 +98,8 @@
 
             <TextView
                 android:id="@+id/group3Head"
-                android:layout_width="139dp"
-                android:layout_height="37dp"
+                android:layout_width="208dp"
+                android:layout_height="31dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="32dp"
@@ -184,7 +184,7 @@
             <TextView
                 android:id="@+id/group5Text"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
                 android:layout_marginLeft="143dp"
                 android:layout_marginTop="16dp"
