@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SettingsActivity"
             android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".ResultsActivity" />
+        <activity android:name=".ResultsActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".StatisticsActivity"
             android:parentActivityName=".MainActivity">
