@@ -36,7 +36,8 @@
                     android:id="@+id/questionText1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question1"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -45,7 +46,9 @@
                     android:id="@+id/question1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb11"
@@ -92,7 +95,8 @@
                     android:id="@+id/questionText2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question2"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -101,7 +105,9 @@
                     android:id="@+id/question2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb21"
@@ -148,7 +154,8 @@
                     android:id="@+id/questionText3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question3"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -158,7 +165,9 @@
                     android:id="@+id/question3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb31"
@@ -205,7 +214,8 @@
                     android:id="@+id/questionText4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question4"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -214,7 +224,9 @@
                     android:id="@+id/question4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb41"
@@ -261,7 +273,8 @@
                     android:id="@+id/questionText5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question5"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -270,7 +283,9 @@
                     android:id="@+id/question5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb51"
@@ -317,7 +332,8 @@
                     android:id="@+id/questionText6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question6"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -326,7 +342,9 @@
                     android:id="@+id/question6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb61"
@@ -373,7 +391,8 @@
                     android:id="@+id/questionText7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question7"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -382,7 +401,9 @@
                     android:id="@+id/question7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb71"
@@ -429,7 +450,8 @@
                     android:id="@+id/questionText8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question8"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -438,7 +460,9 @@
                     android:id="@+id/question8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb81"
@@ -485,7 +509,8 @@
                     android:id="@+id/questionText9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question9"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -494,7 +519,9 @@
                     android:id="@+id/question9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb91"
@@ -541,7 +568,8 @@
                     android:id="@+id/questionText10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question10"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -550,7 +578,9 @@
                     android:id="@+id/question10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb101"
@@ -597,7 +627,8 @@
                     android:id="@+id/questionText11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question11"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -606,7 +637,9 @@
                     android:id="@+id/question11"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb111"
@@ -653,7 +686,8 @@
                     android:id="@+id/questionText12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question12"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -662,7 +696,9 @@
                     android:id="@+id/question12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb121"
@@ -709,7 +745,8 @@
                     android:id="@+id/questionText13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question13"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -718,7 +755,9 @@
                     android:id="@+id/question13"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb131"
@@ -765,7 +804,8 @@
                     android:id="@+id/questionText14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question14"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -774,7 +814,9 @@
                     android:id="@+id/question14"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb141"
@@ -821,7 +863,8 @@
                     android:id="@+id/questionText15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question15"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -830,7 +873,9 @@
                     android:id="@+id/question15"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb151"
@@ -877,7 +922,8 @@
                     android:id="@+id/questionText16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question16"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -886,7 +932,9 @@
                     android:id="@+id/question16"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb161"
@@ -933,7 +981,8 @@
                     android:id="@+id/questionText17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question17"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -942,7 +991,9 @@
                     android:id="@+id/question17"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb171"
@@ -989,7 +1040,8 @@
                     android:id="@+id/questionText18"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question18"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -998,7 +1050,9 @@
                     android:id="@+id/question18"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb181"
@@ -1045,7 +1099,8 @@
                     android:id="@+id/questionText19"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question19"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -1054,7 +1109,9 @@
                     android:id="@+id/question19"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb191"
@@ -1101,7 +1158,8 @@
                     android:id="@+id/questionText20"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="64dp"
+                    android:gravity="center"
                     android:text="@string/question20"
                     android:textColor="#000000"
                     android:textSize="18sp" />
@@ -1110,7 +1168,9 @@
                     android:id="@+id/question20"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="32dp">
 
                     <RadioButton
                         android:id="@+id/rb201"
@@ -1158,6 +1218,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="32dp"
+                    android:layout_marginTop="64dp"
                     android:layout_marginRight="32dp"
                     android:layout_marginBottom="32dp"
                     android:onClick="sendButton"
