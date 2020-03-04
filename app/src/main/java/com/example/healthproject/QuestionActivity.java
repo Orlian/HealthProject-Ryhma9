@@ -50,7 +50,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 button1.setEnabled(false);
-                Log.v("DEBUG3","SAVEBUTTON");
+                Log.v("DEBUG3","Save/Tallenna onClick"); //DEBUG / TESTIKOODI
                 sendButton(v);
 
             }
@@ -107,7 +107,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer1 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG / TESTIKOODI
             }
         });
 
@@ -141,7 +141,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer2 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 2 arvo: " +answer2); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 2 arvo: " +answer2); //DEBUG / TESTIKOODI
             }
         });
 
@@ -175,7 +175,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer3 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 3 arvo: " +answer3); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 3 arvo: " +answer3); //DEBUG / TESTIKOODI
             }
         });
 
@@ -209,7 +209,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer4 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 4 arvo: " +answer4); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 4 arvo: " +answer4); //DEBUG / TESTIKOODI
             }
         });
 
@@ -243,7 +243,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer5 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 5 arvo: " +answer5); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 5 arvo: " +answer5); //DEBUG / TESTIKOODI
             }
         });
 
@@ -277,7 +277,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer6 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 6 arvo: " +answer6); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 6 arvo: " +answer6); //DEBUG / TESTIKOODI
             }
         });
 
@@ -311,7 +311,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer7 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 7 arvo: " +answer7); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 7 arvo: " +answer7); //DEBUG / TESTIKOODI
             }
         });
 
@@ -345,7 +345,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer8 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 8 arvo: " +answer8); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 8 arvo: " +answer8); //DEBUG / TESTIKOODI
             }
         });
 
@@ -379,7 +379,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer9 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 9 arvo: " +answer9); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 9 arvo: " +answer9); //DEBUG / TESTIKOODI
             }
         });
 
@@ -413,7 +413,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer10 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 10 arvo: " +answer10); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 10 arvo: " +answer10); //DEBUG / TESTIKOODI
             }
         });
 
@@ -447,7 +447,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer11 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 11 arvo: " +answer11); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 11 arvo: " +answer11); //DEBUG / TESTIKOODI
             }
         });
 
@@ -481,7 +481,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer12 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 12 arvo: " +answer12); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 12 arvo: " +answer12); //DEBUG / TESTIKOODI
             }
         });
 
@@ -515,7 +515,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer13 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 13 arvo: " +answer13); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 13 arvo: " +answer13); //DEBUG / TESTIKOODI
             }
         });
 
@@ -549,7 +549,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer14 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 14 arvo: " +answer14); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 14 arvo: " +answer14); //DEBUG / TESTIKOODI
             }
         });
 
@@ -583,7 +583,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer15 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 15 arvo: " +answer15); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 15 arvo: " +answer15); //DEBUG / TESTIKOODI
             }
         });
 
@@ -617,7 +617,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer16 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 16 arvo: " +answer16); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 16 arvo: " +answer16); //DEBUG / TESTIKOODI
             }
         });
 
@@ -651,7 +651,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer17 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 17 arvo: " +answer17); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 17 arvo: " +answer17); //DEBUG / TESTIKOODI
             }
         });
 
@@ -685,7 +685,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer18 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 18 arvo: " +answer18); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 18 arvo: " +answer18); //DEBUG / TESTIKOODI
             }
         });
 
@@ -719,7 +719,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer19 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 19 arvo: " +answer19); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 19 arvo: " +answer19); //DEBUG / TESTIKOODI
             }
         });
 
@@ -753,7 +753,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer20 = getTotalPoint();
-                Log.v("DEBUG2","Kysymys 20 arvo: " +answer20); //DEBUG/TESTIKOODI
+                Log.v("DEBUG2","Kysymys 20 arvo: " +answer20); //DEBUG / TESTIKOODI
             }
         });
 
@@ -763,13 +763,13 @@ public class QuestionActivity extends AppCompatActivity {
         for (int i = 0; i < answers.length; i++ )
             sum += answers[i];
 
-        Log.v("DEBUG2", "SUMMA: " +sum);
+        Log.v("DEBUG2", "Valintahetken Arrayn arvo: " +sum);
         return sum;
     }
 
     public void sendButton(View v){
-        group1=answer1+answer2; //TESTIKOODI
-        Log.v("DEBUG3","SendButton 1+2 " +group1); //TESITKOODI
+        //group1=answer1+answer2; //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
 
      /*
      lista tuloksista, joka tallennetaan kun nappia painetaan
@@ -785,12 +785,12 @@ public class QuestionActivity extends AppCompatActivity {
             group4 = answer13 + answer14;
             groupAverage = group1 + group2 + group3 + group4;
 
-            Log.v("DEBUG3","Date: "+date); //TESTIKOODI
-            Log.v("DEBUG3","Group 1: "+group1); //TESTIKOODI
-            Log.v("DEBUG3","Group 2: "+group2); //TESTIKOODI
-            Log.v("DEBUG3","Group 3: "+group3); //TESTIKOODI
-            Log.v("DEBUG3","Group 4: "+group4); //TESTIKOODI
-            Log.v("DEBUG3","Group 5: "+groupAverage); //TESTIKOODI
+            Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
+            Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
+            Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
+            Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
+            Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
+            Log.v("DEBUG3","Group 5: "+groupAverage); //DEBUG / TESTIKOODI
 
 
             Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
