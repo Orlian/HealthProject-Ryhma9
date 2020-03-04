@@ -14,7 +14,7 @@
     <string name="not_logged_in">You need to log in to use the app</string>
     <string name="save_button">Save</string>
     <string name="login_button">Login</string>
-    <string name="mainmenu_button" translatable="false">Main Menu</string>
+    <string name="mainmenu_button">Main Menu</string>
 
     //Questions
     <string name="question1">Do you feel sad or unhappy? \n(1= very unhappy, 5=happy)</string>
