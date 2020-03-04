@@ -25,17 +25,14 @@
         android:id="@+id/loginRegisterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:layout_marginBottom="15dp"
         android:background="#B4FFFFFF"
         android:onClick="onClick"
         android:text="@string/login_register_button"
-        app:layout_constraintBottom_toTopOf="@+id/statsButton"
+        app:layout_constraintBottom_toBottomOf="@+id/mainMenuImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainMenuImage"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintTop_toTopOf="@+id/mainMenuImage" />
 
     <Button
         android:id="@+id/statsButton"
@@ -43,32 +40,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginLeft="140dp"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="140dp"
         android:layout_marginRight="140dp"
-        android:layout_marginBottom="15dp"
         android:background="#B4FFFFFF"
         android:onClick="onClick"
         android:text="@string/stats_button"
-        app:layout_constraintBottom_toTopOf="@+id/mainButton"
+        app:layout_constraintBottom_toBottomOf="@+id/mainMenuImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginRegisterButton" />
+        app:layout_constraintTop_toBottomOf="@+id/loginRegisterButton"
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/mainButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
         android:background="#B4FFFFFF"
         android:onClick="onClick"
         android:text="@string/start_button"
         app:layout_constraintBottom_toBottomOf="@+id/mainMenuImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statsButton"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintTop_toBottomOf="@+id/statsButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
