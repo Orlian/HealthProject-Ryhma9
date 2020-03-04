@@ -15,7 +15,6 @@
     <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
     <string name="save_button">Tallenna</string>
     <string name="login_button">Kirjaudu</string>
-    <string name="mainmenu_button">Päävalikko</string>
 
     //Qustions
     <string name="question1">Oletko surullinen tai onneton? \n(1=erittäin, 5=en)</string>
@@ -79,5 +78,6 @@
     <string name="group_feedback_exception">Et vastannut yhteenkään kysymykseen.</string>
     <string name="settings_language">Kieli</string>
     <string name="settings_user">Käyttäjäasetukset</string>
+    <string name="mainmenu_button">Päävalikko</string>
 
 </resources>
