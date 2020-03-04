@@ -27,7 +27,7 @@ public class StatisticsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_statistics);
+        setContentView(R.layout.activity_statistics);
         Log.d("Debug", "0");
         anyChartView = findViewById(R.id.any_chart_view);
         setupChart();

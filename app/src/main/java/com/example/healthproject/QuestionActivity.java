@@ -9,10 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
@@ -42,7 +39,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_questions);
+        setContentView(R.layout.activity_questions);
 
         final Button button1 = (Button) findViewById(R.id.saveButton);
         button1.setOnClickListener(new View.OnClickListener() {

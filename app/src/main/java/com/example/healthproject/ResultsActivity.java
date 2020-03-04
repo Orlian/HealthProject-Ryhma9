@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP3;
@@ -24,7 +22,7 @@ public class ResultsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_results);
+        setContentView(R.layout.activity_results);
 
         Intent intent = getIntent();
         int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
