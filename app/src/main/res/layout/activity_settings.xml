@@ -107,4 +107,27 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordChangeField1"
         app:layout_constraintVertical_bias="0.1" />
 
+    <Button
+        android:id="@+id/passWordChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordChangeField2" />
+
+    <Button
+        android:id="@+id/mainMenuButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:onClick="onClick"
+        android:text="@string/mainmenu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/passwordChangeField2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
