@@ -5,6 +5,8 @@ import java.util.List;
 
 /**
  * DataList-luokka säilöö käyttäjän vastauksien numeeriset arvot
+ * @author Joonas Lehtoranta
+ * @version 1.2
  */
 public class DataList {
     private ArrayList<Integer> dataList;
