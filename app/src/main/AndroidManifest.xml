@@ -13,7 +13,11 @@
         <activity android:name=".ResultsActivity" />
         <activity
             android:name=".StatisticsActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android:support.PARENT_ACTIVITY"
+                android:value="com.example.healthproject.MainActivity" />
+            </activity>
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".MainActivity" />
