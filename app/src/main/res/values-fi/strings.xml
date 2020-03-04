@@ -82,5 +82,6 @@
     <string name="settings_change_password_text">Vaihda salasana</string>
     <string name="settings_password_change_hint">Anna uusi salasana</string>
     <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
+    <string name="resetPassword">Vaihda</string>
 
 </resources>

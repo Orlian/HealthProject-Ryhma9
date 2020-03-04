@@ -86,6 +86,7 @@
     <string name="settings_change_password_text">Change your password</string>
     <string name="settings_password_change_hint">Enter new password</string>
     <string name="settings_password_change_hint2">Enter password again</string>
+    <string name="resetPassword">Reset</string>
 
 </resources>
 
