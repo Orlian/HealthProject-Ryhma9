@@ -83,6 +83,9 @@
     <string name="group_feedback_exception">You did not answer any questions.</string>
     <string name="settings_language">Language</string>
     <string name="settings_user">User options</string>
+    <string name="settings_change_password_text">Change your password</string>
+    <string name="settings_password_change_hint">Enter new password</string>
+    <string name="settings_password_change_hint2">Enter password again</string>
 
 </resources>
 

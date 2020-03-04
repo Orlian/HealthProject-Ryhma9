@@ -79,5 +79,8 @@
     <string name="group_feedback_exception">Et vastannut yhteenkään kysymykseen.</string>
     <string name="settings_language">Kieli</string>
     <string name="settings_user">Käyttäjäasetukset</string>
+    <string name="settings_change_password_text">Vaihda salasana</string>
+    <string name="settings_password_change_hint">Anna uusi salasana</string>
+    <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
 
 </resources>
