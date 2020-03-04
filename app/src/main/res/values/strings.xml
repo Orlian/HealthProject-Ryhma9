@@ -15,7 +15,6 @@
     <string name="save_button">Save</string>
     <string name="login_button">Login</string>
     <string name="mainmenu_button">Main Menu</string>
-    <string name="exit_button" translatable="false">EXIT</string>
 
     //Questions
     <string name="question1">Do you feel sad or unhappy? \n(1= very unhappy, 5=happy)</string>
@@ -49,7 +48,7 @@
     //Group results
     <string name="group1head">Deep feelings</string>
     <string name="group2head">How you felt</string>
-    <string name="group3head">Physical attribute</string>
+    <string name="group3head">Physical attributes</string>
     <string name="group4head">Human relations</string>
     <string name="group5head">Median</string>
     <string name="group1text" translatable="false"></string>

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if(v == findViewById(R.id.mainButton)){
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
-            if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){
+            if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", false)){
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
             }else{

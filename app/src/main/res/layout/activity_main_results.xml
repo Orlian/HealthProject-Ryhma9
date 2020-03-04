@@ -15,8 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rentouttavakuva" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -99,8 +98,8 @@
 
             <TextView
                 android:id="@+id/group3Head"
-                android:layout_width="139dp"
-                android:layout_height="37dp"
+                android:layout_width="208dp"
+                android:layout_height="31dp"
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="32dp"
@@ -185,7 +184,7 @@
             <TextView
                 android:id="@+id/group5Text"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
                 android:layout_marginLeft="143dp"
                 android:layout_marginTop="16dp"
