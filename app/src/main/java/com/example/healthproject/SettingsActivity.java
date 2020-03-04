@@ -2,6 +2,7 @@ package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +18,8 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
     }
 
-    public void onClick(View v){
-        if(v == findViewById(R.id.languageEngButton)){
+    public void onClick(View v) {
+        if (v == findViewById(R.id.languageEngButton)) {
             String languageToLoad = "en";
             Locale locale = new Locale(languageToLoad);
             Locale.setDefault(locale);
@@ -26,13 +27,17 @@ public class SettingsActivity extends AppCompatActivity {
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
             updateUI();
-        } else if(v == findViewById(R.id.languageFinButton)){
+        } else if (v == findViewById(R.id.languageFinButton)) {
             String languageToLoad = "fi";
             Locale locale = new Locale(languageToLoad);
             Locale.setDefault(locale);
             Configuration config = new Configuration();
             config.locale = locale;
             getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+            updateUI();
+        } else if (v == findViewById(R.id.mainMenuButton2)) {
+            Intent mainIntent = new Intent(SettingsActivity.this, MainActivity.class);
+            startActivity(mainIntent);
             updateUI();
         }
     }
@@ -48,5 +53,8 @@ public class SettingsActivity extends AppCompatActivity {
         tv.setHint(R.string.settings_password_change_hint2);
         tv = findViewById(R.id.userSettingsPasswordChange);
         tv.setText(R.string.settings_change_password_text);
+        tv = findViewById(R.id.mainMenuButton2);
+        tv.setText(R.string.mainmenu_button);
     }
+
 }
