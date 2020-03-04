@@ -76,5 +76,8 @@
     <string name="group5midway">"Melkoisen tasapaksua mielialaa. Kannattaa puhua asiasta. "</string>
     <string name="group5good">"Hyvältä näyttää! Ei ihan paras mahdollinen kunto, mutta tsemppiä ja suunta ylöspäin! "</string>
     <string name="group5excellent">"Mahtavaa! Olet hyvässä mielenterveydessä! :) "</string>
+    <string name="group_feedback_exception">Et vastannut yhteenkään kysymykseen.</string>
+    <string name="settings_language">Kieli</string>
+    <string name="settings_user">Käyttäjäasetukset</string>
 
 </resources>

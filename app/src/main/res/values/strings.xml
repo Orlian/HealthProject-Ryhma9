@@ -81,6 +81,9 @@
     <string name="group5midway">Not good, not bad. You should try and talk with someone.</string>
     <string name="group5good">Looking good! Not the best possible situation, but keep it up and you will get there!</string>
     <string name="group5excellent">Awesome! You are in a good mental health! :)</string>
+    <string name="group_feedback_exception">You did not answer any questions.</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_user">User options</string>
 
 </resources>
 

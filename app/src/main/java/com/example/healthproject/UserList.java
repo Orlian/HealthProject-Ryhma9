@@ -3,6 +3,9 @@ package com.example.healthproject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Luokka, joka sisältää listan aplikaatioon rekisteröityneistä käyttäjistä
+ */
 public class UserList {
     private List<User> userList;
 
