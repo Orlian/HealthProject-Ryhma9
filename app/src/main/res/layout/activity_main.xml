@@ -32,24 +32,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mainMenuImage" />
+        app:layout_constraintTop_toTopOf="@+id/mainMenuImage"
+        app:layout_constraintVertical_bias="0.52" />
 
     <Button
         android:id="@+id/statsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginRight="140dp"
         android:background="#B4FFFFFF"
         android:onClick="onClick"
         android:text="@string/stats_button"
-        app:layout_constraintBottom_toBottomOf="@+id/mainMenuImage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginRegisterButton"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <Button
         android:id="@+id/mainButton"
@@ -58,10 +55,11 @@
         android:background="#B4FFFFFF"
         android:onClick="onClick"
         android:text="@string/start_button"
-        app:layout_constraintBottom_toBottomOf="@+id/mainMenuImage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/statsButton"
+        app:layout_constraintVertical_bias="0.26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
