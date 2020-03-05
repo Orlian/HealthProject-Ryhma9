@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
                     loginEdit.commit();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
+                    loginSuccess.putExtra("Active_user", this.testUser);
                     startActivity(loginSuccess);
                 }
             }
@@ -72,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
             User user = new User(userInputName, userInputPassword);
-            this.userList.getUserList().add(user);
+            userList.getUserList().add(user);
             Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(temporaryIntent);
 

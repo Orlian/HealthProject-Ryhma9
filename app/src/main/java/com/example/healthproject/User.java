@@ -1,15 +1,17 @@
 package com.example.healthproject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Käyttäjä-luokka, joka sisältää aplikaation käyttäjän oleelliset tiedot ja tallentaa
  * tietyn käyttäjän vastausdatan omaan listaan.
+ * Implementoi Serializable-luokkaa, jotta saamme siirrettyä User-luokan olioita Intentien avulla
  * @author Joonas Lehtoranta
- * @version 1.0
+ * @version 1.2
  */
-public class User {
+public class User implements Serializable {
     private String userName, password;
     private List<Integer> dataList;
 
