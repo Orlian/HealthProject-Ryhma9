@@ -38,7 +38,10 @@ public class MainActivity extends AppCompatActivity {
         } else if(v == findViewById(R.id.mainButton)){
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){ //Oletusarvo false, true vain testikäytössä
+                Intent testUserIntent = getIntent();
+                User testUser = (User) testUserIntent.getSerializableExtra("Active_user");
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
+                questionsIntent.putExtra("Active_user", testUser);
                 startActivity(questionsIntent);
             }else{
                 loggedIn = false;
