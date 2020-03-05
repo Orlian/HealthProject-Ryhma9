@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
             loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
             loginEdit.commit();
             User user = new User(userInputName, userInputPassword);
-            userList.getUserList().add(user);
+            userList.getInstance().getUserList().add(user);
             Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
             loginSuccess.putExtra("Active_user", user);
             startActivity(loginSuccess);
