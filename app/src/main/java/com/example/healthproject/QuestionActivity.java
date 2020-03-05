@@ -3,11 +3,14 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+
+import com.google.gson.Gson;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -809,7 +812,18 @@ public class QuestionActivity extends AppCompatActivity {
         }
         inner.put(date, testUser);
             Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
-
+        SharedPreferences listPrefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = listPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(testUser);
+        prefsEditor.putString("ActiveUser", json);
+        prefsEditor.commit();
+        /*
+        Gsonin palauttaminen:
+        Gson gson = new Gson();
+        String json = listPrefs.getString("ActiveUser", "");
+        User testUser = gson.fromJson(json, User.class);
+         */
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
         //Extrana tänne kyseisen käyttäjän vastausdatan!
