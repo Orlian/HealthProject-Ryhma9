@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
@@ -767,38 +769,69 @@ public class QuestionActivity extends AppCompatActivity {
     public void sendButton(View v){
         //group1=answer1+answer2; //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
+        Intent testUserIntent = getIntent();
+        User testUser = (User) testUserIntent.getSerializableExtra("Active_user");
+
 
      /*
      lista tuloksista, joka tallennetaan kun nappia painetaan
      for (int values : tulevalista){
         tulevalista.add(values);
     }*/
-        if(v == findViewById(R.id.saveButton)){
-            Date date = new Date();
 
-            group1 = answer1 + answer2 + answer19 + answer20;
-            group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
-            group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
-            group4 = answer13 + answer14;
-            groupAverage = group1 + group2 + group3 + group4;
+        Date date = new Date();
 
-            Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
-            Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
-            Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
-            Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
-            Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
-            Log.v("DEBUG3","Group 5: "+groupAverage); //DEBUG / TESTIKOODI
+        group1 = answer1 + answer2 + answer19 + answer20;
+        group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
+        group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
+        group4 = answer13 + answer14;
+        groupAverage = group1 + group2 + group3 + group4;
 
+        Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 5: "+groupAverage); //DEBUG / TESTIKOODI
 
-            Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
-            //Extrana tänne kyseisen käyttäjän vastausdatan!
-            statsIntent.putExtra(EXTRA_GROUP1, group1);
-            statsIntent.putExtra(EXTRA_GROUP2, group2);
-            statsIntent.putExtra(EXTRA_GROUP3, group3);
-            statsIntent.putExtra(EXTRA_GROUP4, group4);
-            statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-            startActivity(statsIntent);
+        Map<User, Map<Date,User>>outer = new HashMap<User, Map<Date, User>>();
+
+        Map<Date,User> inner = outer.get(testUser);
+        if (inner == null) {
+            inner = new HashMap<Date, User>();
+            outer.put(testUser, inner);
         }
+        inner.put(date, testUser);
+
+        /*
+        if (resultsMap.isEmpty()) {
+
+            Map<Date, User> resultValues = new HashMap<Date, User>();
+            resultValues.put(date, testUser);
+            resultsMap.put(testUser, resultValues);
+
+        } else if (resultsMap.containsKey(testUser)){
+
+            Map<Date, User> resultValues = (Map<Date, User>) resultsMap.get(testUser).clone();
+            resultValues.put(date, testUser);
+            resultsMap.put(testUser, resultValues);
+
+
+        }
+        */
+
+
+
+
+        Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
+        //Extrana tänne kyseisen käyttäjän vastausdatan!
+        statsIntent.putExtra(EXTRA_GROUP1, group1);
+        statsIntent.putExtra(EXTRA_GROUP2, group2);
+        statsIntent.putExtra(EXTRA_GROUP3, group3);
+        statsIntent.putExtra(EXTRA_GROUP4, group4);
+        statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
+        startActivity(statsIntent);
+
 
     }
 }
