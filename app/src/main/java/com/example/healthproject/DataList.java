@@ -27,28 +27,6 @@ public class DataList {
         return this.dataList.get(i);
     }
 
-    /**
-     * getDataList-metodi palauttaa tietyn lista-olion
-     * @return List<Integer> this.dataList
-     */
-    public List<Integer> getDataList(){
-        return this.dataList;
-    }
-
-    /**
-     * removeDataListEntry-metodi poistaa tietyn indeksin kohdalla olevan arvon listalta
-     * @param i indeksi
-     */
-    public void removeDataListEntry(int i){
-        this.dataList.remove(i);
-    }
-
-    /**
-     * clearDataList-metodi tyhjentää koko käyttäjän datalistan
-     */
-    public void clearDataList(){
-        this.dataList.clear();
-    }
 
 
 }

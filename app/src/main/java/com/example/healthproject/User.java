@@ -39,7 +39,7 @@ public class User implements Serializable {
      * @return String userName
      */
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     /**
@@ -47,7 +47,7 @@ public class User implements Serializable {
      * @return String password
      */
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     /**
@@ -75,17 +75,9 @@ public class User implements Serializable {
         return this.userName;
     }
 
-    /**
-     * Palauttaa tietyn käyttäjän datalistan tietyn arvon.
-     * @param i Indeksi, jolla määritetään mitä listan lukua haetaan
-     * @return int dataList value at index
-     */
-    public int getDataListValue(int i){
-        return this.dataList.get(i);
-    }
 
     public List<Integer> getDataList(){
-        return getDataList();
+        return this.dataList;
     }
 
 
