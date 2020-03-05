@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
  * @author Joonas Soininen
- * @version 1.8
+ * @version 2.1
  */
 public class QuestionActivity extends AppCompatActivity {
 
