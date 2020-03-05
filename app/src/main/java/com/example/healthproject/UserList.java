@@ -4,13 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Luokka, joka sisältää listan aplikaatioon rekisteröityneistä käyttäjistä
+ * Singleton-luokka, joka sisältää listan aplikaatioon rekisteröityneistä käyttäjistä
+ * @author Joonas Lehtoranta
+ * @version 1.3
  */
-public class UserList {
+class UserList {
     private List<User> userList;
+    public static final UserList ourInstance = new UserList();
 
-    public void UserList(){
-        this.userList = new ArrayList<>();
+
+    static UserList getInstance(){
+        return ourInstance;
+    }
+
+    private UserList(){
+        userList = new ArrayList<>();
     }
 
     public User getUser(int i){

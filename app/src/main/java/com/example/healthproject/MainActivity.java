@@ -6,7 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-
+/**
+ * Päävalikko-aktiviteetti, joka toimii kaikkien muiden aktiviteettien yhdyskohtana
+ * @author Joonas Lehtoranta
+ * @author Joonas Soininen
+ * @author Oskari Piiroinen
+ * @author Arttu Myyryläinen
+ * @version 2.0
+ */
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
@@ -18,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Päävalikon nappien onClick-metodi, joka sisältää koodia kolmen eri napin id:lle
+     * Päävalikon nappien onClick-metodi, joka sisältää koodia kaikkien eri nappien id:lle
      * @param v aktiivinen View-olio
      */
     public void onClick(View v){

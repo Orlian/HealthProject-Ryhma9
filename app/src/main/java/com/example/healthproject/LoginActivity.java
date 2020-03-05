@@ -44,9 +44,10 @@ public class LoginActivity extends AppCompatActivity {
             String userPassword = userPasswordInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
             //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
-            for(int i = 0; i < this.userList.getUserList().size(); i++){
+            userList = UserList.getInstance();
+            for(int i = 0; i < userList.getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
-                this.testUser = this.userList.getUser(i);
+                this.testUser = userList.getUser(i);
                 if(this.testUser.getUserName().equals(userInput)){
                     loginStatus = true;
                     SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
             TextView tv = findViewById(R.id.loginErrorMessage);
+            //HUOM! Korvaa teksti resurssilla
             tv.setText("Invalid username or password");
 
 
