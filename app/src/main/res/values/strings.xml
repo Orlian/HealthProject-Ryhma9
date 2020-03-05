@@ -87,6 +87,9 @@
     <string name="settings_change_password_text">Change your password</string>
     <string name="settings_password_change_hint">Enter new password</string>
     <string name="settings_password_change_hint2">Enter password again</string>
+    <string name="statisticsWeek">Weekly average</string>
+    <string name="statisticsMonth">Monthly average</string>
+    <string name="pieChartTitle">Average moods</string>
 
 
 </resources>

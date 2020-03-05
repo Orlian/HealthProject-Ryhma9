@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class StatisticsActivity extends AppCompatActivity {
     AnyChartView anyChartView;
-    String[] states = {"Moods", "Feelings", "Physical", "Relationships"};
+
     Boolean state = true;
 
     @Override
@@ -36,6 +36,7 @@ public class StatisticsActivity extends AppCompatActivity {
     }
 
     public void setupChart() {
+        String[] states = {getString(R.string.group1head), getString(R.string.group2head), getString(R.string.group3head), getString(R.string.group4head)}; //
         Pie pie = AnyChart.pie();
         List<DataEntry> dataEntries = new ArrayList<>();
         if (state) {
@@ -45,7 +46,7 @@ public class StatisticsActivity extends AppCompatActivity {
                 dataEntries.add(new ValueDataEntry(states[i], values[i]));
                 Log.d("Debug", "2");
             }
-            pie.title("Weekly averages");
+            pie.title(getString(R.string.statisticsWeek));
             Log.d("Debug", "true");
         } else {
             int[] values = {100, 10, 10, 10};
@@ -54,7 +55,7 @@ public class StatisticsActivity extends AppCompatActivity {
                 dataEntries.add(new ValueDataEntry(states[i], values[i]));
                 Log.d("Debug", "4");
             }
-            pie.title("Monthly averages");
+            pie.title(getString(R.string.statisticsMonth));
             Log.d("Debug", "false");
         }
         pie.data(dataEntries);
