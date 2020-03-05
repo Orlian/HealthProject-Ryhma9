@@ -773,11 +773,12 @@ public class QuestionActivity extends AppCompatActivity {
         User testUser = (User) testUserIntent.getSerializableExtra("Active_user");
 
 
-     /*
-     lista tuloksista, joka tallennetaan kun nappia painetaan
-     for (int values : tulevalista){
-        tulevalista.add(values);
-    }*/
+
+
+     for (int i=0; i < answers.length; i++){
+        testUser.getDataList().add(answers[i]);
+        Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
+    }
 
         Date date = new Date();
 
@@ -800,8 +801,10 @@ public class QuestionActivity extends AppCompatActivity {
         if (inner == null) {
             inner = new HashMap<Date, User>();
             outer.put(testUser, inner);
+            Log.v("DEBUG4", "HashMap OUTER OK!"); //DEBUG / TESTIKOODI
         }
         inner.put(date, testUser);
+            Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
 
         /*
         if (resultsMap.isEmpty()) {
