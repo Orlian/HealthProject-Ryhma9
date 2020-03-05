@@ -3,8 +3,11 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+
+import com.google.gson.Gson;
 
 /**
  * Päävalikko-aktiviteetti, joka toimii kaikkien muiden aktiviteettien yhdyskohtana
@@ -17,6 +20,8 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
+    private SharedPreferences loginPrefs;
+    private User testUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
         } else if(v == findViewById(R.id.mainButton)){
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
-            if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){ //Oletusarvo false, true vain testikäytössä
-                Intent testUserIntent = getIntent();
-                User testUser = (User) testUserIntent.getSerializableExtra("Active_user");
+            //Oletusarvo false, true vain testikäytössä
+            if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){
+                Gson gson = new Gson();
+                String json = loginPrefs.getString("ACTIVE_USER", "");
+                testUser = gson.fromJson(json, User.class);
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
-                questionsIntent.putExtra("Active_user", testUser);
                 startActivity(questionsIntent);
             }else{
                 loggedIn = false;

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.Date;
 import java.util.HashMap;
 
@@ -18,8 +20,7 @@ import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 public class LoginActivity extends AppCompatActivity {
     private User testUser;
     private boolean loginStatus;
-    private HashMap<Date, User> hashMap;
-    private UserList userList;
+    private UserList userList = UserList.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
             String userPassword = userPasswordInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
             //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
-            userList = UserList.getInstance();
             for(int i = 0; i < userList.getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
                 this.testUser = userList.getUser(i);
@@ -54,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                     SharedPreferences.Editor loginEdit = loginPrefs.edit();
                     loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
+                    Gson gson = new Gson();
+                    String json = gson.toJson(testUser);
+                    loginEdit.putString("ACTIVE_USER", json);
                     loginEdit.commit();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                     loginSuccess.putExtra("Active_user", this.testUser);
@@ -73,16 +76,19 @@ public class LoginActivity extends AppCompatActivity {
             String userInputName = userRegisterInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
+            testUser = new User(userInputName, userInputPassword);
             //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
+            if(!userList.getUserList().contains(testUser))
             loginStatus = true;
             SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
             SharedPreferences.Editor loginEdit = loginPrefs.edit();
             loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
+            Gson gson = new Gson();
+            String json = gson.toJson(testUser);
+            loginEdit.putString("ACTIVE_USER", json);
             loginEdit.commit();
-            User user = new User(userInputName, userInputPassword);
-            userList.getInstance().getUserList().add(user);
+            userList.getUserList().add(testUser);
             Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
-            loginSuccess.putExtra("Active_user", user);
             startActivity(loginSuccess);
 
         }

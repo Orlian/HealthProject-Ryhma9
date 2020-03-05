@@ -80,7 +80,15 @@ public class QuestionActivity extends AppCompatActivity {
         RadioGroup radioGroup19 = (RadioGroup) findViewById(R.id.question19);
         RadioGroup radioGroup20 = (RadioGroup) findViewById(R.id.question20);
 
+
+
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            /**
+             * Metodi tarkistaa mikä kyseisen radiogroupin radioButtonin valittu arvo on ja tallentaa sen answer1-muuttujaan
+             * @param question1 vastaava kysymys
+             * @param checkedId valitun radioButtonin tunniste ja siihen liittyvä arvo
+             */
             @Override
             public void onCheckedChanged(RadioGroup question1, int checkedId) {
                 switch (checkedId) {
@@ -773,6 +781,10 @@ public class QuestionActivity extends AppCompatActivity {
     }
  */
 
+    /**
+     * Tallennus-metodi, joka säilöö kaikkien vastausten arvot aktiivisen käyttäjän DataListaan
+     * @param v aktiivinen View-olio
+     */
     public void sendButton(View v){
         //group1=answer1+answer2; //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
@@ -812,6 +824,9 @@ public class QuestionActivity extends AppCompatActivity {
         }
         inner.put(date, testUser);
             Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
+
+        //SharedPreferences toiminnallisuuden kautta aktiivisen käyttäjän säilöminen!
+        //LAITA OIKEISIIN PAIKKOIHIN!
         SharedPreferences listPrefs = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = listPrefs.edit();
         Gson gson = new Gson();
@@ -826,7 +841,7 @@ public class QuestionActivity extends AppCompatActivity {
          */
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
-        //Extrana tänne kyseisen käyttäjän vastausdatan!
+        //Extrana tänne kyseisen käyttäjän vastausdata!
         statsIntent.putExtra(EXTRA_GROUP1, group1);
         statsIntent.putExtra(EXTRA_GROUP2, group2);
         statsIntent.putExtra(EXTRA_GROUP3, group3);
