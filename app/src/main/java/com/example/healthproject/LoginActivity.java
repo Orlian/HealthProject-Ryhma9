@@ -73,10 +73,17 @@ public class LoginActivity extends AppCompatActivity {
             String userInputName = userRegisterInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
+            //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
+            loginStatus = true;
+            SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+            SharedPreferences.Editor loginEdit = loginPrefs.edit();
+            loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
+            loginEdit.commit();
             User user = new User(userInputName, userInputPassword);
             userList.getUserList().add(user);
-            Intent temporaryIntent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(temporaryIntent);
+            Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
+            loginSuccess.putExtra("Active_user", user);
+            startActivity(loginSuccess);
 
         }
     }
