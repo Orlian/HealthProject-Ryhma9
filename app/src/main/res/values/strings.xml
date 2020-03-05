@@ -15,6 +15,7 @@
     <string name="save_button">Save</string>
     <string name="login_button">Login</string>
     <string name="mainmenu_button">Main Menu</string>
+    <string name="resetPassword">Reset</string>
 
     //Questions
     <string name="question1">Do you feel sad or unhappy? \n(1= very unhappy, 5=happy)</string>
@@ -86,7 +87,7 @@
     <string name="settings_change_password_text">Change your password</string>
     <string name="settings_password_change_hint">Enter new password</string>
     <string name="settings_password_change_hint2">Enter password again</string>
-    <string name="resetPassword">Reset</string>
+
 
 </resources>
 
