@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.gson.Gson;
@@ -15,7 +16,7 @@ import com.google.gson.Gson;
  * @author Joonas Soininen
  * @author Oskari Piiroinen
  * @author Arttu Myyryläinen
- * @version 2.0
+ * @version 2.1
  */
 public class MainActivity extends AppCompatActivity {
     private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
@@ -44,9 +45,11 @@ public class MainActivity extends AppCompatActivity {
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             //Oletusarvo false, true vain testikäytössä
             if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){
+                loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 Gson gson = new Gson();
-                String json = loginPrefs.getString("ACTIVE_USER", "");
+                String json = loginPrefs.getString("ACTIVE_USER", " ");
                 testUser = gson.fromJson(json, User.class);
+                Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
             }else{

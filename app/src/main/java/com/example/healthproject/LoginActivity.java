@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         //Jos käyttäjä ei ole kirjautunut sisään, näytetään login/register ruudun yllä virheviesti
         //Mutta vain silloin, jos käyttäjä on yrittänyt päästä päävalikosta kysymyksiin kirjautumatta!
-        if(!getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", true) &&
+        if(loginStatus = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", true) &&
         getIntent().getBooleanExtra(EXTRA_NEED_LOGIN, true)){
 
             TextView tv = findViewById(R.id.loginErrorMessage);
@@ -46,9 +47,9 @@ public class LoginActivity extends AppCompatActivity {
             String userPassword = userPasswordInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
             //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
-            for(int i = 0; i < userList.getUserList().size(); i++){
+            for(int i = 0; i < UserList.getInstance().getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
-                this.testUser = userList.getUser(i);
+                this.testUser = UserList.getInstance().getUser(i);
                 if(this.testUser.getUserName().equals(userInput)){
                     loginStatus = true;
                     SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
@@ -78,18 +79,20 @@ public class LoginActivity extends AppCompatActivity {
             String userInputPassword = userPasswordInput.getText().toString();
             testUser = new User(userInputName, userInputPassword);
             //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
-            if(!userList.getUserList().contains(testUser))
-            loginStatus = true;
-            SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
-            SharedPreferences.Editor loginEdit = loginPrefs.edit();
-            loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
-            Gson gson = new Gson();
-            String json = gson.toJson(testUser);
-            loginEdit.putString("ACTIVE_USER", json);
-            loginEdit.commit();
-            userList.getUserList().add(testUser);
-            Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(loginSuccess);
+            if(!UserList.getInstance().getUserList().contains(testUser)) {
+                loginStatus = true;
+                SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+                SharedPreferences.Editor loginEdit = loginPrefs.edit();
+                loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
+                Gson gson = new Gson();
+                String json = gson.toJson(testUser);
+                loginEdit.putString("ACTIVE_USER", json);
+                loginEdit.commit();
+                UserList.getInstance().getUserList().add(testUser);
+                Log.v("DEBUG5", "Aktiivinen käyttäjä:" + testUser.getUserName());
+                Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(loginSuccess);
+            }
 
         }
     }

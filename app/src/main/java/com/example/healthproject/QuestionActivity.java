@@ -29,6 +29,9 @@ public class QuestionActivity extends AppCompatActivity {
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
 
     RadioGroup radioGroup;
+    private SharedPreferences listPrefs;
+    private User testUser;
+
 
     int answers[];
 
@@ -788,10 +791,11 @@ public class QuestionActivity extends AppCompatActivity {
     public void sendButton(View v){
         //group1=answer1+answer2; //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
-        Intent testUserIntent = getIntent();
-        User testUser = (User) testUserIntent.getSerializableExtra("Active_user");
-
-
+        listPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = listPrefs.getString("ACTIVE_USER", " ");
+        testUser = gson.fromJson(json, User.class);
+        Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
 
      for (int i=0; i < answers.length; i++){
         testUser.getDataList().add(answers[i]);
@@ -825,20 +829,6 @@ public class QuestionActivity extends AppCompatActivity {
         inner.put(date, testUser);
             Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
 
-        //SharedPreferences toiminnallisuuden kautta aktiivisen käyttäjän säilöminen!
-        //LAITA OIKEISIIN PAIKKOIHIN!
-        SharedPreferences listPrefs = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = listPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(testUser);
-        prefsEditor.putString("ActiveUser", json);
-        prefsEditor.commit();
-        /*
-        Gsonin palauttaminen:
-        Gson gson = new Gson();
-        String json = listPrefs.getString("ActiveUser", "");
-        User testUser = gson.fromJson(json, User.class);
-         */
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
         //Extrana tänne kyseisen käyttäjän vastausdata!
