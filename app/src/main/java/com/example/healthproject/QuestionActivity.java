@@ -840,6 +840,13 @@ public class QuestionActivity extends AppCompatActivity {
         resultsEdit.commit();
         Log.v("DEBUG4","GSON HASHMAP: "+gsonString);
 
+        /*
+        Map<String, Object> retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType());
+        Log.v("DEBUG4", "UUSI HASHMAP: "+retMap);
+
+         */
+
+
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
         //Extrana tänne kyseisen käyttäjän vastausdata!
