@@ -28,4 +28,5 @@ class UserList {
     public List<User> getUserList(){
         return this.userList;
     }
+
 }
