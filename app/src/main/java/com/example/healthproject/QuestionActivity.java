@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +21,7 @@ import java.util.Map;
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
  * @author Joonas Soininen
- * @version 2.1
+ * @version 2.3
  */
 public class QuestionActivity extends AppCompatActivity {
 
@@ -773,35 +775,21 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    /*
-    public int getTotalPoint() {
-        int sum = 0;
-        for (int i = 0; i < answers.length; i++ )
-            sum += answers[i];
-
-        Log.v("DEBUG2", "Valintahetken Arrayn arvo: " +sum);
-        return sum;
-    }
- */
 
     /**
      * Tallennus-metodi, joka säilöö kaikkien vastausten arvot aktiivisen käyttäjän DataListaan
      * @param v aktiivinen View-olio
      */
     public void sendButton(View v){
-        //group1=answer1+answer2; //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
+
+        int answersGroups[]=new int[5];
+
         listPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = listPrefs.getString("ACTIVE_USER", " ");
         testUser = gson.fromJson(json, User.class);
         Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
-
-     for (int i=0; i < answers.length; i++){
-        testUser.getDataList().add(answers[i]);
-        Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
-        }
-
 
         Date date = new Date();
 
@@ -810,6 +798,18 @@ public class QuestionActivity extends AppCompatActivity {
         group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
         group4 = answer13 + answer14;
         groupAverage = group1 + group2 + group3 + group4;
+
+        answersGroups[0]=group1;
+        answersGroups[1]=group2;
+        answersGroups[2]=group3;
+        answersGroups[3]=group4;
+        answersGroups[4]=groupAverage;
+
+
+        for (int i=0; i < answersGroups.length; i++){
+            testUser.getDataList().add(answersGroups[i]);
+            Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
+        }
 
         Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
@@ -825,43 +825,34 @@ public class QuestionActivity extends AppCompatActivity {
             inner = new HashMap<Date, User>();
             outer.put(testUser, inner);
             Log.v("DEBUG4", "HashMap OUTER OK!"); //DEBUG / TESTIKOODI
+            Log.v("DEBUG4", "HashMap OUTER ARVO: " +outer.toString()); //DEBUG / TESTIKOODI
         }
         inner.put(date, testUser);
             Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
+            Log.v("DEBUG4","HashMap INNER ARVO: "+inner.toString()); //DEBUG / TESTIKOODI
+
+
+        SharedPreferences resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
+        SharedPreferences.Editor resultsEdit = resultPref.edit();
+        Type gsonType = new TypeToken<HashMap>() {}.getType();
+        String gsonString = gson.toJson(outer,gsonType);
+        resultsEdit.putString("HASHMAP_VALUE", gsonString);
+        resultsEdit.commit();
+        Log.v("DEBUG4","GSON HASHMAP: "+gsonString);
 
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
         //Extrana tänne kyseisen käyttäjän vastausdata!
-        statsIntent.putExtra(EXTRA_GROUP1, group1);
-        statsIntent.putExtra(EXTRA_GROUP2, group2);
-        statsIntent.putExtra(EXTRA_GROUP3, group3);
-        statsIntent.putExtra(EXTRA_GROUP4, group4);
-        statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
+        statsIntent.putExtra(EXTRA_GROUP1, answersGroups[0]);
+        statsIntent.putExtra(EXTRA_GROUP2, answersGroups[1]);
+        statsIntent.putExtra(EXTRA_GROUP3, answersGroups[2]);
+        statsIntent.putExtra(EXTRA_GROUP4, answersGroups[3]);
+        statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
         startActivity(statsIntent);
 
 
     }
 }
-    /*
-    Päivämäärän mukaan tallentuvat listat, avaimena päivämäärä ja kellonaika, jotta voi useampia entryjä tehdä per päivä
-    yhteenvetoon vastausten kokonaisarvo ja sen mukaan palaute
-    keskiarvoja palautteassa voi kysymykset ryhmitellä aiheiden mukaan
-    Hashmap lajittelee päivittäin saadut kysymysten vastaukset
-    Date oliolla saadaan päivämäärä
-    Date date = new Date();
-    HashMap<Date, ArrayList<User>>  dateResults = new HashMap<>();
-    */
 
-/* Listajuttu
 
-ArrayList<ArrayList<String>> listOLists = new ArrayList<ArrayList<String>>();
-ArrayList<String> singleList = new ArrayList<String>();
-singleList.add("hello");
-singleList.add("world");
-listOLists.add(singleList);
 
-ArrayList<String> anotherList = new ArrayList<String>();
-anotherList.add("this is another list");
-listOLists.add(anotherList);
-
-*/
