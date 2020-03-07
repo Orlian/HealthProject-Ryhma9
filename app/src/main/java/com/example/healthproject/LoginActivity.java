@@ -18,6 +18,12 @@ import java.util.HashMap;
 
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 
+/**
+ * Kirjautumisesta ja rekisteröinnistä vastaava aktiviteetti, joka kutsuu ja muokkaa käyttäjälistaa,
+ * sekä asettaa aktiivisen käyttäjän SharedPreferences tiedostoon.
+ * @author Joonas Lehtoranta
+ * @version 1.8
+ */
 public class LoginActivity extends AppCompatActivity {
     private User testUser;
     private boolean loginStatus;
@@ -49,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
             //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
             for(int i = 0; i < UserList.getInstance().getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
-                this.testUser = UserList.getInstance().getUser(i);
-                if(this.testUser.getUserName().equals(userInput)){
+                testUser = UserList.getInstance().getUser(i);
+                if(testUser.getUserName().equals(userInput) && testUser.getPassword().equals(userPassword)){
                     loginStatus = true;
                     SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                     SharedPreferences.Editor loginEdit = loginPrefs.edit();
@@ -60,7 +66,6 @@ public class LoginActivity extends AppCompatActivity {
                     loginEdit.putString("ACTIVE_USER", json);
                     loginEdit.commit();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
-                    loginSuccess.putExtra("Active_user", this.testUser);
                     startActivity(loginSuccess);
                 }
             }
@@ -89,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                 loginEdit.putString("ACTIVE_USER", json);
                 loginEdit.commit();
                 UserList.getInstance().getUserList().add(testUser);
-                Log.v("DEBUG5", "Aktiivinen käyttäjä:" + testUser.getUserName());
+                Log.v("DEBUG5", "Aktiivinen käyttäjä:" + testUser.getUserName() + " Salasana: " + testUser.getPassword());
                 Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(loginSuccess);
             }

@@ -90,6 +90,7 @@
     <string name="statisticsWeek">Weekly average</string>
     <string name="statisticsMonth">Monthly average</string>
     <string name="pieChartTitle">Average moods</string>
+    <string name="settings_password_change_error">Both passwords need to match</string>
 
 
 </resources>

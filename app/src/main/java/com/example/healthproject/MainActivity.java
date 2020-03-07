@@ -19,7 +19,7 @@ import com.google.gson.Gson;
  * @version 2.1
  */
 public class MainActivity extends AppCompatActivity {
-    private boolean loggedIn=true; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
+    private boolean loggedIn; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
     private SharedPreferences loginPrefs;
     private User testUser;
@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         } else if(v == findViewById(R.id.mainButton)){
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             //Oletusarvo false, true vain testikäytössä
-            if(getSharedPreferences("LOGIN_PREFS", 0).getBoolean("LOGIN_STATUS", true)){
+            if(getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)){
                 loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 Gson gson = new Gson();
                 String json = loginPrefs.getString("ACTIVE_USER", " ");
                 testUser = gson.fromJson(json, User.class);
-                Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
+                Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName() + " Salasana: " + testUser.getPassword());
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
             }else{
@@ -68,6 +68,6 @@ public class MainActivity extends AppCompatActivity {
         } else if(v == findViewById(R.id.settingsButton)){
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
-        }
+        } //TODO Aktiivisen käyttäjän näyttäminen jollakin ikonilla yläkulmassa
     }
 }

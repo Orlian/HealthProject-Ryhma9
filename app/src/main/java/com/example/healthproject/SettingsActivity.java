@@ -63,10 +63,16 @@ public class SettingsActivity extends AppCompatActivity {
                     if(testUser.getUserName().equals(activeUser.getUserName())){
                         UserList.getInstance().getUser(i).setPassword(newPassword2);
                         Log.v("DEBUG5", "Index: " + i);
-                        Log.v("DEBUG5", "UserList: " + UserList.getInstance().getUser(i).getPassword());
+                        Log.v("DEBUG5", "Uusi salasana: " + UserList.getInstance().getUser(i).getPassword());
                         break;
                     }
                 }
+                updateUI();
+
+            } else {
+                TextView tv =findViewById(R.id.userSettingsPasswordChange);
+                tv.setText(R.string.settings_password_change_error);
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
 
             }
         }
@@ -83,6 +89,7 @@ public class SettingsActivity extends AppCompatActivity {
         tv.setHint(R.string.settings_password_change_hint2);
         tv = findViewById(R.id.userSettingsPasswordChange);
         tv.setText(R.string.settings_change_password_text);
+        tv.setTextColor(getResources().getColor(R.color.colorText));
         tv = findViewById(R.id.mainMenuButton2);
         tv.setText(R.string.mainmenu_button);
     }

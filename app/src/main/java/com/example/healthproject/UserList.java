@@ -10,10 +10,10 @@ import java.util.List;
  */
 class UserList {
     private List<User> userList;
-    public static final UserList ourInstance = new UserList();
+    private static UserList ourInstance = new UserList();
 
 
-    static UserList getInstance(){
+    public static UserList getInstance(){
         return ourInstance;
     }
 
@@ -26,7 +26,7 @@ class UserList {
     }
 
     public List<User> getUserList(){
-        return this.userList;
+        return userList;
     }
 
 }

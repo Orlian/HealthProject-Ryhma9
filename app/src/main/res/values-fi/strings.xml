@@ -86,5 +86,6 @@
     <string name="statisticsWeek">Viikon keskiarvo</string>
     <string name="statisticsMonth">Kuukauden keskiarvo</string>
     <string name="pieChartTitle">Mielialojen keskiarvo</string>
+    <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
 
 </resources>
