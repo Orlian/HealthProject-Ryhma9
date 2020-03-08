@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +14,14 @@ import android.widget.RadioGroup;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -805,7 +811,6 @@ public class QuestionActivity extends AppCompatActivity {
         answersGroups[3]=group4;
         answersGroups[4]=groupAverage;
 
-
         for (int i=0; i < answersGroups.length; i++){
             testUser.getDataList().add(answersGroups[i]);
             Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
@@ -828,9 +833,8 @@ public class QuestionActivity extends AppCompatActivity {
             Log.v("DEBUG4", "HashMap OUTER ARVO: " +outer.toString()); //DEBUG / TESTIKOODI
         }
         inner.put(date, testUser);
-            Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
-            Log.v("DEBUG4","HashMap INNER ARVO: "+inner.toString()); //DEBUG / TESTIKOODI
-
+        Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
+        Log.v("DEBUG4","HashMap INNER ARVO: "+inner.toString()); //DEBUG / TESTIKOODI
 
         SharedPreferences resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
         SharedPreferences.Editor resultsEdit = resultPref.edit();
@@ -840,12 +844,74 @@ public class QuestionActivity extends AppCompatActivity {
         resultsEdit.commit();
         Log.v("DEBUG4","GSON HASHMAP: "+gsonString);
 
-        /*
-        Map<String, Object> retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType());
-        Log.v("DEBUG4", "UUSI HASHMAP: "+retMap);
+        Map<String, Object> retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType()); //Uuden mapin luonti gson/json datasta
+        Log.v("DEBUG0", "UUSI HASHMAP: "+retMap);
+
+        //TESTIKOODIA
+    /*
+        for(String s : retMap.keySet()){
+            Log.v("DEBUG0","retMap VALUE: " +s);
+        }
+
+        for (Map.Entry<String, Object> entry : retMap.entrySet()){
+            Log.v("DEBUG0","Päällimmäinen Avain: "+entry.getKey());
+            Log.v("DEBUG0", "Päällimmäinen Arvo: " +entry.getValue());
+        }
+
+
+
+        for (Map.Entry<User, Map<Date, User>> entry2 : outer.entrySet()) {
+            Log.v("DEBUG0","outer Avain: "+entry2.getKey());
+            Log.v("DEBUG0", "outer Arvo: " +entry2.getValue());
+        }
+
+        for (Map.Entry<Date, User> entry3 : inner.entrySet()) {
+            Log.v("DEBUG0","inner Avain: "+entry3.getKey());
+            Log.v("DEBUG0", "inner Arvo: " +entry3.getValue());
+        }
+
+     */
+
+       /*
+        Collection<Object> valuesretMap = retMap.values();
+        for(Object valueretMap : valuesretMap){
+            Log.v("DEBUG0","retMap VALUE: " +valueretMap);
+            Log.v("DEBUG0","retMap VALUES: " +valuesretMap);
+        }
+        for(String keyretMap : retMap.keySet()){
+            Log.v("DEBUG0","retMap key: " +keyretMap);
+            Log.v("DEBUG0","retMap.get(key): " +retMap.get(keyretMap));
+            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
+        }
+
+        Collection<Map<Date, User>> valuesouter = outer.values();
+        for(Object valueouter : valuesouter){
+            Log.v("DEBUG0","outer VALUE: " +valueouter);
+            Log.v("DEBUG0","outer VALUES: " +valuesouter);
+        }
+        for(User keyouter : outer.keySet()){
+            Log.v("DEBUG0","outer key: " +keyouter);
+            Log.v("DEBUG0","outer.get(key): " +outer.get(keyouter));
+            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
+        }
 
          */
 
+
+    /*
+        Collection<User> valuesinner = inner.values();
+        for(Object valueinner : valuesinner){
+            Log.v("DEBUG0","inner VALUE: " +valueinner);
+            Log.v("DEBUG0","inner VALUES: " +valuesinner);
+        }
+        for(Date keyinner : inner.keySet()){
+            Log.v("DEBUG0","inner key: " +keyinner);
+            Log.v("DEBUG0","inner.get(key): " +inner.get(keyinner));
+            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
+        }
+
+     */
+    //TESTIKOODIT LOPPUU
 
 
         Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
