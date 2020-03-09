@@ -88,5 +88,7 @@
     <string name="pieChartTitle">Mielialojen keskiarvo</string>
     <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
     <string name="switch1">kytkin1</string>
+    <string name="active_user_main">Heissulivei! Ole hyvä ja kirjaudu sisään.</string>
+    <string name="active_user_active">"Tervetuloa"</string>
 
 </resources>
