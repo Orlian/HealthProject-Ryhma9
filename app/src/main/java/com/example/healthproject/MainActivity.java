@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v("DEBUG5", UserList.getInstance().getUserList().toString());
+        updateUI();
     }
 
     /**
@@ -88,5 +90,13 @@ public class MainActivity extends AppCompatActivity {
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
         } //TODO Aktiivisen käyttäjän näyttäminen jollakin ikonilla yläkulmassa
+    }
+    private void updateUI(){
+        loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = loginPrefs.getString("ACTIVE_USER", " ");
+        testUser = gson.fromJson(json, User.class);
+        TextView tv = findViewById(R.id.activeUser);
+        tv.setText((getString(R.string.active_user_active)) + " " + testUser.getUserName() + "!");
     }
 }

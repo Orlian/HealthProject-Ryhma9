@@ -94,5 +94,9 @@
     <string name="statisticsDay">Todays answers</string>
 
 
+    //Active user
+    <string name="active_user_main">Hello, friend! Please log in.</string>
+    <string name="active_user_active">Welcome</string>
+
 </resources>
 
