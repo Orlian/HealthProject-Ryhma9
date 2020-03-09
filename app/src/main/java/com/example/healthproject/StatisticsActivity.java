@@ -86,7 +86,7 @@ public class StatisticsActivity extends AppCompatActivity {
         anyChartView2.setChart(pie2);
         Log.d("Debug", "4");
     }
-
+    //kommentti
     /*
     switch kokeilu, toimii mutta näyttää vain toisen piirakan.
     public void changeState(View e){
