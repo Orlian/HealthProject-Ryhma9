@@ -84,7 +84,7 @@
     <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
     <string name="resetPassword">Vaihda</string>
     <string name="statisticsWeek">Viikon keskiarvo</string>
-    <string name="statisticsMonth">Kuukauden keskiarvo</string>
+    <string name="statisticsDay">Päivän vastaukset</string>
     <string name="pieChartTitle">Mielialojen keskiarvo</string>
     <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
     <string name="switch1">kytkin1</string>

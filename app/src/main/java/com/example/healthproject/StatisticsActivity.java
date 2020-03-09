@@ -2,6 +2,7 @@ package com.example.healthproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,12 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP3;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP4;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
 
 /**
  * Statistiikka-luokka, joka käyttää AnyChart kirjastoa ja näyttää käyttäjän tulokset ympyrädiagrammissa.
@@ -55,14 +62,24 @@ public class StatisticsActivity extends AppCompatActivity {
         String[] states = {getString(R.string.group1head), getString(R.string.group2head), getString(R.string.group3head), getString(R.string.group4head)};
         Pie pie1 = AnyChart.pie();
         List<DataEntry> dataEntries = new ArrayList<>();
-        resultPrefs = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = resultPrefs.getString("HASHMAP_VALUE", "");
-        int[] values1 = {10, 10, 10, 10};
+
+        Intent intent = getIntent();
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
+        int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
+        int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
+        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
+        Log.v("DEBUG9", "INTENT_ARVO1: "+group1);
+        Log.v("DEBUG9", "INTENT_ARVO2: "+group2);
+        Log.v("DEBUG9", "INTENT_ARVO3: "+group3);
+        Log.v("DEBUG9", "INTENT_ARVO4: "+group4);
+        Log.v("DEBUG9", "INTENT_ARVOKAIKKI: "+groupAverage);
+
+        int[] values1 = {group1/4, group2/7, group3/7, group4/2};
             for (int i = 0; i < states.length; i++) {
                 dataEntries.add(new ValueDataEntry(states[i], values1[i]));
             }
-            pie1.title(getString(R.string.statisticsWeek));
+            pie1.title(getString(R.string.statisticsDay));
             Log.d("Debug", "true");
 
         pie1.data(dataEntries);
@@ -79,7 +96,7 @@ public class StatisticsActivity extends AppCompatActivity {
         for (int i = 0; i < states.length; i++) {
             dataEntries2.add(new ValueDataEntry(states[i], values2[i]));
         }
-        pie2.title(getString(R.string.statisticsMonth));
+        pie2.title(getString(R.string.statisticsWeek));
         Log.d("Debug", "false");
         pie2.data(dataEntries2);
         Log.d("Debug", "2");
