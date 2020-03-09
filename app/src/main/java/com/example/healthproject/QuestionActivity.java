@@ -746,7 +746,7 @@ public class QuestionActivity extends AppCompatActivity {
                 Log.v("DEBUG2","Kysymys 19 arvo: " +answer19); //DEBUG / TESTIKOODI
             }
         });
-
+                //
         radioGroup20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup question20, int checkedId20) {
