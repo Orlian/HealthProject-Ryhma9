@@ -15,7 +15,7 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
 /**
  * Tulos-luokka, joka sisältää aplikaation mielentilatulokset ja antaa palautteen viitenä keskiarvona
  * @author Oskari Piiroinen
- * @version 1.1
+ * @version 1.3
  */
 public class ResultsActivity extends AppCompatActivity {
 
@@ -126,13 +126,29 @@ public class ResultsActivity extends AppCompatActivity {
     }
 
     public void onClick(View a) {
+        Intent intent = getIntent();
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
+        int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
+        int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
+        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
         if (a == findViewById(R.id.mainMenuButton)) {
             Intent mainIntent = new Intent(ResultsActivity.this, MainActivity.class);
+            mainIntent.putExtra(EXTRA_GROUP1, group1);
+            mainIntent.putExtra(EXTRA_GROUP2, group2);
+            mainIntent.putExtra(EXTRA_GROUP3, group3);
+            mainIntent.putExtra(EXTRA_GROUP4, group4);
+            mainIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
             startActivity(mainIntent);
 
         } else if (a == findViewById(R.id.statisticsButton)) {
             Intent statsIntent = new Intent(ResultsActivity.this, StatisticsActivity.class);
+            statsIntent.putExtra(EXTRA_GROUP1, group1);
+            statsIntent.putExtra(EXTRA_GROUP2, group2);
+            statsIntent.putExtra(EXTRA_GROUP3, group3);
+            statsIntent.putExtra(EXTRA_GROUP4, group4);
+            statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
             startActivity(statsIntent);
         }
     }

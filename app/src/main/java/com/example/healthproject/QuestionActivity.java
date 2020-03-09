@@ -27,7 +27,7 @@ import java.util.Map;
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
  * @author Joonas Soininen
- * @version 2.3
+ * @version 2.5
  */
 public class QuestionActivity extends AppCompatActivity {
 
@@ -37,8 +37,10 @@ public class QuestionActivity extends AppCompatActivity {
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
 
     RadioGroup radioGroup;
-    private SharedPreferences listPrefs;
-    private User testUser;
+    //private SharedPreferences listPrefs;
+    //private User testUser, activeUser;
+    //private Map<String, Object> retMap;
+
 
 
     int answers[];
@@ -788,16 +790,26 @@ public class QuestionActivity extends AppCompatActivity {
      */
     public void sendButton(View v){
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
-
         int answersGroups[]=new int[5];
+        /*
+        Gson gson = new Gson();
+
+        SharedPreferences resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
+        Type gsonType = new TypeToken<HashMap>() {}.getType();
+        String gsonString = gson.toJson(outer,gsonType);
+
 
         listPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
-        Gson gson = new Gson();
+
         String json = listPrefs.getString("ACTIVE_USER", " ");
         testUser = gson.fromJson(json, User.class);
         Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
+        activeUser = testUser;
+
 
         Date date = new Date();
+
+         */
 
         group1 = answer1 + answer2 + answer19 + answer20;
         group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
@@ -811,19 +823,57 @@ public class QuestionActivity extends AppCompatActivity {
         answersGroups[3]=group4;
         answersGroups[4]=groupAverage;
 
+        Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
+        //Extrana tänne kyseisen käyttäjän vastausdata!
+        statsIntent.putExtra(EXTRA_GROUP1, answersGroups[0]);
+        statsIntent.putExtra(EXTRA_GROUP2, answersGroups[1]);
+        statsIntent.putExtra(EXTRA_GROUP3, answersGroups[2]);
+        statsIntent.putExtra(EXTRA_GROUP4, answersGroups[3]);
+        statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
+        startActivity(statsIntent);
+/*
         for (int i=0; i < answersGroups.length; i++){
             testUser.getDataList().add(answersGroups[i]);
             Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
+
         }
 
-        Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
+ */
+
+        //Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 5: "+groupAverage); //DEBUG / TESTIKOODI
+        /*
+        retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType()); //Uuden mapin luonti gson/json datasta
+        Log.v("DEBUG0", "UUSI HASHMAP: "+retMap);
+        Map<User, Map<Date, User>>outer;retMap;
+        String tarkista;
+        tarkista = resultPref.getString("HASHMAP_VALUE", "");
+        Log.v("DEBUG0","UUSI HASHMAP ennen if-lausetta: "+tarkista);
+        if (tarkista != null){
+            testUser = (User) outer.get("Joonas");
+            if (testUser.getUserName().equals(activeUser.getUserName())){
+                for (int i=0; i < answersGroups.length; i++) {
+                    outer.get("Joonas").get("Joonas").getDataList().add(i);
+                }
+            }
+            //outer = new HashMap<>();//new Gson().fromJson(gsonString, new TypeToken<HashMap<Date, User>>() {}.getType());
+            Log.v("DEBUG0","Outer juttuja: "+outer);
 
-        Map<User, Map<Date,User>>outer = new HashMap<User, Map<Date, User>>();
+        } else {
+            outer = new HashMap<User, Map<Date, User>>();
+            Log.v("DEBUG0", "UUSI HASHMAP: " + outer);
+        }
+
+
+        for (Map.Entry<User, Map<Date, User>> entry : outer.entrySet()){
+            Log.v("DEBUG0","Päällimmäinen Avain: "+entry.getKey());
+            Log.v("DEBUG0", "Päällimmäinen Arvo: " +entry.getValue());
+            testUser=entry.getKey();
+        }
 
         Map<Date,User> inner = outer.get(testUser);
         if (inner == null) {
@@ -836,21 +886,21 @@ public class QuestionActivity extends AppCompatActivity {
         Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
         Log.v("DEBUG4","HashMap INNER ARVO: "+inner.toString()); //DEBUG / TESTIKOODI
 
-        SharedPreferences resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
+
+        resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
         SharedPreferences.Editor resultsEdit = resultPref.edit();
-        Type gsonType = new TypeToken<HashMap>() {}.getType();
-        String gsonString = gson.toJson(outer,gsonType);
+        gsonType = new TypeToken<HashMap>() {}.getType();
+        gsonString = gson.toJson(outer,gsonType);
         resultsEdit.putString("HASHMAP_VALUE", gsonString);
         resultsEdit.commit();
-        Log.v("DEBUG4","GSON HASHMAP: "+gsonString);
+        Log.v("DEBUG0","GSON HASHMAP: "+gsonString);
 
-        Map<String, Object> retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType()); //Uuden mapin luonti gson/json datasta
-        Log.v("DEBUG0", "UUSI HASHMAP: "+retMap);
+
 
         //TESTIKOODIA
-    /*
+/*
         for(String s : retMap.keySet()){
-            Log.v("DEBUG0","retMap VALUE: " +s);
+            Log.v("DEBUG0","retMap keyset: " +s);
         }
 
         for (Map.Entry<String, Object> entry : retMap.entrySet()){
@@ -868,9 +918,14 @@ public class QuestionActivity extends AppCompatActivity {
         for (Map.Entry<Date, User> entry3 : inner.entrySet()) {
             Log.v("DEBUG0","inner Avain: "+entry3.getKey());
             Log.v("DEBUG0", "inner Arvo: " +entry3.getValue());
+            testUser = entry3.getValue();
+            Log.v("DEBUG","KÄYTTÄJÄN DATALIST: "+testUser.getDataList());
+
         }
 
-     */
+ */
+
+
 
        /*
         Collection<Object> valuesretMap = retMap.values();
@@ -914,14 +969,7 @@ public class QuestionActivity extends AppCompatActivity {
     //TESTIKOODIT LOPPUU
 
 
-        Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
-        //Extrana tänne kyseisen käyttäjän vastausdata!
-        statsIntent.putExtra(EXTRA_GROUP1, answersGroups[0]);
-        statsIntent.putExtra(EXTRA_GROUP2, answersGroups[1]);
-        statsIntent.putExtra(EXTRA_GROUP3, answersGroups[2]);
-        statsIntent.putExtra(EXTRA_GROUP4, answersGroups[3]);
-        statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
-        startActivity(statsIntent);
+
 
 
     }

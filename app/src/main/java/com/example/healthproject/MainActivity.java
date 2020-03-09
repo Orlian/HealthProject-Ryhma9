@@ -10,6 +10,12 @@ import android.view.View;
 
 import com.google.gson.Gson;
 
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP3;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP4;
+import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
+
 /**
  * Päävalikko-aktiviteetti, joka toimii kaikkien muiden aktiviteettien yhdyskohtana
  * @author Joonas Lehtoranta
@@ -36,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
      * @param v aktiivinen View-olio
      */
     public void onClick(View v){
+
+        Intent intent = getIntent();
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
+        int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
+        int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
+        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
+
         if(v == findViewById(R.id.loginRegisterButton)){
             //Tänne siirtyminen LoginActivity aktiviteettiin
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
@@ -63,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
         } else if(v == findViewById(R.id.statsButton)){
             //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
             Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
+            statsIntent.putExtra(EXTRA_GROUP1, group1);
+            statsIntent.putExtra(EXTRA_GROUP2, group2);
+            statsIntent.putExtra(EXTRA_GROUP3, group3);
+            statsIntent.putExtra(EXTRA_GROUP4, group4);
+            statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
             //Extrana tänne kyseisen käyttäjän vastausdatan!
             startActivity(statsIntent);
         } else if(v == findViewById(R.id.settingsButton)){
