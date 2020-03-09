@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Statistiikka-luokka, joka käyttää AnyChart kirjastoa ja näyttää käyttäjän tulokset ympyrädiagrammissa.
  * @author Arttu Myyryläinen
- * @version 0.4
+ * @version 0.6
  */
 public class StatisticsActivity extends AppCompatActivity {
     AnyChartView anyChartView;

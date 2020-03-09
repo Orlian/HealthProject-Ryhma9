@@ -36,9 +36,8 @@
 
             <com.anychart.AnyChartView
                 android:id="@+id/any_chart_view"
-                android:layout_width="360dp"
-                android:layout_height="331dp"
-                android:layout_marginBottom="16dp"
+                android:layout_width="0dp"
+                android:layout_height="315dp"
                 app:layout_constraintBottom_toTopOf="@+id/any_chart_view2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -49,7 +48,7 @@
 
             <com.anychart.AnyChartView
                 android:id="@+id/any_chart_view2"
-                android:layout_width="360dp"
+                android:layout_width="0dp"
                 android:layout_height="315dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
