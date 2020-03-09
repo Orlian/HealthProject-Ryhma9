@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tahtitaivas"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/languageFinButton"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -38,7 +49,7 @@
         android:layout_height="wrap_content"
         android:text="@string/settings_language"
         android:textAlignment="center"
-        android:textColor="#E90C0707"
+        android:textColor="#E9F8F5F5"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/languageEngButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="@string/settings_user"
         android:textAlignment="center"
-        android:textColor="#E90C0707"
+        android:textColor="#E9F6F5F5"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings_change_password_text"
-        android:textColor="#F3030202"
+        android:textColor="#F3FAF8F8"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,6 +98,8 @@
         android:ems="10"
         android:hint="@string/settings_password_change_hint"
         android:inputType="textPassword"
+        android:textColor="#F8F4F4"
+        android:textColorHint="#FBF9F9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -101,6 +114,8 @@
         android:ems="10"
         android:hint="@string/settings_password_change_hint2"
         android:inputType="textPassword"
+        android:textColor="#F8F3F3"
+        android:textColorHint="#F8F6F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
