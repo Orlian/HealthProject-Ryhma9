@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.Arrays;
+import java.util.List;
 
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
@@ -30,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
     private SharedPreferences loginPrefs;
     private User testUser;
+    private UserList userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +109,14 @@ public class MainActivity extends AppCompatActivity {
             TextView tv = findViewById(R.id.activeUser);
             tv.setText(getString(R.string.active_user_main));
         }
+        /*
+        List<User> userList2 = new Gson().fromJson(gsonString, new TypeToken<User>() {}.getType());
+        if(userList2 != null){
+            Log.v("DEBUG9", "UserList: " + userList2);
+        }
+        */
+
+
 
     }
 }

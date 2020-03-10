@@ -90,5 +90,6 @@
     <string name="switch1">kytkin1</string>
     <string name="active_user_main">Heissulivei! Ole hyvä ja kirjaudu sisään.</string>
     <string name="active_user_active">"Tervetuloa"</string>
+    <string name="invalid_login">Väärä käyttäjänimi tai salasana</string>
 
 </resources>

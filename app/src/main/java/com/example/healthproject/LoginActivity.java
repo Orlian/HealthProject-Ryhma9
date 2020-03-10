@@ -12,9 +12,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 
@@ -27,7 +30,8 @@ import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
 public class LoginActivity extends AppCompatActivity {
     private User testUser;
     private boolean loginStatus;
-    private UserList userList = UserList.getInstance();
+    private List<Integer> userDataList;
+    private UserList userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             String userPassword = userPasswordInput.getText().toString();
             //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
             //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
+            userList = UserList.getInstance();
             for(int i = 0; i < UserList.getInstance().getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
                 testUser = UserList.getInstance().getUser(i);
@@ -64,14 +69,23 @@ public class LoginActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     String json = gson.toJson(testUser);
                     loginEdit.putString("ACTIVE_USER", json);
-                    loginEdit.apply();
+                    loginEdit.commit();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(loginSuccess);
+                    break;
+                } else if(i == UserList.getInstance().getUserList().size() -1
+                        && (!testUser.getUserName().equals(userInput) || !testUser.getPassword().equals(userPassword))){
+                    TextView tv = findViewById(R.id.loginErrorMessage);
+                    tv.setText(getString(R.string.invalid_login));
+                    tv.setTextColor(getResources().getColor(R.color.colorErrorText));
                 }
             }
-            TextView tv = findViewById(R.id.loginErrorMessage);
-            //HUOM! Korvaa teksti resurssilla
-            tv.setText("Invalid username or password");
+            if(userList.getUserList().isEmpty()){
+                TextView tv = findViewById(R.id.loginErrorMessage);
+                tv.setText(getString(R.string.invalid_login));
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
+            }
+
 
 
 
@@ -83,8 +97,9 @@ public class LoginActivity extends AppCompatActivity {
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
             testUser = new User(userInputName, userInputPassword);
+            userList = UserList.getInstance();
             //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
-            if(!UserList.getInstance().getUserList().contains(testUser)) {
+            if(!userList.getUserList().contains(testUser)) {
                 loginStatus = true;
                 SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 SharedPreferences.Editor loginEdit = loginPrefs.edit();
@@ -92,9 +107,16 @@ public class LoginActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 String json = gson.toJson(testUser);
                 loginEdit.putString("ACTIVE_USER", json);
+                userList.getUserList().add(testUser);
+                /*gson = new Gson();
+                Type gsonType = new TypeToken<User>() {}.getType();
+                String gsonString = gson.toJson(userList.getUserList() ,gsonType);
+                loginEdit.putString("USER_LIST", gsonString);
                 loginEdit.commit();
-                UserList.getInstance().getUserList().add(testUser);
+                Log.v("DEBUG9", "Tallennettu userList gson muodossa: " + gsonString);
                 Log.v("DEBUG5", "Aktiivinen käyttäjä:" + testUser.getUserName() + " Salasana: " + testUser.getPassword());
+
+                 */
                 Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(loginSuccess);
             }

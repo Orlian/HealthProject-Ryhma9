@@ -97,6 +97,7 @@
     //Active user
     <string name="active_user_main">Hello, friend! Please log in.</string>
     <string name="active_user_active">Welcome</string>
+    <string name="invalid_login">Invalid username or password</string>
 
 </resources>
 
