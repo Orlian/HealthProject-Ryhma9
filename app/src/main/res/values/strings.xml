@@ -24,14 +24,14 @@
     <string name="question4">Do you feel like you get enough sleep? \n(1=not enough, 5=plenty enough)</string>
     <string name="question5">Do you feel guilt? \n(1=constant guilt, 5=no guilt)</string>
     <string name="question6">Do you feel like you have failed as a person? \n(1=I have failed, 5=no, I feel fine)</string>
-    <string name="question7">Do you get tired quicker that usual? \n(1=yes, I wake up tired, 5=no, I feel fine)</string>
-    <string name="question8">Are you as functional as you used to? \n(1=I cannot function at all, 5=I feel fine)</string>
+    <string name="question7">Do you get tired easier that usual? \n(1=yes, I wake up tired, 5=no, I feel fine)</string>
+    <string name="question8">Are you as functional as you used to be? \n(1=I cannot function at all, 5=I feel fine)</string>
     <string name="question9">Are you feeling indecisive? \n(1=yes, I cannot decide anything, 5=no)</string>
     <string name="question10">Are you unable to concentrate as you used to? \n(1=yes, I cannot concentrate, 5=no)</string>
-    <string name="question11">Has there been changes in you appetite? \n(1=yes a lot, 5=no changes)</string>
-    <string name="question12">Has your views on your own health changed? \n(1=Yes, I don not care anymore, 5=no change)</string>
-    <string name="question13">Do you feel that you are less interested in sexual activities? \n(1=yes, no interest, 5=no)</string>
-    <string name="question14">Do you feel you have enough meaningful relationships? \n(1=I feel that I am alone, 5=I do) </string>
+    <string name="question11">Has there been changes to your appetite? \n(1=yes a lot, 5=no changes)</string>
+    <string name="question12">Have your views on your own health changed? \n(1=Yes, I don not care anymore, 5=no change)</string>
+    <string name="question13">Are you less interested in sexual activities? \n(1=yes, no interest, 5=no)</string>
+    <string name="question14">Do you feel like you have enough meaningful relationships? \n(1=I feel that I am alone, 5=I do) </string>
     <string name="question15">Have you been paying attention to your diet? \n(1=I don not care, 5=yes, I eat healthy)</string>
     <string name="question16">Do you feel healthy? \n(1=no, 5=yes)</string>
     <string name="question17">Have you had more headaches than usually? \n(1=yes, 5=no)</string>
@@ -60,24 +60,24 @@
 
     //Group feedback
     <string name="group1critical">Mental state critical, please go to the closest emergency room and get some help. For first aid you can call Finnish mental health service 0925250113</string>
-    <string name="group1alarm">Your mental state seems to be worryingly low. Professional help could be in order. In need for someone to talk with you can call Finnish mental health service 0925250113</string>
-    <string name="group1good">Looking good! Still you should keep your mental healt in mind as it seems you are suffering from mild depression.</string>
+    <string name="group1alarm">Your mental state seems to be worryingly low. Professional help could be in order. In need for someone to talk with, you can call Finnish mental health service 0925250113</string>
+    <string name="group1good">Looking good! Still you should keep your mental health in mind as it seems like you are suffering from mild depression.</string>
     <string name="group1excellent">Your mental state seems really good! :)</string>
     <string name="group2critical">Your result is really alarming. I recommend that you contact your local health care or call the Finnish mental health service: 0925250113</string>
     <string name="group2alarm">It seems that your mental state is more to the dark side. You should talk to someone about your mental state. You can always contact the Finnish mental health service: 0925250113</string>
-    <string name="group2midway">Slightly unbalance mental state, but nothing too alarming. You should ponder on the possibility to talk with a therapist.</string>
+    <string name="group2midway">Slightly unbalanced mental state, but nothing too alarming. You should ponder on the possibility to talk with a therapist.</string>
     <string name="group2good">Seems good. You should study your feelings as you might start sinking into depression.</string>
     <string name="group2excellent">All seems good with your feelings! :)</string>
     <string name="group3critical">Really worrying. You should take care of your physical well being also. I recommend you contact your local health care or call the Finnish mental health service: 0925250113</string>
     <string name="group3alarm">Alarming mental state. I recommend consulting a professional about your mental health. You also can contact Finnish mental health service: 0925250113</string>
-    <string name="group3midway">Balanced mental state is good, but unfortunately this is not it. I do recommend to contact a professional therapist.</string>
+    <string name="group3midway">Balanced mental state is good, but unfortunately this is not it. I recommend that you contact a professional therapist.</string>
     <string name="group3good">Seems alright! Still you have work to get your mental health to the best possible!</string>
     <string name="group3excellent">All good! Keep it up you happy chap! :)</string>
     <string name="group4critical">Seems worrying, you should talk with someone about your problems. You can contact Finnish mental health service 0925250113</string>
-    <string name="group4midway">Bit worrying I am here. Try to talk with someone.</string>
+    <string name="group4midway"> A bit worrying that you are here. Try to talk with someone.</string>
     <string name="group4excellent">Awesome! It seems you are doing well! :)</string>
-    <string name="group5critical">Critical situation! Please go to the ER or call Finnish mental health service 0925250113</string>
-    <string name="group5alarm">Looks alarming,not good. Get some professional help or call Finnish mental health service 0925250113</string>
+    <string name="group5critical">Critical situation! Please go to the ER or call the Finnish mental health service 0925250113</string>
+    <string name="group5alarm">Looks alarming,not good. Get some professional help or call the Finnish mental health service 0925250113</string>
     <string name="group5midway">Not good, not bad. You should try and talk with someone.</string>
     <string name="group5good">Looking good! Not the best possible situation, but keep it up and you will get there!</string>
     <string name="group5excellent">Awesome! You are in a good mental health! :)</string>
