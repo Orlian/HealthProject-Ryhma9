@@ -71,11 +71,11 @@
     <string name="group3critical">Really worrying. You should take care of your physical well being also. I recommend you contact your local health care or call the Finnish mental health service: 0925250113</string>
     <string name="group3alarm">Alarming mental state. I recommend consulting a professional about your mental health. You also can contact Finnish mental health service: 0925250113</string>
     <string name="group3midway">Balanced mental state is good, but unfortunately this is not it. I recommend that you contact a professional therapist.</string>
-    <string name="group3good">Seems alright! Still you have work to get your mental health to the best possible!</string>
+    <string name="group3good">Seems alright! You still have to work to get your mental health to be the best possible!</string>
     <string name="group3excellent">All good! Keep it up you happy chap! :)</string>
     <string name="group4critical">Seems worrying, you should talk with someone about your problems. You can contact Finnish mental health service 0925250113</string>
     <string name="group4midway"> A bit worrying that you are here. Try to talk with someone.</string>
-    <string name="group4excellent">Awesome! It seems you are doing well! :)</string>
+    <string name="group4excellent">Awesome! It seems like you are doing well! :)</string>
     <string name="group5critical">Critical situation! Please go to the ER or call the Finnish mental health service 0925250113</string>
     <string name="group5alarm">Looks alarming,not good. Get some professional help or call the Finnish mental health service 0925250113</string>
     <string name="group5midway">Not good, not bad. You should try and talk with someone.</string>
@@ -90,7 +90,7 @@
     <string name="pieChartTitle">Average moods</string>
     <string name="settings_password_change_error">Both passwords need to match</string>
     <string name="switch1">switch</string>
-    <string name="statisticsWeek">Weekly average</string>
+    <string name="statisticsWeek">Overall average</string>
     <string name="statisticsDay">Todays answers</string>
 
 
