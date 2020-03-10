@@ -29,7 +29,6 @@ import java.util.Map;
  * @author Joonas Soininen
  * @version 2.5
  */
-
 public class QuestionActivity extends AppCompatActivity {
 
     /**
@@ -37,7 +36,6 @@ public class QuestionActivity extends AppCompatActivity {
      * group1-4 ja groupAverage on vastausten perusteella tehtävien ryhmien tallentamiseen
      * answers-array alustetaan lopullisten vastausten tallentamiseen
      */
-
     int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
@@ -55,10 +53,9 @@ public class QuestionActivity extends AppCompatActivity {
     public static final String EXTRA_GROUP_AVERAGE = "group5score";
 
     /**
-     *
-     * @param savedInstanceState
+     * Suoritetaan kun aktiviteetti luodaan.
+     * @param savedInstanceState hakee muistista sinne tallennetun UI tilan.
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,9 +66,9 @@ public class QuestionActivity extends AppCompatActivity {
 
             /**
              *
-             * @param v
+             * onClick-metodi jolla varmistetaan, että nappia voi painaa vain kerran. Kutsuu samalla sendButton metodin.
+             * @param v aktiivinen View-olio
              */
-
             @Override
             public void onClick(View v) {
 
@@ -82,14 +79,7 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
-        /**
-         * answers-array määritetään sisältämään 20 indeksiä
-         */
         answers = new int[20];
-
-        /**
-         * RadioGroup 1-20 määrietään näyttämään strings.xml:n luotuja arvoja niiden ID:n perusteella
-         */
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -112,14 +102,12 @@ public class QuestionActivity extends AppCompatActivity {
         RadioGroup radioGroup19 = (RadioGroup) findViewById(R.id.question19);
         RadioGroup radioGroup20 = (RadioGroup) findViewById(R.id.question20);
 
-
-
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             /**
              * Metodi tarkistaa mikä kyseisen radiogroupin radioButtonin valittu arvo on ja tallentaa sen answer1-muuttujaan
              * @param question1 vastaava kysymys
-             * @param checkedId valitun radioButtonin tunniste ja siihen liittyvä arvo
+             * @param checkedId valitun radioButtonin tunniste ja siihen liittyvä arvo             *
              */
             @Override
             public void onCheckedChanged(RadioGroup question1, int checkedId) {
@@ -765,7 +753,7 @@ public class QuestionActivity extends AppCompatActivity {
                 Log.v("DEBUG2","Kysymys 19 arvo: " +answer19); //DEBUG / TESTIKOODI
             }
         });
-                //
+
         radioGroup20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup question20, int checkedId20) {
@@ -799,9 +787,7 @@ public class QuestionActivity extends AppCompatActivity {
                 Log.v("DEBUG2","Kysymys 20 arvo: " +answer20); //DEBUG / TESTIKOODI
             }
         });
-
     }
-
 
     /**
      * Tallennus-metodi, joka säilöö kaikkien vastausten arvot aktiivisen käyttäjän DataListaan
@@ -811,21 +797,11 @@ public class QuestionActivity extends AppCompatActivity {
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
         int[] answersGroups =new int[5];
 
-        /**
-         * group1-4, sekä groupAverage määritellään vastausten perusteella tiettyihin arvoihin
-         *
-         */
-
         group1 = answer1 + answer2 + answer19 + answer20;
         group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
         group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
         group4 = answer13 + answer14;
         groupAverage = group1 + group2 + group3 + group4;
-
-        /**
-         * Array:lle answerGroups määritellään arvot muuttujien group1-4, sekä groupAverage avulla
-         * @param answersGroups
-         */
 
         answersGroups[0]=group1;
         answersGroups[1]=group2;
@@ -841,7 +817,6 @@ public class QuestionActivity extends AppCompatActivity {
         statsIntent.putExtra(EXTRA_GROUP4, answersGroups[3]);
         statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
         startActivity(statsIntent);
-
 
         Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
