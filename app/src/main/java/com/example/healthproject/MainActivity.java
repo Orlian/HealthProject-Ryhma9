@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());
         updateUI();
     }
@@ -114,10 +115,9 @@ public class MainActivity extends AppCompatActivity {
         Type type = new TypeToken<List<User>>() {}.getType();
         String gsonString = gson.toJson(users, type);
         String json2 = loginPrefs.getString("USER_LIST", gsonString);
-        users = new Gson().fromJson(json2, new TypeToken<List<Object>>() {}.getType());
+        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
         //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
         userList = UserList.getInstance();
-
         if(users != null){
             Log.v("DEBUG9", "UserList: " + users);
         }
