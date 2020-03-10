@@ -13,12 +13,21 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP3;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP4;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
 /**
- * Tulos-luokka, joka sisältää aplikaation mielentilatulokset ja antaa palautteen viitenä keskiarvona
+ * Yhteenveto-luokka, joka näyttää käyttäjälle QuestionActivityssä saamiensa pisteiden mukaiset tekstimuotoiset palautteet.
+ * Luokka lähettää pisteet eteenpäin joko MainActivityyn tai StatisticActivityyn, riippuen minne käyttäjä haluaa siirtyä nappia painamalla.
  * @author Oskari Piiroinen
  * @version 1.3
  */
 public class ResultsActivity extends AppCompatActivity {
 
+    /**
+     * Suoritetaan kun aktiviteetti luodaan.
+     * @param savedInstanceState hakee muistista sinne tallennetun UI tilan.
+     * Intent luokan olio vastaanottaa aikeen edelliseltä aktiviteetilta (QuestionActivity)
+     * int group1, 2, 3, 4 ja groupAverage muuttujiin sijoitetaan aikeen avaimilla (EXTRA_GROUP1 etc.) arvot, jotka saadaan QuestionActivitystä
+     * if kyselyissä vertaillaan muuttujien saamaa int arvoa ja annetaan tekstimuotoinen palaute käyttäjälle sen mukaan.
+     *  Jokaiselle palautteelle on layoutissa oma TextView kenttä, joka täytetään pistemäärään mukaan.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +134,15 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * OnClick metodia kutsutaan kun layouttiin lisättyjä nappeja painetaan. Napin painallusta vertaillaan napin ID:n mukaan.
+     * @param a kertoo OnClick metodille mitä näkymää käytetään.
+     * Intent luokan olio vastaanottaa aikeen edelliseltä aktiviteetilta (QuestionActivity)
+     * int group1, 2, 3, 4 ja groupAverage muuttujiin sijoitetaan aikeen avaimilla (EXTRA_GROUP1 etc.) arvot, jotka saadaan QuestionActivitystä
+     *  if lauseessa vertaillaan onko käyttäjä painanut Menu vai Statistics nappia.
+     *  Menu nappia painamalla käyttäjä siirtyy MainActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot MainActivityyn.
+     *  Statistics nappia painamalla käyttäjä siirtyy StatisticsActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot StatisticsActivityyn.
+     */
     public void onClick(View a) {
         Intent intent = getIntent();
         int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
