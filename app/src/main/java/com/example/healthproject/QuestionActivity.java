@@ -29,29 +29,35 @@ import java.util.Map;
  * @author Joonas Soininen
  * @version 2.5
  */
+
 public class QuestionActivity extends AppCompatActivity {
+
+    /**
+     * answer1-20 muuttujat toimivat radiogroupien vastausarvojen tallentamiseen
+     * group1-4 ja groupAverage on vastausten perusteella tehtävien ryhmien tallentamiseen
+     * answers-array alustetaan lopullisten vastausten tallentamiseen
+     */
 
     int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
-
-    RadioGroup radioGroup;
-    //private SharedPreferences listPrefs;
-    //private User testUser, activeUser;
-    //private Map<String, Object> retMap;
-
-
-
-    int answers[];
-
+    int[] answers;
     int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;
 
+    /**
+     * EXTRA_GROUP1-4 sekä EXTRA_GROUP_AVERAGE luodaan ja niille määritetään avaimet
+     */
     public static final String EXTRA_GROUP1 = "group1score";
     public static final String EXTRA_GROUP2 = "group2score";
     public static final String EXTRA_GROUP3 = "group3score";
     public static final String EXTRA_GROUP4 = "group4score";
     public static final String EXTRA_GROUP_AVERAGE = "group5score";
+
+    /**
+     *
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +66,12 @@ public class QuestionActivity extends AppCompatActivity {
 
         final Button button1 = (Button) findViewById(R.id.saveButton);
         button1.setOnClickListener(new View.OnClickListener() {
+
+            /**
+             *
+             * @param v
+             */
+
             @Override
             public void onClick(View v) {
 
@@ -70,7 +82,14 @@ public class QuestionActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * answers-array määritetään sisältämään 20 indeksiä
+         */
         answers = new int[20];
+
+        /**
+         * RadioGroup 1-20 määrietään näyttämään strings.xml:n luotuja arvoja niiden ID:n perusteella
+         */
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -790,25 +809,11 @@ public class QuestionActivity extends AppCompatActivity {
      */
     public void sendButton(View v){
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
-        int answersGroups[]=new int[5];
-        /*
-        Gson gson = new Gson();
+        int[] answersGroups =new int[5];
 
-        SharedPreferences resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
-        Type gsonType = new TypeToken<HashMap>() {}.getType();
-        String gsonString = gson.toJson(outer,gsonType);
-
-
-        listPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
-
-        String json = listPrefs.getString("ACTIVE_USER", " ");
-        testUser = gson.fromJson(json, User.class);
-        Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName());
-        activeUser = testUser;
-
-
-        Date date = new Date();
-
+        /**
+         * group1-4, sekä groupAverage määritellään vastausten perusteella tiettyihin arvoihin
+         *
          */
 
         group1 = answer1 + answer2 + answer19 + answer20;
@@ -816,6 +821,11 @@ public class QuestionActivity extends AppCompatActivity {
         group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
         group4 = answer13 + answer14;
         groupAverage = group1 + group2 + group3 + group4;
+
+        /**
+         * Array:lle answerGroups määritellään arvot muuttujien group1-4, sekä groupAverage avulla
+         * @param answersGroups
+         */
 
         answersGroups[0]=group1;
         answersGroups[1]=group2;
@@ -831,146 +841,13 @@ public class QuestionActivity extends AppCompatActivity {
         statsIntent.putExtra(EXTRA_GROUP4, answersGroups[3]);
         statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
         startActivity(statsIntent);
-/*
-        for (int i=0; i < answersGroups.length; i++){
-            testUser.getDataList().add(answersGroups[i]);
-            Log.v("DEBUG4","Datalistan lisäys: " +testUser.getDataList()); //DEBUG / TESTIKOODI
 
-        }
 
- */
-
-        //Log.v("DEBUG3","Date: "+date); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 5: "+groupAverage); //DEBUG / TESTIKOODI
-        /*
-        retMap = new Gson().fromJson(gsonString, new TypeToken<HashMap<String, Object>>() {}.getType()); //Uuden mapin luonti gson/json datasta
-        Log.v("DEBUG0", "UUSI HASHMAP: "+retMap);
-        Map<User, Map<Date, User>>outer;retMap;
-        String tarkista;
-        tarkista = resultPref.getString("HASHMAP_VALUE", "");
-        Log.v("DEBUG0","UUSI HASHMAP ennen if-lausetta: "+tarkista);
-        if (tarkista != null){
-            testUser = (User) outer.get("Joonas");
-            if (testUser.getUserName().equals(activeUser.getUserName())){
-                for (int i=0; i < answersGroups.length; i++) {
-                    outer.get("Joonas").get("Joonas").getDataList().add(i);
-                }
-            }
-            //outer = new HashMap<>();//new Gson().fromJson(gsonString, new TypeToken<HashMap<Date, User>>() {}.getType());
-            Log.v("DEBUG0","Outer juttuja: "+outer);
-
-        } else {
-            outer = new HashMap<User, Map<Date, User>>();
-            Log.v("DEBUG0", "UUSI HASHMAP: " + outer);
-        }
-
-
-        for (Map.Entry<User, Map<Date, User>> entry : outer.entrySet()){
-            Log.v("DEBUG0","Päällimmäinen Avain: "+entry.getKey());
-            Log.v("DEBUG0", "Päällimmäinen Arvo: " +entry.getValue());
-            testUser=entry.getKey();
-        }
-
-        Map<Date,User> inner = outer.get(testUser);
-        if (inner == null) {
-            inner = new HashMap<Date, User>();
-            outer.put(testUser, inner);
-            Log.v("DEBUG4", "HashMap OUTER OK!"); //DEBUG / TESTIKOODI
-            Log.v("DEBUG4", "HashMap OUTER ARVO: " +outer.toString()); //DEBUG / TESTIKOODI
-        }
-        inner.put(date, testUser);
-        Log.v("DEBUG4", "HashMap INNER OK!"); //DEBUG / TESTIKOODI
-        Log.v("DEBUG4","HashMap INNER ARVO: "+inner.toString()); //DEBUG / TESTIKOODI
-
-
-        resultPref = getSharedPreferences("RESULTS_PREFS", MODE_PRIVATE);
-        SharedPreferences.Editor resultsEdit = resultPref.edit();
-        gsonType = new TypeToken<HashMap>() {}.getType();
-        gsonString = gson.toJson(outer,gsonType);
-        resultsEdit.putString("HASHMAP_VALUE", gsonString);
-        resultsEdit.commit();
-        Log.v("DEBUG0","GSON HASHMAP: "+gsonString);
-
-
-
-        //TESTIKOODIA
-/*
-        for(String s : retMap.keySet()){
-            Log.v("DEBUG0","retMap keyset: " +s);
-        }
-
-        for (Map.Entry<String, Object> entry : retMap.entrySet()){
-            Log.v("DEBUG0","Päällimmäinen Avain: "+entry.getKey());
-            Log.v("DEBUG0", "Päällimmäinen Arvo: " +entry.getValue());
-        }
-
-
-
-        for (Map.Entry<User, Map<Date, User>> entry2 : outer.entrySet()) {
-            Log.v("DEBUG0","outer Avain: "+entry2.getKey());
-            Log.v("DEBUG0", "outer Arvo: " +entry2.getValue());
-        }
-
-        for (Map.Entry<Date, User> entry3 : inner.entrySet()) {
-            Log.v("DEBUG0","inner Avain: "+entry3.getKey());
-            Log.v("DEBUG0", "inner Arvo: " +entry3.getValue());
-            testUser = entry3.getValue();
-            Log.v("DEBUG","KÄYTTÄJÄN DATALIST: "+testUser.getDataList());
-
-        }
-
- */
-
-
-
-       /*
-        Collection<Object> valuesretMap = retMap.values();
-        for(Object valueretMap : valuesretMap){
-            Log.v("DEBUG0","retMap VALUE: " +valueretMap);
-            Log.v("DEBUG0","retMap VALUES: " +valuesretMap);
-        }
-        for(String keyretMap : retMap.keySet()){
-            Log.v("DEBUG0","retMap key: " +keyretMap);
-            Log.v("DEBUG0","retMap.get(key): " +retMap.get(keyretMap));
-            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
-        }
-
-        Collection<Map<Date, User>> valuesouter = outer.values();
-        for(Object valueouter : valuesouter){
-            Log.v("DEBUG0","outer VALUE: " +valueouter);
-            Log.v("DEBUG0","outer VALUES: " +valuesouter);
-        }
-        for(User keyouter : outer.keySet()){
-            Log.v("DEBUG0","outer key: " +keyouter);
-            Log.v("DEBUG0","outer.get(key): " +outer.get(keyouter));
-            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
-        }
-
-         */
-
-
-    /*
-        Collection<User> valuesinner = inner.values();
-        for(Object valueinner : valuesinner){
-            Log.v("DEBUG0","inner VALUE: " +valueinner);
-            Log.v("DEBUG0","inner VALUES: " +valuesinner);
-        }
-        for(Date keyinner : inner.keySet()){
-            Log.v("DEBUG0","inner key: " +keyinner);
-            Log.v("DEBUG0","inner.get(key): " +inner.get(keyinner));
-            //Log.v("DEBUG0","testUser.getDataList(): "+testUser.getDataList());
-        }
-
-     */
-    //TESTIKOODIT LOPPUU
-
-
-
-
 
     }
 }
