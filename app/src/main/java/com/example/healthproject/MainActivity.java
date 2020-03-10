@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.v("DEBUG5", UserList.getInstance().getUserList().toString());
+        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList().toString());
         updateUI();
     }
 
@@ -96,7 +96,13 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = loginPrefs.getString("ACTIVE_USER", " ");
         testUser = gson.fromJson(json, User.class);
-        TextView tv = findViewById(R.id.activeUser);
-        tv.setText((getString(R.string.active_user_active)) + " " + testUser.getUserName() + "!");
+        if(testUser != null){
+            TextView tv = findViewById(R.id.activeUser);
+            tv.setText((getString(R.string.active_user_active)) + " " + testUser.getUserName() + "!");
+        } else {
+            TextView tv = findViewById(R.id.activeUser);
+            tv.setText(getString(R.string.active_user_main));
+        }
+
     }
 }

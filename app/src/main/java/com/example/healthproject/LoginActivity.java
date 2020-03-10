@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     String json = gson.toJson(testUser);
                     loginEdit.putString("ACTIVE_USER", json);
-                    loginEdit.commit();
+                    loginEdit.apply();
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(loginSuccess);
                 }

@@ -10,7 +10,7 @@ import java.util.List;
  */
 class UserList {
     private List<User> userList;
-    private static UserList ourInstance = new UserList();
+    private static UserList ourInstance = null;
 
 
     public static UserList getInstance(){
@@ -18,7 +18,10 @@ class UserList {
     }
 
     private UserList(){
-        userList = new ArrayList<>();
+        if(ourInstance == null){
+            userList = new ArrayList<>();
+        }
+
     }
 
     public User getUser(int i){
