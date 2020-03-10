@@ -36,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences loginPrefs;
     private User testUser;
     private UserList userList;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList().toString());
+        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());
         updateUI();
     }
 
@@ -109,12 +110,22 @@ public class MainActivity extends AppCompatActivity {
             TextView tv = findViewById(R.id.activeUser);
             tv.setText(getString(R.string.active_user_main));
         }
-        /*
-        List<User> userList2 = new Gson().fromJson(gsonString, new TypeToken<User>() {}.getType());
-        if(userList2 != null){
-            Log.v("DEBUG9", "UserList: " + userList2);
+        gson = new Gson();
+        Type type = new TypeToken<List<User>>() {}.getType();
+        String gsonString = gson.toJson(users, type);
+        String json2 = loginPrefs.getString("USER_LIST", gsonString);
+        users = new Gson().fromJson(json2, new TypeToken<List<Object>>() {}.getType());
+        //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
+        userList = UserList.getInstance();
+
+        if(users != null){
+            Log.v("DEBUG9", "UserList: " + users);
         }
+        /*
+        Type type = new TypeToken<List<Student>>(){}.getType();
+        List<Student> students = gson.fromJson(json, type);
         */
+
 
 
 

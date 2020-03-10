@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.os.SharedMemory;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private boolean loginStatus;
     private List<Integer> userDataList;
     private UserList userList;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,26 +99,36 @@ public class LoginActivity extends AppCompatActivity {
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
             testUser = new User(userInputName, userInputPassword);
+
+            SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<User>>() {}.getType();
+            String gsonString = gson.toJson(users, type);
+            String json2 = loginPrefs.getString("USER_LIST", gsonString);
+            users = new Gson().fromJson(json2, new TypeToken<List<Object>>() {}.getType());
+
             userList = UserList.getInstance();
             //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
             if(!userList.getUserList().contains(testUser)) {
                 loginStatus = true;
-                SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+                loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 SharedPreferences.Editor loginEdit = loginPrefs.edit();
                 loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
-                Gson gson = new Gson();
+                gson = new Gson();
                 String json = gson.toJson(testUser);
                 loginEdit.putString("ACTIVE_USER", json);
+                //kokeile yhdistää users-muuttujaa, eli listaa UserList-luokan userListiin tässä
                 userList.getUserList().add(testUser);
-                /*gson = new Gson();
-                Type gsonType = new TypeToken<User>() {}.getType();
-                String gsonString = gson.toJson(userList.getUserList() ,gsonType);
+                loginEdit.commit();
+                gson = new Gson();
+                Type gsonType = new TypeToken<List<User>>() {}.getType();
+                gsonString = gson.toJson(userList.getUserList() ,gsonType);
                 loginEdit.putString("USER_LIST", gsonString);
                 loginEdit.commit();
                 Log.v("DEBUG9", "Tallennettu userList gson muodossa: " + gsonString);
                 Log.v("DEBUG5", "Aktiivinen käyttäjä:" + testUser.getUserName() + " Salasana: " + testUser.getPassword());
 
-                 */
+
                 Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(loginSuccess);
             }
