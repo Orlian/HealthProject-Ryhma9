@@ -81,8 +81,8 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 button1.setEnabled(false); //Muutetaan arvo false tilaan jolloin nappia voi painaa vain kerran
-                Log.v("DEBUG3","Save/Tallenna onClick"); //DEBUG / TESTIKOODI
-                sendButton(v);
+                Log.v("DEBUG3","Save/Tallenna onClick"); //DEBUG / TESTIKOODI Varmistetaan, että metodi toimii
+                sendButton(v); //Kutsutaan sendButton metodi alkamaan
 
             }
         });
@@ -121,7 +121,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup question1, int checkedId) { //Kuunnellaan RadioGroupin nappeja switch/case:n avulla.
                 switch (checkedId) {
                     case R.id.rb11:
-                        Log.v("DEBUG", "11"); //DEBUG / TESTIKOODI
+                        Log.v("DEBUG", "11"); //DEBUG / TESTIKOODI Jolla varmistetaan jokaisen radioButtonin oikein määritys
                         answers[0] = 1; //Asetetaan aswers Arrayhin valitun radiobuttonin arvo
                         break;
                     case R.id.rb12:
@@ -146,7 +146,7 @@ public class QuestionActivity extends AppCompatActivity {
                         break;
                 }
                 answer1 = answers[0]; //Asetetaan answer1 arvoksi juuri saatu aswers Arrayn indeksin arvo
-                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG / TESTIKOODI
+                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG / TESTIKOODI Varmistetaan, että oikea arvo on tallennettu
             }
         }); //Samat ominaisuudet toistetaan 20 kertaa jolloin saadaan jokaiselta RadioGroupilta oma yksittäinen arvo.
 
@@ -802,7 +802,7 @@ public class QuestionActivity extends AppCompatActivity {
      * @param v aktiivinen View-olio
      */
     public void sendButton(View v){
-        Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
+        Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI Varmistetaan, että metodi toimii
         int[] answersGroups =new int[5]; //Luodaan uusi Array answersGroups jolle asetetaan kooksi 5
 
         group1 = answer1 + answer2 + answer19 + answer20; //Tässä määritellään vastausten perusteella group1 arvo ja tämä toistuu jokaisen ryhmän kohdalla
@@ -825,7 +825,7 @@ public class QuestionActivity extends AppCompatActivity {
         statsIntent.putExtra(EXTRA_GROUP_AVERAGE, answersGroups[4]);
         startActivity(statsIntent);
 
-        Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI
+        Log.v("DEBUG3","Group 1: "+group1); //DEBUG / TESTIKOODI Varmistetaan jokaisen ryhmän oikea arvo.
         Log.v("DEBUG3","Group 2: "+group2); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 3: "+group3); //DEBUG / TESTIKOODI
         Log.v("DEBUG3","Group 4: "+group4); //DEBUG / TESTIKOODI
