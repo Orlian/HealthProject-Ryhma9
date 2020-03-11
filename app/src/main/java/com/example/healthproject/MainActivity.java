@@ -112,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         }
     }
+
+    /**
+     * Päivittää käyttäjän tunnistavaa textViewtä ja hakee singletonin käyttäjälistan arvoksi
+     * SharedPreferenceihin tallenetun käyttäjälistan.
+     */
     private void updateUI(){
         loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
         Gson gson = new Gson();
@@ -129,12 +134,10 @@ public class MainActivity extends AppCompatActivity {
         String gsonString = gson.toJson(users, type);
         String json2 = loginPrefs.getString("USER_LIST", gsonString);
         users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
-        //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
         userList = UserList.getInstance();
         if(users != null){
             userList.getUserList().clear();
             userList.getUserList().addAll(users);
-            gson = new Gson();
 
             Log.v("DEBUG9", "UserList uudelleenkoottuna: " + userList.getUserList());
         }

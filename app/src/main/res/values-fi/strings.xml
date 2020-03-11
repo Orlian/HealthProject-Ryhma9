@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    //App name
+    //App name (Ei käännöstä)
 
     //User input
     <string name="username_text">Käyttäjätunnus</string>
     <string name="password_text">Salasana</string>
+    <string name="settings_password_change_hint">Anna uusi salasana</string>
+    <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
 
     //Buttons
     <string name="login_register_button">Kirjaudu / Rekisteröidy</string>
     <string name="stats_button">Tilastot</string>
     <string name="start_button">Miltä sinusta tuntuu?</string>
     <string name="register_button">Rekisteröidy</string>
-    <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi aplikaatiota</string>
+    <string name="not_logged_in">Sinun täytyy kirjautua sisään käyttääksesi sovellusta</string>
     <string name="save_button">Tallenna</string>
     <string name="login_button">Kirjaudu</string>
+    <string name="switch1">kytkin1</string>
+    <string name="resetPassword">Vaihda</string>
+    <string name="mainmenu_button">Päävalikko</string>
 
-    //Qustions
+    //Questions
     <string name="question1">Oletko surullinen tai onneton? \n(1=erittäin, 5=en)</string>
     <string name="question2">Oletko haluton tai tyytymätön? \n(1=erittäin haluton, 5=en)</string>
     <string name="question3">Tunnetko itsesi väsyneemmäksi kuin yleensä? \n(1=tunnen paljon, 5=en tunne)</string>
@@ -37,7 +42,7 @@
     <string name="question19">Oletko itkenyt tavallista enemmän? \n(1=en pysty itkemään enää, 5=en ole)</string>
     <string name="question20">Haluatko vahingoittaa itseäsi? \n(1=kyllä, 5=ei)</string>
 
-    //Radiobutton numnbers
+    //Radiobutton numbers
     <string name="number1">1</string>
     <string name="number2">2</string>
     <string name="number3">3</string>
@@ -59,7 +64,7 @@
     <string name="group2critical">"Tuloksesi näyttää todella huolestuttavalta. Suosittelen ottamaan yhteyttä terveydenhuoltoon tai soittamaan mielenterveyspäivystykseen: 0925250111 "</string>
     <string name="group2alarm">"Vaikuttaa huolestuttavalta, ehkä sinun tulisi jutella asiasta jonkun kanssa. Tänne voi aina soittaa: mielenterveyspäivystys: 0925250111 "</string>
     <string name="group2midway">"Hieman epätasapainoinen mieliala, muttei mitään mahdottoman hälyttävää. Kannattaa harkita keskustelevansa asioista jonkun kanssa. "</string>
-    <string name="group2good">"Ihan hyvältä vaikuttaa. Kannattaa kuitenkin pohtia onko mielialat ihan kunnossa. "</string>
+    <string name="group2good">"Ihan hyvältä vaikuttaa. Kannattaa kuitenkin pohtia ovatko mielialat ihan kunnossa. "</string>
     <string name="group2excellent">"Hyvältä näyttää tuntemusten kanssa! :) "</string>
     <string name="group3critical">"Hälyttävää, fyysisestä terveydestä tulisi kanssa huolehtia. Suosittelen ottamaan yhteyttä terveydenhuoltoon tai soittamaan mielenterveyspäivystykseen: 0925250111 "</string>
     <string name="group3alarm">"Hälyttävä mielentila. Suosittelen juttelemaan asiasta ammattilaisen kanssa. Aina voi soittaa mielenterveyspäivystykseen: 0925250111 "</string>
@@ -69,27 +74,31 @@
     <string name="group4critical">"Vaikuttaa ikävältä, jos tarvitset juttukaveria voit soittaa mielenterveyspäivystykseen: 0925250111. "</string>
     <string name="group4midway">"On hieman huolestuttavalla tolalla tilanne. "</string>
     <string name="group4excellent">"Sinulla näyttää kaikki olevan mallillaan! :) "</string>
-    <string name="group5critical">"Tilanne kriittinen. Hakeudu päivystykseen tai soita apua. Täältä saat heti apua: mielenterveyspäivystys: 0925250111 "</string>
-    <string name="group5alarm">"Näyttää melkoisen huonolta. Hakeudu ammattilaisen vastaanotolle tai soita mielenterveyspäivystykseen: 0925250111 "</string>
-    <string name="group5midway">"Melkoisen tasapaksua mielialaa. Kannattaa puhua asiasta. "</string>
+    <string name="group5critical">"Tilanne vaikuttaa todella kriittiseltä. Hakeudu päivystykseen tai soita apua. Täältä saat heti apua: mielenterveyspäivystys: 0925250111 "</string>
+    <string name="group5alarm">"Näyttää melkoisen huonolta. Hakeutuminen ammattilaisen vastaanotolle on suositeltavaa tai soita mielenterveyspäivystykseen: 0925250111 "</string>
+    <string name="group5midway">"Melkoisen tasapaksua mielialaa. Kannattaa puhua asiasta jollekin. "</string>
     <string name="group5good">"Hyvältä näyttää! Ei ihan paras mahdollinen kunto, mutta tsemppiä ja suunta ylöspäin! "</string>
     <string name="group5excellent">"Mahtavaa! Olet hyvässä mielenterveydessä! :) "</string>
     <string name="group_feedback_exception">Et vastannut yhteenkään kysymykseen.</string>
+
+
+    //Settings
     <string name="settings_language">Kieli</string>
     <string name="settings_user">Käyttäjäasetukset</string>
-    <string name="mainmenu_button">Päävalikko</string>
     <string name="settings_change_password_text">Vaihda salasana</string>
-    <string name="settings_password_change_hint">Anna uusi salasana</string>
-    <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
-    <string name="resetPassword">Vaihda</string>
+
+    //Statistics
     <string name="statisticsWeek">Vastausten keskiarvo</string>
     <string name="statisticsDay">Viimeisimmät vastaukset</string>
     <string name="pieChartTitle">Mielialojen keskiarvo</string>
-    <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
-    <string name="switch1">kytkin1</string>
+
+    //Active user
     <string name="active_user_main">Heissulivei! Ole hyvä ja kirjaudu sisään.</string>
     <string name="active_user_active">"Tervetuloa"</string>
+
+    //Error messages
     <string name="invalid_login">Väärä käyttäjänimi tai salasana</string>
-    <string name="login_error_empty_data">Käyttäjänimi ja salasana eivät voi olla tyhjiä eivätkä sisältää välilyöntejä.</string>
+    <string name="login_error_empty_data">Käyttäjänimi ja salasana eivät voi olla tyhjiä, eivätkä sisältää välilyöntejä.</string>
+    <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
 
 </resources>
