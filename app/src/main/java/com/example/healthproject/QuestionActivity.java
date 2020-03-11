@@ -31,11 +31,7 @@ import java.util.Map;
  */
 public class QuestionActivity extends AppCompatActivity {
 
-    /**
-     * answer1-20 muuttujat toimivat radiogroupien vastausarvojen tallentamiseen
-     * group1-4 ja groupAverage on vastausten perusteella tehtävien ryhmien tallentamiseen
-     * answers-array alustetaan lopullisten vastausten tallentamiseen
-     */
+
     int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
@@ -43,9 +39,7 @@ public class QuestionActivity extends AppCompatActivity {
     int[] answers;
     int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;
 
-    /**
-     * EXTRA_GROUP1-4 sekä EXTRA_GROUP_AVERAGE luodaan ja niille määritetään avaimet
-     */
+
     public static final String EXTRA_GROUP1 = "group1score";
     public static final String EXTRA_GROUP2 = "group2score";
     public static final String EXTRA_GROUP3 = "group3score";

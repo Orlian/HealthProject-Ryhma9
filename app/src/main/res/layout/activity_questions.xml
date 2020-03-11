@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".QuestionActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/questionbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/LinearLayout"
         android:layout_width="0dp"
@@ -39,7 +49,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question1"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -56,7 +66,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#2196F3"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#9C27B0" />
 
                     <RadioButton
                         android:id="@+id/rb12"
@@ -64,7 +79,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#2196F3"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#9C27B0" />
 
                     <RadioButton
                         android:id="@+id/rb13"
@@ -72,7 +92,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#2196F3"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#9C27B0" />
 
                     <RadioButton
                         android:id="@+id/rb14"
@@ -80,7 +105,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#2196F3"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#9C27B0" />
 
                     <RadioButton
                         android:id="@+id/rb15"
@@ -88,7 +118,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#2196F3"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#9C27B0" />
                 </RadioGroup>
 
                 <TextView
@@ -98,7 +133,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question2"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -115,7 +150,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb22"
@@ -123,7 +162,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb23"
@@ -131,7 +174,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb24"
@@ -139,7 +186,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb25"
@@ -147,7 +198,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -157,7 +212,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question3"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
 
@@ -175,7 +230,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb32"
@@ -183,7 +242,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb33"
@@ -191,7 +254,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb34"
@@ -199,7 +266,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb35"
@@ -207,7 +278,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -217,7 +292,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question4"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -234,7 +309,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb42"
@@ -242,7 +321,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb43"
@@ -250,7 +333,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb44"
@@ -258,7 +345,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb45"
@@ -266,7 +357,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -276,7 +371,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question5"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -293,7 +388,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb52"
@@ -301,7 +400,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb53"
@@ -309,7 +412,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb54"
@@ -317,7 +424,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb55"
@@ -325,7 +436,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -335,7 +450,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question6"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -352,7 +467,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb62"
@@ -360,7 +479,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb63"
@@ -368,7 +491,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb64"
@@ -376,7 +503,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb65"
@@ -384,7 +515,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -394,7 +529,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question7"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -411,7 +546,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb72"
@@ -419,7 +558,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb73"
@@ -427,7 +570,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb74"
@@ -435,7 +582,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb75"
@@ -443,7 +594,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -453,7 +608,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question8"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -470,7 +625,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb82"
@@ -478,7 +637,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb83"
@@ -486,7 +649,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb84"
@@ -494,7 +661,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb85"
@@ -502,7 +673,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -512,7 +687,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question9"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -529,7 +704,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb92"
@@ -537,7 +716,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb93"
@@ -545,7 +728,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb94"
@@ -553,7 +740,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb95"
@@ -561,7 +752,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -571,7 +766,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question10"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -588,7 +783,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb102"
@@ -596,7 +795,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb103"
@@ -604,7 +807,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb104"
@@ -612,7 +819,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb105"
@@ -620,7 +831,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -630,7 +845,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question11"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -647,7 +862,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb112"
@@ -655,7 +874,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb113"
@@ -663,7 +886,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb114"
@@ -671,7 +898,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb115"
@@ -679,7 +910,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -689,7 +924,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question12"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -706,7 +941,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb122"
@@ -714,7 +953,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb123"
@@ -722,7 +965,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb124"
@@ -730,7 +977,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb125"
@@ -738,7 +989,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -748,7 +1003,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question13"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -765,7 +1020,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb132"
@@ -773,7 +1032,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb133"
@@ -781,7 +1044,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb134"
@@ -789,7 +1056,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb135"
@@ -797,7 +1068,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -807,7 +1082,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question14"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -824,7 +1099,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb142"
@@ -832,7 +1111,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb143"
@@ -840,7 +1123,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb144"
@@ -848,7 +1135,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb145"
@@ -856,7 +1147,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -866,7 +1161,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question15"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -878,12 +1173,28 @@
                     android:paddingTop="32dp">
 
                     <RadioButton
+                        android:id="@+id/rb154"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+
+                    <RadioButton
                         android:id="@+id/rb151"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb152"
@@ -891,7 +1202,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb153"
@@ -899,15 +1214,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
-
-                    <RadioButton
-                        android:id="@+id/rb154"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb155"
@@ -915,7 +1226,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -925,7 +1240,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question16"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -937,20 +1252,28 @@
                     android:paddingTop="32dp">
 
                     <RadioButton
-                        android:id="@+id/rb161"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="24dp"
-                        android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
-
-                    <RadioButton
                         android:id="@+id/rb162"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/rb161"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginRight="24dp"
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb163"
@@ -958,7 +1281,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb164"
@@ -966,7 +1293,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb165"
@@ -974,7 +1305,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -984,7 +1319,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question17"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -1001,7 +1336,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb172"
@@ -1009,7 +1348,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb173"
@@ -1017,7 +1360,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb174"
@@ -1025,7 +1372,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb175"
@@ -1033,7 +1384,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -1043,7 +1398,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question18"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -1060,7 +1415,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb182"
@@ -1068,7 +1427,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb183"
@@ -1076,7 +1439,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb184"
@@ -1084,7 +1451,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb185"
@@ -1092,7 +1463,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -1102,7 +1477,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question19"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -1119,7 +1494,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb192"
@@ -1127,7 +1506,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb193"
@@ -1135,7 +1518,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb194"
@@ -1143,7 +1530,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb195"
@@ -1151,7 +1542,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <TextView
@@ -1161,7 +1556,7 @@
                     android:layout_marginTop="64dp"
                     android:gravity="center"
                     android:text="@string/question20"
-                    android:textColor="#000000"
+                    android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
                 <RadioGroup
@@ -1178,7 +1573,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number1" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number1"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb202"
@@ -1186,7 +1585,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number2" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number2"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb203"
@@ -1194,7 +1597,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number3" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number3"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb204"
@@ -1202,7 +1609,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number4" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number4"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
 
                     <RadioButton
                         android:id="@+id/rb205"
@@ -1210,7 +1621,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"
                         android:layout_marginRight="24dp"
-                        android:text="@string/number5" />
+                        android:button="@android:drawable/btn_radio"
+                        android:text="@string/number5"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF" />
                 </RadioGroup>
 
                 <Button
