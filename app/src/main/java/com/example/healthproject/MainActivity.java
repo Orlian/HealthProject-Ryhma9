@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                 loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
                 startActivity(loginIntent);
-            } else {
+            } else  {
                 Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
                 statsIntent.putExtra(EXTRA_GROUP1, group1);
                 statsIntent.putExtra(EXTRA_GROUP2, group2);
