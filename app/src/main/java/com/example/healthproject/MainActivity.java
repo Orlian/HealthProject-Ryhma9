@@ -86,19 +86,24 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (v == findViewById(R.id.statsButton)) {
             //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
-            if (loggedIn == false) {
-                Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-                loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
-                startActivity(loginIntent);
-            } else  {
+            if (getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)) {
+                loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+                Gson gson = new Gson();
+                String json = loginPrefs.getString("ACTIVE_USER", " ");
+                testUser = gson.fromJson(json, User.class);
+                Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName() + " Salasana: " + testUser.getPassword());
                 Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
                 statsIntent.putExtra(EXTRA_GROUP1, group1);
                 statsIntent.putExtra(EXTRA_GROUP2, group2);
                 statsIntent.putExtra(EXTRA_GROUP3, group3);
                 statsIntent.putExtra(EXTRA_GROUP4, group4);
                 statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-                //Extrana tänne kyseisen käyttäjän vastausdatan!
                 startActivity(statsIntent);
+            } else {
+                loggedIn = false;
+                Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+                loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
+                startActivity(loginIntent);
             }
         }
 
