@@ -98,6 +98,18 @@ public class LoginActivity extends AppCompatActivity {
             String userInputName = userRegisterInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
+            if((userInputName.equals("") && userInputPassword.equals("")) || (userInputName.equals("") || userInputPassword.equals(""))){
+                TextView tv = findViewById(R.id.loginErrorMessage);
+                tv.setText(getString(R.string.login_error_empty_data));
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
+                return;
+            }
+            if((userInputName.contains(" ") && userInputPassword.contains(" ")) || (userInputName.contains(" ") || userInputPassword.contains(" "))){
+                TextView tv = findViewById(R.id.loginErrorMessage);
+                tv.setText(getString(R.string.login_error_empty_data));
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
+                return;
+            }
             testUser = new User(userInputName, userInputPassword);
 
             SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
