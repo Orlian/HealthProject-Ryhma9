@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (v == findViewById(R.id.statsButton)) {
             //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
-            if (loggedIn == false) {
+            if (!loggedIn) {
                 Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                 loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
                 startActivity(loginIntent);
