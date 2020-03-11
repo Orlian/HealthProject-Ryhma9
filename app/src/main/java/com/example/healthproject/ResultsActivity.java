@@ -216,7 +216,6 @@ public class ResultsActivity extends AppCompatActivity {
               userList.getUser(i).getDataList().add(group2);
               userList.getUser(i).getDataList().add(group3);
               userList.getUser(i).getDataList().add(group4);
-              userList.getUser(i).getDataList().add(groupAverage);
               Log.v("DEBUG9", "testUser lisäykset: "+userList.getUser(i).getDataList());
             }
 
