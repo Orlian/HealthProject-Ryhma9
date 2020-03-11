@@ -134,15 +134,10 @@ public class MainActivity extends AppCompatActivity {
         if(users != null){
             userList.getUserList().clear();
             userList.getUserList().addAll(users);
-            Log.v("DEBUG9", "UserList: " + users);
+            gson = new Gson();
+
+            Log.v("DEBUG9", "UserList uudelleenkoottuna: " + userList.getUserList());
         }
-        /*
-        Type type = new TypeToken<List<Student>>(){}.getType();
-        List<Student> students = gson.fromJson(json, type);
-        */
-
-
-
 
     }
 }

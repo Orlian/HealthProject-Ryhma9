@@ -18,6 +18,11 @@ import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * Asetukset, eli kielenvaihdon ja salasanan muuttamisen sisältävä aktiviteetti.
+ * @author Joonas Lehtoranta
+ * @version 1.6
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     private User testUser, activeUser;
@@ -30,6 +35,11 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
     }
 
+    /**
+     * onClick-metodi, joka sisältää koodit kielenvaihtonapeille, jotka muuttavat lokalisaatiota,
+     * ja aktiivisen käyttäjän salasanan vaihto ja uuden talletus pysyvään tallennustilaan.
+     * @param v aktiivista näkymää kuvaava View muuttuja, joka kertoo mitä nappia painetaan.
+     */
     public void onClick(View v) {
         if (v == findViewById(R.id.languageEngButton)) {
             String languageToLoad = "en";
@@ -69,7 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
                         userList.getUser(i).setPassword(newPassword2);
                         saveNewPassword(userList);
                         Log.v("DEBUG5", "Index: " + i);
-                        Log.v("DEBUG5", "Uusi salasana: " + UserList.getInstance().getUser(i).getPassword());
+                        Log.v("DEBUG5", "Uusi salasana: " + userList.getUser(i).getPassword());
                         break;
                     }
                 }
@@ -84,6 +94,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Kieltä vaihtaessa kutsuttava metodi, joka päivittää näkymän reaaliajassa oikeeseen kieleen.
+     */
     public void updateUI(){
         TextView tv = findViewById(R.id.languageSettingText);
         tv.setText(R.string.settings_language);
@@ -99,23 +112,19 @@ public class SettingsActivity extends AppCompatActivity {
         tv = findViewById(R.id.mainMenuButton2);
         tv.setText(R.string.mainmenu_button);
     }
+
+    /**
+     * Kapsuloitu SharedPreference tallennus, joka ottaa parametrikseen UserList-olion jonka listaa on juuri muokattu.
+     * @param userListParam olio, joka sisältää tuoreeltaan muokatun listan talletusta varten.
+     */
     private void saveNewPassword(UserList userListParam){
         SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
         SharedPreferences.Editor loginEdit = loginPrefs.edit();
         Gson gson = new Gson();
         Type type = new TypeToken<List<User>>(){}.getType();
-        String gsonString = gson.toJson(users, type);
-        String json2 = loginPrefs.getString("USER_LIST", gsonString);
-        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
-        userListParam.getUserList().clear();
-        userListParam.getUserList().addAll(users);
-        Gson gson2 = new Gson();
-        Type gsonType = new TypeToken<List<User>>() {}.getType();
-        gsonString = gson.toJson(userListParam.getUserList() ,gsonType);
+        String gsonString = gson.toJson(userListParam.getUserList(), type);
         loginEdit.putString("USER_LIST", gsonString);
         loginEdit.commit();
-
-
     }
 
 }

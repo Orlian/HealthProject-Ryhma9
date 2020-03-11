@@ -66,12 +66,11 @@ public class LoginActivity extends AppCompatActivity {
             String userInput = userNameInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userPassword = userPasswordInput.getText().toString();
-            //Tarkista vertaamalla käyttäjien hashMappiin onko kyseistä käyttäjänimeä rekisteröity
-            //HUOM! EI TOIMI VIELÄ, KOSKA USERLIST ON VIELÄ NULL OBJECT REFERENCE
+            //Tarkista vertaamalla käyttäjien listaan onko kyseistä käyttäjänimeä rekisteröity
             userList = UserList.getInstance();
-            for(int i = 0; i < UserList.getInstance().getUserList().size(); i++){
+            for(int i = 0; i < userList.getUserList().size(); i++){
                 //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
-                testUser = UserList.getInstance().getUser(i);
+                testUser = userList.getUser(i);
                 if(testUser.getUserName().equals(userInput) && testUser.getPassword().equals(userPassword)){
                     loginStatus = true;
                     SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
@@ -84,8 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent loginSuccess = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(loginSuccess);
                     break;
-                } else if(i == UserList.getInstance().getUserList().size() -1
-                        && (!testUser.getUserName().equals(userInput) || !testUser.getPassword().equals(userPassword))){
+                } else {
                     TextView tv = findViewById(R.id.loginErrorMessage);
                     tv.setText(getString(R.string.invalid_login));
                     tv.setTextColor(getResources().getColor(R.color.colorErrorText));
@@ -132,16 +130,15 @@ public class LoginActivity extends AppCompatActivity {
             //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
             if(!userList.getUserList().contains(testUser)) {
                 loginStatus = true;
-                loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 SharedPreferences.Editor loginEdit = loginPrefs.edit();
                 loginEdit.putBoolean("LOGIN_STATUS", loginStatus);
                 gson = new Gson();
                 String json = gson.toJson(testUser);
                 loginEdit.putString("ACTIVE_USER", json);
-                //kokeile yhdistää users-muuttujaa, eli listaa UserList-luokan userListiin tässä
-                userList.getUserList().add(testUser);
                 loginEdit.commit();
+
                 gson = new Gson();
+                userList.getUserList().add(testUser);
                 Type gsonType = new TypeToken<List<User>>() {}.getType();
                 gsonString = gson.toJson(userList.getUserList() ,gsonType);
                 loginEdit.putString("USER_LIST", gsonString);
