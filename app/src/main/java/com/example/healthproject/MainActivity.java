@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         }
-            //kommentoin
+            //kommentointi
             else if(v == findViewById(R.id.settingsButton)){
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
