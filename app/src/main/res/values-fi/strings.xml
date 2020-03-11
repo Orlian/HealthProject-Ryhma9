@@ -90,5 +90,6 @@
     <string name="active_user_main">Heissulivei! Ole hyvä ja kirjaudu sisään.</string>
     <string name="active_user_active">"Tervetuloa"</string>
     <string name="invalid_login">Väärä käyttäjänimi tai salasana</string>
+    <string name="login_error_empty_data">Käyttäjänimi ja salasana eivät voi olla tyhjiä eivätkä sisältää välilyöntejä.</string>
 
 </resources>

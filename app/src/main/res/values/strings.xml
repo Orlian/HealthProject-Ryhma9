@@ -98,6 +98,7 @@
     <string name="active_user_main">Hello, friend! Please log in.</string>
     <string name="active_user_active">Welcome</string>
     <string name="invalid_login">Invalid username or password</string>
+    <string name="login_error_empty_data">Username and password can\'t be empty or contain spaces.</string>
 
 </resources>
 
