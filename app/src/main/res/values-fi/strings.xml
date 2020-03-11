@@ -100,5 +100,6 @@
     <string name="invalid_login">Väärä käyttäjänimi tai salasana</string>
     <string name="login_error_empty_data">Käyttäjänimi ja salasana eivät voi olla tyhjiä, eivätkä sisältää välilyöntejä.</string>
     <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
+    <string name="settings_new_password_error">Uusi salasana ei voi olla tyhjä tai sisältää välilyöntejä</string>
 
 </resources>

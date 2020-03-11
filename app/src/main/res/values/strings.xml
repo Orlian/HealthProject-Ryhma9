@@ -105,6 +105,7 @@
     <string name="settings_password_change_error">Both passwords need to match</string>
     <string name="invalid_login">Invalid username or password</string>
     <string name="login_error_empty_data">Username and password can\'t be empty or contain spaces.</string>
+    <string name="settings_new_password_error">New password can\'t be blank or contain spaces</string>
 
 </resources>
 

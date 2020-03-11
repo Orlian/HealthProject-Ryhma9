@@ -71,6 +71,18 @@ public class SettingsActivity extends AppCompatActivity {
             String newPassword1 = newPasswordInput1.getText().toString();
             EditText newPasswordInput2 = findViewById(R.id.passwordChangeField2);
             String newPassword2 = newPasswordInput2.getText().toString();
+            if((newPassword1.equals("") && newPassword2.equals(""))){
+                TextView tv =findViewById(R.id.userSettingsPasswordChange);
+                tv.setText(R.string.settings_new_password_error);
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
+                return;
+            }
+            if((newPassword1.contains(" ") && newPassword2.contains(" "))){
+                TextView tv =findViewById(R.id.userSettingsPasswordChange);
+                tv.setText(R.string.settings_new_password_error);
+                tv.setTextColor(getResources().getColor(R.color.colorErrorText));
+                return;
+            }
             UserList userList = UserList.getInstance();
             if(newPassword1.equals(newPassword2)){
                 for(int i = 0; i < userList.getUserList().size(); i++){
@@ -111,6 +123,8 @@ public class SettingsActivity extends AppCompatActivity {
         tv.setTextColor(getResources().getColor(R.color.colorText));
         tv = findViewById(R.id.mainMenuButton2);
         tv.setText(R.string.mainmenu_button);
+        tv = findViewById(R.id.resetPassword);
+        tv.setText(R.string.resetPassword);
     }
 
     /**
