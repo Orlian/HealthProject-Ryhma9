@@ -31,19 +31,33 @@ import java.util.Map;
  */
 public class QuestionActivity extends AppCompatActivity {
 
-
+    //Määritetään vastauksille muuttujat answer1-20
     int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
-    int[] answers;
-    int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;
+    int[] answers; //Määritetään Array answers
+    int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0; //Määritetään ryhmäarvoille omat muuttujat group1-4 ja groupAverage
 
-
+    /**
+     * EXTRA_GROUP1 määritellään ja alustetaan. Tällä siirretään vastausdatan ryhmä1 eteenpäin.
+     */
     public static final String EXTRA_GROUP1 = "group1score";
+    /**
+     * EXTRA_GROUP2 määritellään ja alustetaan. Tällä siirretään vastausdatan ryhmä2 eteenpäin.
+     */
     public static final String EXTRA_GROUP2 = "group2score";
+    /**
+     * EXTRA_GROUP3 määritellään ja alustetaan. Tällä siirretään vastausdatan ryhmä3 eteenpäin.
+     */
     public static final String EXTRA_GROUP3 = "group3score";
+    /**
+     * EXTRA_GROUP2 määritellään ja alustetaan. Tällä siirretään vastausdatan ryhmä4 eteenpäin.
+     */
     public static final String EXTRA_GROUP4 = "group4score";
+    /**
+     * EXTRA_GROUP_AVERAGE määritellään ja alustetaan. Tällä siirretään kaikki vastausdata eteenpäin.
+     */
     public static final String EXTRA_GROUP_AVERAGE = "group5score";
 
     /**
@@ -55,7 +69,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        final Button button1 = (Button) findViewById(R.id.saveButton);
+        final Button button1 = (Button) findViewById(R.id.saveButton); //Tehdään muuttuja jonka avulla varmistetaan vain yksi painallus sendButtonille
         button1.setOnClickListener(new View.OnClickListener() {
 
             /**
