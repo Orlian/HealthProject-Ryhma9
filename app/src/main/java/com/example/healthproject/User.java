@@ -75,6 +75,10 @@ public class User implements Serializable {
         return this.userName;
     }
 
+    /**
+     * getDataList palauttaa singletonin käytössä olevan datalistan.
+     * @return palauttaa singeltonin käytössä olevan datalistan.
+     */
 
     public List<Integer> getDataList(){
         return this.dataList;

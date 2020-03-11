@@ -1,6 +1,6 @@
 <resources>
     //App name
-    <string name="app_name">HealthProject</string>
+    <string name="app_name" translatable="false">Mentall</string>
 
     //User input
     <string name="username_text">Username</string>
@@ -91,7 +91,7 @@
     <string name="settings_password_change_error">Both passwords need to match</string>
     <string name="switch1">switch</string>
     <string name="statisticsWeek">Overall average</string>
-    <string name="statisticsDay">Todays answers</string>
+    <string name="statisticsDay">Latest answers</string>
 
 
     //Active user

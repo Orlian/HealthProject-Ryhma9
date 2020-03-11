@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     //App name
-    <string name="app_name">TerveysProjekti</string>
 
     //User input
     <string name="username_text">Käyttäjätunnus</string>
@@ -24,7 +23,7 @@
     <string name="question5">Tunnetko syyllisyyttä? \n(1=kyllä, 5=en)</string>
     <string name="question6">Tunnetko, että olet epäonnistunut? \n(1=kyllä, 5=en)</string>
     <string name="question7">Väsytkö nopeammin kuin ennen? \n(1=kyllä, 5=en)</string>
-    <string name="question8">Pystytkö toimimaan yhtä hyvin kuin ennen? \n(1=en, 5=en)</string>
+    <string name="question8">Pystytkö toimimaan yhtä hyvin kuin ennen? \n(1=en, 5=kyllä)</string>
     <string name="question9">Tuntuuko päätöksenteko vaikealta? \n(1=kyllä, 5=ei)</string>
     <string name="question10">Pystytkö keskittymään yhtä hyvin kuin ennen? \n(1=en, 5=kyllä)</string>
     <string name="question11">Onko ruokahalusi sama kuin ennen? \n(1=ei, 5=kyllä)</string>
@@ -83,8 +82,8 @@
     <string name="settings_password_change_hint">Anna uusi salasana</string>
     <string name="settings_password_change_hint2">Anna salasana uudelleen</string>
     <string name="resetPassword">Vaihda</string>
-    <string name="statisticsWeek">Viikon keskiarvo</string>
-    <string name="statisticsDay">Päivän vastaukset</string>
+    <string name="statisticsWeek">Vastausten keskiarvo</string>
+    <string name="statisticsDay">Viimeisimmät vastaukset</string>
     <string name="pieChartTitle">Mielialojen keskiarvo</string>
     <string name="settings_password_change_error">Salasanojen täytyy olla samat</string>
     <string name="switch1">kytkin1</string>
