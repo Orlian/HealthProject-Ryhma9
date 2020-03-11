@@ -29,7 +29,7 @@
     <string name="question6">Tunnetko, että olet epäonnistunut? \n(1=kyllä, 5=en)</string>
     <string name="question7">Väsytkö nopeammin kuin ennen? \n(1=kyllä, 5=en)</string>
     <string name="question8">Pystytkö toimimaan yhtä hyvin kuin ennen? \n(1=en, 5=kyllä)</string>
-    <string name="question9">Tuntuuko päätöksenteko vaikealta? \n(1=kyllä, 5=ei)</string>
+    <string name="question9">Tuntuuko päätöksenteko vaikealta?(Mieti tätä hyvin tarkasti) \n(1=kyllä, 5=ei)</string>
     <string name="question10">Pystytkö keskittymään yhtä hyvin kuin ennen? \n(1=en, 5=kyllä)</string>
     <string name="question11">Onko ruokahalusi sama kuin ennen? \n(1=ei, 5=kyllä)</string>
     <string name="question12">Ajatteletko terveyttäsi yhtä paljon kuin ennen? \n(1=en, 5=kyllä)</string>

@@ -29,7 +29,7 @@
     <string name="question6">Do you feel like you have failed as a person? \n(1=I have failed, 5=no, I feel fine)</string>
     <string name="question7">Do you get tired easier that usual? \n(1=yes, I wake up tired, 5=no, I feel fine)</string>
     <string name="question8">Are you as functional as you used to be? \n(1=I cannot function at all, 5=I feel fine)</string>
-    <string name="question9">Are you feeling indecisive?(tick, tock) \n(1=yes, I cannot decide anything, 5=no)</string>
+    <string name="question9">Are you feeling indecisive?(Take your time to REALLY ponder this one) \n(1=yes, I cannot decide anything, 5=no)</string>
     <string name="question10">Are you unable to concentrate like you used to? \n(1=yes, I cannot concentrate, 5=no)</string>
     <string name="question11">Has there been changes to your appetite? \n(1=yes a lot, 5=no changes)</string>
     <string name="question12">Do you pay attention to your own health? \n(1=No, I don\'t care anymore, 5=As much as before)</string>
