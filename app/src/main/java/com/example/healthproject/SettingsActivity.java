@@ -12,13 +12,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.List;
 import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
     private User testUser, activeUser;
     private SharedPreferences loginPrefs;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +61,13 @@ public class SettingsActivity extends AppCompatActivity {
             String newPassword1 = newPasswordInput1.getText().toString();
             EditText newPasswordInput2 = findViewById(R.id.passwordChangeField2);
             String newPassword2 = newPasswordInput2.getText().toString();
+            UserList userList = UserList.getInstance();
             if(newPassword1.equals(newPassword2)){
-                for(int i = 0; i < UserList.getInstance().getUserList().size(); i++){
-                    testUser = UserList.getInstance().getUser(i);
+                for(int i = 0; i < userList.getUserList().size(); i++){
+                    testUser = userList.getUser(i);
                     if(testUser.getUserName().equals(activeUser.getUserName())){
-                        UserList.getInstance().getUser(i).setPassword(newPassword2);
+                        userList.getUser(i).setPassword(newPassword2);
+                        saveNewPassword(userList);
                         Log.v("DEBUG5", "Index: " + i);
                         Log.v("DEBUG5", "Uusi salasana: " + UserList.getInstance().getUser(i).getPassword());
                         break;
@@ -92,6 +98,24 @@ public class SettingsActivity extends AppCompatActivity {
         tv.setTextColor(getResources().getColor(R.color.colorText));
         tv = findViewById(R.id.mainMenuButton2);
         tv.setText(R.string.mainmenu_button);
+    }
+    private void saveNewPassword(UserList userListParam){
+        SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+        SharedPreferences.Editor loginEdit = loginPrefs.edit();
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<User>>(){}.getType();
+        String gsonString = gson.toJson(users, type);
+        String json2 = loginPrefs.getString("USER_LIST", gsonString);
+        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
+        userListParam.getUserList().clear();
+        userListParam.getUserList().addAll(users);
+        Gson gson2 = new Gson();
+        Type gsonType = new TypeToken<List<User>>() {}.getType();
+        gsonString = gson.toJson(userListParam.getUserList() ,gsonType);
+        loginEdit.putString("USER_LIST", gsonString);
+        loginEdit.commit();
+
+
     }
 
 }

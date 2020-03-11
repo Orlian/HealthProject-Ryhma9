@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());
         updateUI();
+        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());
+
     }
 
     /**
@@ -132,6 +132,8 @@ public class MainActivity extends AppCompatActivity {
         //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
         userList = UserList.getInstance();
         if(users != null){
+            userList.getUserList().clear();
+            userList.getUserList().addAll(users);
             Log.v("DEBUG9", "UserList: " + users);
         }
         /*
