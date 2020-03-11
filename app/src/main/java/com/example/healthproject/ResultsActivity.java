@@ -3,9 +3,17 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP2;
@@ -16,9 +24,13 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
  * Yhteenveto-luokka, joka näyttää käyttäjälle QuestionActivityssä saamiensa pisteiden mukaiset tekstimuotoiset palautteet.
  * Luokka lähettää pisteet eteenpäin joko MainActivityyn tai StatisticActivityyn, riippuen minne käyttäjä haluaa siirtyä nappia painamalla.
  * @author Oskari Piiroinen
- * @version 1.3
+ * @version 1.4
  */
 public class ResultsActivity extends AppCompatActivity {
+    private SharedPreferences resultPrefs;
+    private User testUser;
+    private List <User> users;
+    private UserList userList;
 
     /**
      * Suoritetaan kun aktiviteetti luodaan.
@@ -39,6 +51,7 @@ public class ResultsActivity extends AppCompatActivity {
         int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
         int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
+
 
 
 
@@ -152,6 +165,8 @@ public class ResultsActivity extends AppCompatActivity {
         int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
         if (a == findViewById(R.id.mainMenuButton)) {
+            saveData();
+
             Intent mainIntent = new Intent(ResultsActivity.this, MainActivity.class);
             mainIntent.putExtra(EXTRA_GROUP1, group1);
             mainIntent.putExtra(EXTRA_GROUP2, group2);
@@ -161,6 +176,8 @@ public class ResultsActivity extends AppCompatActivity {
             startActivity(mainIntent);
 
         } else if (a == findViewById(R.id.statisticsButton)) {
+            saveData();
+
             Intent statsIntent = new Intent(ResultsActivity.this, StatisticsActivity.class);
             statsIntent.putExtra(EXTRA_GROUP1, group1);
             statsIntent.putExtra(EXTRA_GROUP2, group2);
@@ -169,5 +186,72 @@ public class ResultsActivity extends AppCompatActivity {
             statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
             startActivity(statsIntent);
         }
+    }
+    private void saveData(){
+        Intent intent = getIntent();
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
+        int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
+        int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
+        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
+
+
+        resultPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = resultPrefs.getString("ACTIVE_USER", " ");
+        Gson gson2 = new Gson();
+        testUser = gson2.fromJson(json, User.class);
+        Type type = new TypeToken<List<User>>() {}.getType();
+        String gsonString = gson.toJson(users, type);
+        String json2 = resultPrefs.getString("USER_LIST", gsonString);
+        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
+        //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
+        userList = UserList.getInstance();
+        userList.getUserList().clear();
+        userList.getUserList().addAll(users);
+        Log.v("DEBUG9","ADDALL: "+userList.getUserList());
+        for(int i = 0; i < userList.getUserList().size(); i++){
+          if(userList.getUser(i).getUserName().equals(testUser.getUserName())){
+              userList.getUser(i).getDataList().add(group1);
+              userList.getUser(i).getDataList().add(group2);
+              userList.getUser(i).getDataList().add(group3);
+              userList.getUser(i).getDataList().add(group4);
+              userList.getUser(i).getDataList().add(groupAverage);
+              Log.v("DEBUG9", "testUser lisäykset: "+userList.getUser(i).getDataList());
+            }
+
+        }
+    Log.v("DEBUG9", "USERLIST: "+userList.getUserList());
+
+
+        SharedPreferences.Editor editor = resultPrefs.edit();
+        Gson gson3 = new Gson();
+        Type gsonType = new TypeToken<List<User>>() {}.getType();
+        gsonString = gson3.toJson(userList.getUserList() ,gsonType);
+        editor.putString("USER_LIST", gsonString);
+        editor.commit();
+
+
+
+        /*//dataBank turha jos käytetään userList
+        Type gsonType = new TypeToken<HashMap>() {}.getType();
+        String gsonString = gson.toJson(dataBank,gsonType);
+
+        dataBank = new Gson().fromJson(gsonString, new TypeToken<HashMap<Object, int[] >>() {}.getType());
+
+        if(dataBank != null) {
+
+            dataBank.put(testUser, );
+            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else if: "+dataBank);
+            Log.v("DEBUG9", "Databankin testUserin arvot: " + (Arrays.toString(dataBank.get(testUser.))));
+
+        } else {
+
+            dataBank = new HashMap<>();
+            dataBank.put(testUser, answersGroups);
+            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else: "+dataBank);
+        }*/
+        editor.apply();
+
     }
 }
