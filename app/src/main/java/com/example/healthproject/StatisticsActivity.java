@@ -39,7 +39,7 @@ public class StatisticsActivity extends AppCompatActivity {
     AnyChartView anyChartView2;
     private SharedPreferences settings, resultPref;
     private User testUser;
-    private HashMap <User, int[]> dataBank;
+
 
     /*
     switch komentoon liittyvät muuttujat.
@@ -61,43 +61,9 @@ public class StatisticsActivity extends AppCompatActivity {
         anyChartView2 = findViewById(R.id.any_chart_view2);
         APIlib.getInstance().setActiveAnyChartView(anyChartView2);
         setupChart2();
-        saveData();
-    }
-    private void saveData(){
-
-        settings = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = settings.getString("ACTIVE_USER", " ");
-        testUser = gson.fromJson(json, User.class);
-        SharedPreferences.Editor editor = settings.edit();
-        Log.v("DEBUG9","TESTUSER: "+testUser);
-        Intent intent = getIntent();
-        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
-        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
-        int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
-        int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
-        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
-        /*//dataBank turha jos käytetään userList
-        Type gsonType = new TypeToken<HashMap>() {}.getType();
-        String gsonString = gson.toJson(dataBank,gsonType);
-
-        dataBank = new Gson().fromJson(gsonString, new TypeToken<HashMap<Object, int[] >>() {}.getType());
-
-        if(dataBank != null) {
-
-            dataBank.put(testUser, );
-            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else if: "+dataBank);
-            Log.v("DEBUG9", "Databankin testUserin arvot: " + (Arrays.toString(dataBank.get(testUser.))));
-
-        } else {
-
-            dataBank = new HashMap<>();
-            dataBank.put(testUser, answersGroups);
-            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else: "+dataBank);
-        }*/
-        editor.apply();
 
     }
+
 
     public void setupChart1() {
         String[] states = {getString(R.string.group1head), getString(R.string.group2head), getString(R.string.group3head), getString(R.string.group4head)};
