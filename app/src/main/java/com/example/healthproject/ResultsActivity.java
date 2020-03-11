@@ -153,8 +153,8 @@ public class ResultsActivity extends AppCompatActivity {
      * Intent luokan olio vastaanottaa aikeen edelliseltä aktiviteetilta (QuestionActivity)
      * int group1, 2, 3, 4 ja groupAverage muuttujiin sijoitetaan aikeen avaimilla (EXTRA_GROUP1 etc.) arvot, jotka saadaan QuestionActivitystä
      *  if lauseessa vertaillaan onko käyttäjä painanut Menu vai Statistics nappia.
-     *  Menu nappia painamalla käyttäjä siirtyy MainActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot MainActivityyn.
-     *  Statistics nappia painamalla käyttäjä siirtyy StatisticsActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot StatisticsActivityyn.
+     *  Menu nappia painamalla käyttäjä tallentaa datat aktiivisen käyttäjän datalistaan. Käyttäjä siirtyy MainActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot MainActivityyn.
+     *  Statistics nappia painamalla käyttäjä tallentaa datat aktiivisen käyttäjän datalistaan. Käyttäjä siirtyy StatisticsActivityyn ja siirtää int group1, 2, 3, 4 ja GroupAverage arvot StatisticsActivityyn.
      */
     public void onClick(View a) {
         Intent intent = getIntent();
@@ -187,13 +187,17 @@ public class ResultsActivity extends AppCompatActivity {
             startActivity(statsIntent);
         }
     }
+
+    /**
+     * saveData metodi, joka tallentaa aktiivisen käyttäjän datalistaan QuestionsActivity:ltä saamansa int arvot.
+     *
+     */
     private void saveData(){
         Intent intent = getIntent();
         int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
         int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
         int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
-        int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
 
         resultPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
@@ -229,28 +233,6 @@ public class ResultsActivity extends AppCompatActivity {
         gsonString = gson3.toJson(userList.getUserList() ,gsonType);
         editor.putString("USER_LIST", gsonString);
         editor.commit();
-
-
-
-        /*//dataBank turha jos käytetään userList
-        Type gsonType = new TypeToken<HashMap>() {}.getType();
-        String gsonString = gson.toJson(dataBank,gsonType);
-
-        dataBank = new Gson().fromJson(gsonString, new TypeToken<HashMap<Object, int[] >>() {}.getType());
-
-        if(dataBank != null) {
-
-            dataBank.put(testUser, );
-            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else if: "+dataBank);
-            Log.v("DEBUG9", "Databankin testUserin arvot: " + (Arrays.toString(dataBank.get(testUser.))));
-
-        } else {
-
-            dataBank = new HashMap<>();
-            dataBank.put(testUser, answersGroups);
-            Log.v("DEBUG9", "Lisätään dataBank:n arvoja else: "+dataBank);
-        }*/
-        editor.apply();
 
     }
 }
