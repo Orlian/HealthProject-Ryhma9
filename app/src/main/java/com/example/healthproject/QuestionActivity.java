@@ -31,8 +31,8 @@ import java.util.Map;
  */
 public class QuestionActivity extends AppCompatActivity {
 
-    //Määritetään vastauksille muuttujat answer1-20
-    int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;
+
+    int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0; //Määritetään vastauksille muuttujat answer1-20
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
@@ -80,16 +80,16 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                button1.setEnabled(false);
+                button1.setEnabled(false); //Muutetaan arvo false tilaan jolloin nappia voi painaa vain kerran
                 Log.v("DEBUG3","Save/Tallenna onClick"); //DEBUG / TESTIKOODI
                 sendButton(v);
 
             }
         });
 
-        answers = new int[20];
+        answers = new int[20]; //Alustetaan answers Array sisältämään 20 indeksiä
 
-        RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1);
+        RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1); //Luodaan RadioGroup olioita 20 joille määritellään omat id:t strings.xml tiedoston kautta
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
         RadioGroup radioGroup3 = (RadioGroup) findViewById(R.id.question3);
         RadioGroup radioGroup4 = (RadioGroup) findViewById(R.id.question4);
@@ -118,37 +118,37 @@ public class QuestionActivity extends AppCompatActivity {
              * @param checkedId valitun radioButtonin tunniste ja siihen liittyvä arvo             *
              */
             @Override
-            public void onCheckedChanged(RadioGroup question1, int checkedId) {
+            public void onCheckedChanged(RadioGroup question1, int checkedId) { //Kuunnellaan RadioGroupin nappeja switch/case:n avulla.
                 switch (checkedId) {
                     case R.id.rb11:
-                        Log.v("DEBUG", "11");
-                        answers[0] = 1;
+                        Log.v("DEBUG", "11"); //DEBUG / TESTIKOODI
+                        answers[0] = 1; //Asetetaan aswers Arrayhin valitun radiobuttonin arvo
                         break;
                     case R.id.rb12:
-                        Log.v("DEBUG", "12");
+                        Log.v("DEBUG", "12"); //DEBUG / TESTIKOODI
                         answers[0] = 2;
                         break;
                     case R.id.rb13:
-                        Log.v("DEBUG", "13");
+                        Log.v("DEBUG", "13"); //DEBUG / TESTIKOODI
                         answers[0] = 3;
                         break;
                     case R.id.rb14:
-                        Log.v("DEBUG", "14");
+                        Log.v("DEBUG", "14"); //DEBUG / TESTIKOODI
                         answers[0] = 4;
                         break;
                     case R.id.rb15:
-                        Log.v("DEBUG", "15");
+                        Log.v("DEBUG", "15"); //DEBUG / TESTIKOODI
                         answers[0] = 5;
                         break;
                     default:
-                        Log.v("DEBUG", "01");
+                        Log.v("DEBUG", "01"); //DEBUG / TESTIKOODI
                         answers[0] = 0;
                         break;
                 }
-                answer1 = answers[0];
+                answer1 = answers[0]; //Asetetaan answer1 arvoksi juuri saatu aswers Arrayn indeksin arvo
                 Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG / TESTIKOODI
             }
-        });
+        }); //Samat ominaisuudet toistetaan 20 kertaa jolloin saadaan jokaiselta RadioGroupilta oma yksittäinen arvo.
 
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -803,22 +803,21 @@ public class QuestionActivity extends AppCompatActivity {
      */
     public void sendButton(View v){
         Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI
-        int[] answersGroups =new int[5];
+        int[] answersGroups =new int[5]; //Luodaan uusi Array answersGroups jolle asetetaan kooksi 5
 
-        group1 = answer1 + answer2 + answer19 + answer20;
+        group1 = answer1 + answer2 + answer19 + answer20; //Tässä määritellään vastausten perusteella group1 arvo ja tämä toistuu jokaisen ryhmän kohdalla
         group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
         group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
         group4 = answer13 + answer14;
         groupAverage = group1 + group2 + group3 + group4;
 
-        answersGroups[0]=group1;
+        answersGroups[0]=group1; //Määritellään answersGroups Arrayn indekseille yllä määritellyt ryhmien arvot
         answersGroups[1]=group2;
         answersGroups[2]=group3;
         answersGroups[3]=group4;
         answersGroups[4]=groupAverage;
 
-        Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class);
-        //Extrana tänne kyseisen käyttäjän vastausdata!
+        Intent statsIntent = new Intent(QuestionActivity.this, ResultsActivity.class); // Intentin avulla lähetetään vastausten ryhmäarvot Arrayssa toiseen aktiviteettiin
         statsIntent.putExtra(EXTRA_GROUP1, answersGroups[0]);
         statsIntent.putExtra(EXTRA_GROUP2, answersGroups[1]);
         statsIntent.putExtra(EXTRA_GROUP3, answersGroups[2]);
