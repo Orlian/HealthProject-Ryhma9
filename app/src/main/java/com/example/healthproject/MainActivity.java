@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
      * Päävalikon nappien onClick-metodi, joka sisältää koodia kaikkien eri nappien id:lle
      * @param v aktiivinen View-olio
      */
-    public void onClick(View v){
+    public void onClick(View v) {
 
         Intent intent = getIntent();
         int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
@@ -59,16 +59,16 @@ public class MainActivity extends AppCompatActivity {
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
         int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
-        if(v == findViewById(R.id.loginRegisterButton)){
+        if (v == findViewById(R.id.loginRegisterButton)) {
             //Tänne siirtyminen LoginActivity aktiviteettiin
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
             startActivity(loginIntent);
 
-        } else if(v == findViewById(R.id.mainButton)){
+        } else if (v == findViewById(R.id.mainButton)) {
             //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
             //Oletusarvo false, true vain testikäytössä
-            if(getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)){
+            if (getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)) {
                 loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 Gson gson = new Gson();
                 String json = loginPrefs.getString("ACTIVE_USER", " ");
@@ -76,27 +76,35 @@ public class MainActivity extends AppCompatActivity {
                 Log.v("DEBUG5", "Aktiivinen käyttäjä: " + testUser.getUserName() + " Salasana: " + testUser.getPassword());
                 Intent questionsIntent = new Intent(MainActivity.this, QuestionActivity.class);
                 startActivity(questionsIntent);
-            }else{
+            } else {
                 loggedIn = false;
                 Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                 loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
                 startActivity(loginIntent);
             }
 
-        } else if(v == findViewById(R.id.statsButton)){
+        } else if (v == findViewById(R.id.statsButton)) {
             //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
-            Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
-            statsIntent.putExtra(EXTRA_GROUP1, group1);
-            statsIntent.putExtra(EXTRA_GROUP2, group2);
-            statsIntent.putExtra(EXTRA_GROUP3, group3);
-            statsIntent.putExtra(EXTRA_GROUP4, group4);
-            statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-            //Extrana tänne kyseisen käyttäjän vastausdatan!
-            startActivity(statsIntent);
-        } else if(v == findViewById(R.id.settingsButton)){
+            if (loggedIn == false) {
+                Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+                loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
+                startActivity(loginIntent);
+            } else {
+                Intent statsIntent = new Intent(MainActivity.this, StatisticsActivity.class);
+                statsIntent.putExtra(EXTRA_GROUP1, group1);
+                statsIntent.putExtra(EXTRA_GROUP2, group2);
+                statsIntent.putExtra(EXTRA_GROUP3, group3);
+                statsIntent.putExtra(EXTRA_GROUP4, group4);
+                statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
+                //Extrana tänne kyseisen käyttäjän vastausdatan!
+                startActivity(statsIntent);
+            }
+        }
+
+            else if(v == findViewById(R.id.settingsButton)){
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
-        } //TODO Aktiivisen käyttäjän näyttäminen jollakin ikonilla yläkulmassa
+        }
     }
     private void updateUI(){
         loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
