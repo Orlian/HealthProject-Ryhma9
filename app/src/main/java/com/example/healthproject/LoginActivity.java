@@ -35,6 +35,10 @@ public class LoginActivity extends AppCompatActivity {
     private UserList userList;
     private List<User> users;
 
+    /**
+     * Suoritetaan kun aktiviteetti avataan
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +51,14 @@ public class LoginActivity extends AppCompatActivity {
             TextView tv = findViewById(R.id.loginErrorMessage);
             tv.setText(R.string.not_logged_in);
         }
-
-
     }
+
+    /**
+     * OnClick-metodi sisältää koodit login-, ja rekisteröinti napille.
+     * Tarkistaa ja tarvittaessa tallentaa singleton-luokan luokan userListalle, muuntaa ne gson stringiksi
+     * ja tallentaa ne SharedPreferencen kautta pysyvästi.
+     * @param v aktiivinen View olio
+     */
     public void onClick(View v){
         if(v == findViewById(R.id.loginButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi ja salasana täsmäävät
