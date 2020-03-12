@@ -13,7 +13,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.example.healthproject.QuestionActivity.EXTRA_GROUP1;
@@ -31,19 +30,18 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
  * @version 2.1
  */
 public class MainActivity extends AppCompatActivity {
-    private boolean loggedIn; //HUOM! Muista ottaa "true" pois ennen kirjautumisen kokeilua!!!!
+    private boolean loggedIn;                                           //Erillinen boolean, jolla tarkistetaan onko sisäänkirjauduttu
     public static final String EXTRA_NEED_LOGIN = "Need to log in";
-    private SharedPreferences loginPrefs;
+    private SharedPreferences loginPrefs;                               //SharedPreferences-olio login asetuksien hakuun
     private User testUser;
-    private UserList userList;
-    private List<User> users;
+    private List<User> users;                                           //SharedPreferenceistä haettava käyttäjälista
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         updateUI();
-        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());
+        Log.v("DEBUG5", "UserList sisältö: " +  UserList.getInstance().getUserList());  //DEBUG userListin sisällön tarkistaminen
 
     }
 
@@ -61,14 +59,13 @@ public class MainActivity extends AppCompatActivity {
         int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
         if (v == findViewById(R.id.loginRegisterButton)) {
-            //Tänne siirtyminen LoginActivity aktiviteettiin
+            //Vie kirjautumissivulle
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             loginIntent.putExtra(EXTRA_NEED_LOGIN, loggedIn);
             startActivity(loginIntent);
 
         } else if (v == findViewById(R.id.mainButton)) {
-            //Tänne siirtyminen QuestionActivity aktiviteettiin (eli päätoiminto), jos käyttäjä on kirjautunut sisään
-            //Oletusarvo false, true vain testikäytössä
+            //Tarkistaa aktiivisen käyttäjän, jos löytyy niin mennään kysymysaktiviteettiin, muuten kirjautumisaktiviteettin
             if (getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)) {
                 loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 Gson gson = new Gson();
@@ -85,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } else if (v == findViewById(R.id.statsButton)) {
-            //Tänne siirtyminen MainStats aktiviteettiin (*ei vielä luotu*)
+            //Aktiivisen käyttäjän tilastoihin siirtyminen, jos ei aktiivista käyttäjää niin kirjautumissivulle
             if (getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE).getBoolean("LOGIN_STATUS", false)) {
                 loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
                 Gson gson = new Gson();
@@ -106,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         }
-            //kommentointi
+            //Siirrytään asetuksiin
             else if(v == findViewById(R.id.settingsButton)){
             Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
@@ -118,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
      * SharedPreferenceihin tallenetun käyttäjälistan.
      */
     private void updateUI(){
+        //Päivittää aktiiviset view:t oikealla datalla
         loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = loginPrefs.getString("ACTIVE_USER", " ");
@@ -134,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         String gsonString = gson.toJson(users, type);
         String json2 = loginPrefs.getString("USER_LIST", gsonString);
         users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
-        userList = UserList.getInstance();
+        UserList userList = UserList.getInstance();
         if(users != null){
             userList.getUserList().clear();
             userList.getUserList().addAll(users);

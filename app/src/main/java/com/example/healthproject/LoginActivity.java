@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.os.SharedMemory;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -16,8 +14,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
@@ -29,10 +25,8 @@ import static com.example.healthproject.MainActivity.EXTRA_NEED_LOGIN;
  * @version 1.8
  */
 public class LoginActivity extends AppCompatActivity {
-    private User testUser;
     private boolean loginStatus;
     private List<Integer> userDataList;
-    private UserList userList;
     private List<User> users;
 
     /**
@@ -60,16 +54,19 @@ public class LoginActivity extends AppCompatActivity {
      * @param v aktiivinen View olio
      */
     public void onClick(View v){
+        User testUser;
+        UserList userList;
         if(v == findViewById(R.id.loginButton)){
             //Siirtyy takaisin MainActivityyn, jos käyttäjänimi ja salasana täsmäävät
             EditText userNameInput = (EditText) findViewById(R.id.usernameField);
             String userInput = userNameInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userPassword = userPasswordInput.getText().toString();
-            //Tarkista vertaamalla käyttäjien listaan onko kyseistä käyttäjänimeä rekisteröity
+            //Tarkistaa rekisteröityjen käyttäjien listalta onko haettua käyttäjää olemassa
             userList = UserList.getInstance();
             for(int i = 0; i < userList.getUserList().size(); i++){
-                //Ideana on käydä läpi kaikki user-listan user-olioiden nimet ja verrata niitä inputtiin
+                /*Vertaa listan jokaisen käyttäjän tietoja syötettyihin tietoihin, jos ne täsmäävät asetetaan kyseinen käyttäjä aktiiviseksi
+                ja siirrytään mainActivityyn*/
                 testUser = userList.getUser(i);
                 if(testUser.getUserName().equals(userInput) && testUser.getPassword().equals(userPassword)){
                     loginStatus = true;
@@ -84,11 +81,13 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(loginSuccess);
                     break;
                 } else {
+                    //Jos haettua käyttäjää ei löydy listalta niin näytetään virheviesti
                     TextView tv = findViewById(R.id.loginErrorMessage);
                     tv.setText(getString(R.string.invalid_login));
                     tv.setTextColor(getResources().getColor(R.color.colorErrorText));
                 }
             }
+            //Jos verrattava käyttäjälista on tyhjä
             if(userList.getUserList().isEmpty()){
                 TextView tv = findViewById(R.id.loginErrorMessage);
                 tv.setText(getString(R.string.invalid_login));
@@ -105,21 +104,25 @@ public class LoginActivity extends AppCompatActivity {
             String userInputName = userRegisterInput.getText().toString();
             EditText userPasswordInput = (EditText) findViewById(R.id.passwordField);
             String userInputPassword = userPasswordInput.getText().toString();
+            //Varmistaa ettei käyttäjä yritä rekisteröidä tyhjää käyttäjää tai käyttää tyhjää salasanaa
             if((userInputName.equals("") && userInputPassword.equals("")) || (userInputName.equals("") || userInputPassword.equals(""))){
                 TextView tv = findViewById(R.id.loginErrorMessage);
                 tv.setText(getString(R.string.login_error_empty_data));
                 tv.setTextColor(getResources().getColor(R.color.colorErrorText));
                 return;
             }
+            //Varmistaa ettei käyttäjä yritä rekisteröidä käyttäjää, joka sisältää välilyöntejä
             if((userInputName.contains(" ") && userInputPassword.contains(" ")) || (userInputName.contains(" ") || userInputPassword.contains(" "))){
                 TextView tv = findViewById(R.id.loginErrorMessage);
                 tv.setText(getString(R.string.login_error_empty_data));
                 tv.setTextColor(getResources().getColor(R.color.colorErrorText));
                 return;
             }
+            //Luo uuden käyttäjän käyttäjän antamilla arvoilla
             testUser = new User(userInputName, userInputPassword);
 
             SharedPreferences loginPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
+            //Mahdollisesti turha datan haku alla
             Gson gson = new Gson();
             Type type = new TypeToken<List<User>>() {}.getType();
             String gsonString = gson.toJson(users, type);
@@ -127,7 +130,7 @@ public class LoginActivity extends AppCompatActivity {
             users = new Gson().fromJson(json2, new TypeToken<List<Object>>() {}.getType());
 
             userList = UserList.getInstance();
-            //Tarkista tässä välissä ettei kyseistä käyttäjää ole jo luotuna
+            //Tarkistaa tässä välissä ettei kyseistä käyttäjää ole jo luotuna
             if(!userList.getUserList().contains(testUser)) {
                 loginStatus = true;
                 SharedPreferences.Editor loginEdit = loginPrefs.edit();
