@@ -33,7 +33,7 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
  * Statistiikka-luokka, joka käyttää AnyChart kirjastoa ja näyttää käyttäjän tulokset ympyrädiagrammissa.
  * AnyChart: https://github.com/AnyChart/AnyChart-Android
  * @author Arttu Myyryläinen
- * @version 1.7
+ * @version 1.8
  */
 public class StatisticsActivity extends AppCompatActivity {
     AnyChartView anyChartView;              //Nimetään AnyChartille view
@@ -154,39 +154,6 @@ public class StatisticsActivity extends AppCompatActivity {
                 }
             }
 
-        /* Ylimääräistä koodia ainakin viime testeillä
-        for(int i = 0; i < userList.getUserList().size(); i++){ //Haetaan oikea käyttäjälista ajamalla koko käyttäjälista for-loopilla läpi
-            if(userList.getUser(i).getUserName().equals(testUser.getUserName())){ //Valitaan oikea käyttäjä aiemmin määrätyllä testUser muuttujalla
-                for (int y = 0; y < userList.getUser(i).getDataList().size(); y++){ //käydään käyttäjälle osoitettu datalista for-loopilla läpi
-                    if (y%4==1){                                                    //otetaan joka neljäs arvo listalta alkaen toisesta indeksistä
-                        group2+=userList.getUser(i).getDataList().get(y);           //annetaan muuttujalle group2 haettu listan arvo y ja lisätään se aina seuraavaan haettuun arvoon.
-                        Log.v("DEBUG9", "2. arvo neljän sarjassa 'Tuntemukset': "+userList.getUser(i).getDataList().get(y)); //DEBUG / TESTIKOODI Tarkistamme koodin laskevan joka neljännen luvun 2. alkaen
-                    }
-                }
-            }
-        }
-        for(int i = 0; i < userList.getUserList().size(); i++){ //Haetaan oikea käyttäjälista ajamalla koko käyttäjälista for-loopilla läpi
-            if(userList.getUser(i).getUserName().equals(testUser.getUserName())){ //Valitaan oikea käyttäjä aiemmin määrätyllä testUser muuttujalla
-                for (int y = 0; y < userList.getUser(i).getDataList().size(); y++){ //käydään käyttäjälle osoitettu datalista for-loopilla läpi
-                    if (y%4==2){                                                    //otetaan joka neljäs arvo listalta alkaen kolmannesta indeksistä
-                        group3+=userList.getUser(i).getDataList().get(y);           //annetaan muuttujalle group3 haettu listan arvo y ja lisätään se aina seuraavaan haettuun arvoon.
-                        Log.v("DEBUG9", "3. arvo neljän sarjassa: "+userList.getUser(i).getDataList().get(y)); //DEBUG / TESTIKOODI Tarkistamme koodin laskevan joka neljännen luvun 3. alkaen
-                    }
-                }
-            }
-        }
-        for(int i = 0; i < userList.getUserList().size(); i++){ //Haetaan oikea käyttäjälista ajamalla koko käyttäjälista for-loopilla läpi
-            if(userList.getUser(i).getUserName().equals(testUser.getUserName())){ //Valitaan oikea käyttäjä aiemmin määrätyllä testUser muuttujalla
-                for (int y = 0; y < userList.getUser(i).getDataList().size(); y++){ //käydään käyttäjälle osoitettu datalista for-loopilla läpi
-                    if (y%4==3){                                                    //otetaan joka neljäs arvo listalta alkaen neljännestä indeksistä
-                        group4+=userList.getUser(i).getDataList().get(y);           //annetaan muuttujalle group4 haettu listan arvo y ja lisätään se aina seuraavaan haettuun arvoon.
-                        Log.v("DEBUG9", "4. arvo neljän sarjassa: "+userList.getUser(i).getDataList().get(y)); //DEBUG / TESTIKOODI Tarkistamme koodin laskevan joka neljännen luvun 4. alkaen
-                    }
-                }
-            }
-        }
-
-         */
 
         Log.v("DEBUG9", "USERLIST2: "+userList.getUserList());  //DEBUG / TESTIKOODI
         Log.v("DEBUG9", "group1 arvo: "+group1);                //DEBUG / TESTIKOODI Varmistamme rymien oikeat arvot
