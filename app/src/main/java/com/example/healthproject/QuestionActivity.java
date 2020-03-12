@@ -3,26 +3,13 @@ package com.example.healthproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Kysymys-luokka, joka sisältää aplikaation kysymysosion
@@ -32,12 +19,12 @@ import java.util.Map;
 public class QuestionActivity extends AppCompatActivity {
 
 
-    int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0; //Määritetään vastauksille muuttujat answer1-20
+    int answer1 = 0, answer2 = 0, answer3 = 0, answer4 = 0, answer5 = 0;        //Määritetään vastauksille muuttujat answer1-20
     int answer6 = 0, answer7 = 0, answer8 = 0, answer9 = 0, answer10 = 0;
     int answer11 = 0, answer12 = 0, answer13 = 0, answer14 = 0, answer15 = 0;
     int answer16 = 0, answer17 = 0, answer18 = 0, answer19 = 0, answer20 = 0;
-    int[] answers; //Määritetään Array answers
-    int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0; //Määritetään ryhmäarvoille omat muuttujat group1-4 ja groupAverage
+    int[] answers;                                                              //Määritetään Array answers
+    int group1 = 0, group2 = 0, group3 = 0, group4 = 0, groupAverage = 0;       //Määritetään ryhmäarvoille omat muuttujat group1-4 ja groupAverage
 
     /**
      * EXTRA_GROUP1 määritellään ja alustetaan. Tällä siirretään vastausdatan ryhmä1 eteenpäin.
@@ -69,7 +56,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        final Button button1 = (Button) findViewById(R.id.saveButton); //Tehdään muuttuja jonka avulla varmistetaan vain yksi painallus sendButtonille
+        final Button button1 = (Button) findViewById(R.id.saveButton);  //Tehdään muuttuja jonka avulla varmistetaan vain yksi painallus sendButtonille
         button1.setOnClickListener(new View.OnClickListener() {
 
             /**
@@ -80,14 +67,14 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                button1.setEnabled(false); //Muutetaan arvo false tilaan jolloin nappia voi painaa vain kerran
-                Log.v("DEBUG3","Save/Tallenna onClick"); //DEBUG / TESTIKOODI Varmistetaan, että metodi toimii
-                sendButton(v); //Kutsutaan sendButton metodi alkamaan
+                button1.setEnabled(false);                              //Muutetaan arvo false tilaan jolloin nappia voi painaa vain kerran
+                Log.v("DEBUG3","Save/Tallenna onClick");      //DEBUG / TESTIKOODI Varmistetaan, että metodi toimii
+                sendButton(v);                                          //Kutsutaan sendButton metodi alkamaan
 
             }
         });
 
-        answers = new int[20]; //Alustetaan answers Array sisältämään 20 indeksiä
+        answers = new int[20];                                              //Määriteteään answers Array sisältämään 20 indeksiä
 
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.question1); //Luodaan RadioGroup olioita 20 joille määritellään omat id:t strings.xml tiedoston kautta
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.question2);
@@ -121,8 +108,8 @@ public class QuestionActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup question1, int checkedId) { //Kuunnellaan RadioGroupin nappeja switch/case:n avulla.
                 switch (checkedId) {
                     case R.id.rb11:
-                        Log.v("DEBUG", "11"); //DEBUG / TESTIKOODI Jolla varmistetaan jokaisen radioButtonin oikein määritys
-                        answers[0] = 1; //Asetetaan aswers Arrayhin valitun radiobuttonin arvo
+                        Log.v("DEBUG", "11");                   //DEBUG / TESTIKOODI Jolla varmistetaan jokaisen radioButtonin oikein määritys
+                        answers[0] = 1;                                    //Asetetaan aswers Arrayhin valitun radiobuttonin arvo
                         break;
                     case R.id.rb12:
                         Log.v("DEBUG", "12"); //DEBUG / TESTIKOODI
@@ -145,10 +132,10 @@ public class QuestionActivity extends AppCompatActivity {
                         answers[0] = 0;
                         break;
                 }
-                answer1 = answers[0]; //Asetetaan answer1 arvoksi juuri saatu aswers Arrayn indeksin arvo
-                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1); //DEBUG / TESTIKOODI Varmistetaan, että oikea arvo on tallennettu
+                answer1 = answers[0];                                   //Asetetaan answer1 arvoksi juuri saatu aswers Arrayn indeksin arvo
+                Log.v("DEBUG2","Kysymys 1 arvo: " +answer1);  //DEBUG / TESTIKOODI Varmistetaan, että oikea arvo on tallennettu
             }
-        }); //Samat ominaisuudet toistetaan 20 kertaa jolloin saadaan jokaiselta RadioGroupilta oma yksittäinen arvo.
+        });                                                             //Samat ominaisuudet toistetaan 20 kertaa jolloin saadaan jokaiselta RadioGroupilta oma yksittäinen arvo.
 
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -802,10 +789,10 @@ public class QuestionActivity extends AppCompatActivity {
      * @param v aktiivinen View-olio
      */
     public void sendButton(View v){
-        Log.v("DEBUG3","Save/Tallenna sendButton"); //DEBUG / TESITKOODI Varmistetaan, että metodi toimii
-        int[] answersGroups =new int[5]; //Luodaan uusi Array answersGroups jolle asetetaan kooksi 5
+        Log.v("DEBUG3","Save/Tallenna sendButton");     //DEBUG / TESITKOODI Varmistetaan, että metodi toimii
+        int[] answersGroups =new int[5];                        //Luodaan uusi Array answersGroups jolle asetetaan kooksi 5
 
-        group1 = answer1 + answer2 + answer19 + answer20; //Tässä määritellään vastausten perusteella group1 arvo ja tämä toistuu jokaisen ryhmän kohdalla
+        group1 = answer1 + answer2 + answer19 + answer20;       //Tässä määritellään vastausten perusteella group1 arvo ja tämä toistuu jokaisen ryhmän kohdalla
         group2 = answer3 + answer4 + answer5 + answer6 + answer9 + answer16 + answer18;
         group3 = answer7 + answer8 + answer10 + answer11 + answer12 + answer15 + answer17;
         group4 = answer13 + answer14;
