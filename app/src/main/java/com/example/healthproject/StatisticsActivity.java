@@ -36,12 +36,12 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
  * @version 1.7
  */
 public class StatisticsActivity extends AppCompatActivity {
-    AnyChartView anyChartView;
-    AnyChartView anyChartView2;
-    private SharedPreferences resultPrefs; //SharedPreferences olio luodaan
-    private User testUser; //User luokan olio luodaan
-    private List <User> users; //Uusi lista users luodaan
-    private UserList userList; //UserList luokan olio luodaan
+    AnyChartView anyChartView;              //Nimetään AnyChartille view
+    AnyChartView anyChartView2;             //Nimetään AnyChartille view
+    private SharedPreferences resultPrefs;  //SharedPreferences olio luodaan
+    private User testUser;                  //User luokan olio luodaan
+    private List <User> users;              //Uusi lista users luodaan
+    private UserList userList;              //UserList luokan olio luodaan
 
     /**
      * oncreate:
@@ -53,12 +53,12 @@ public class StatisticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
 
-        anyChartView = findViewById(R.id.any_chart_view);
-        APIlib.getInstance().setActiveAnyChartView(anyChartView);
+        anyChartView = findViewById(R.id.any_chart_view);           //Määritetään AnyChartille view
+        APIlib.getInstance().setActiveAnyChartView(anyChartView);   //Asetetaan Anychart aktiiviseksi näkymään
         setupChart1();
 
-        anyChartView2 = findViewById(R.id.any_chart_view2);
-        APIlib.getInstance().setActiveAnyChartView(anyChartView2);
+        anyChartView2 = findViewById(R.id.any_chart_view2);         //Määritetään AnyChartille view
+        APIlib.getInstance().setActiveAnyChartView(anyChartView2);  //Asetetaan AnyChart aktiiviseksi näkymään
         setupChart2();
 
     }
@@ -66,12 +66,12 @@ public class StatisticsActivity extends AppCompatActivity {
     /**
      * setupChart1:
      * Annetaan anyChartille mielentilat ja numerot, joiden perusteella ensimmäinen diagrammi piirretään kuvaamaan viimeisimpiä vastauksia.
-     * Luvut saadaan intentillä ja vastausryhmien keskiarvo lasketaan jakamalla vastausten yhteenlaskettu arvo vastausten määrällä kategorioittain.
+     * Luvut noudetaan intentillä ja vastausryhmien keskiarvo lasketaan jakamalla vastausten yhteenlaskettu arvo vastausten määrällä kategorioittain.
      * Tämän jälkeen ensimmäinen diagrammi piirretään sille varattuun kenttään.
      */
     public void setupChart1() {
         String[] states = {getString(R.string.group1head), getString(R.string.group2head), getString(R.string.group3head), getString(R.string.group4head)};
-        Pie pie1 = AnyChart.pie();
+        Pie pie1 = AnyChart.pie();                                      //Nimetään ja luodaan ensimmäinen ympyrädiagrammi
         List<DataEntry> dataEntries = new ArrayList<>();
 
         Intent intent = getIntent();                                    //Intent nouto ja muuttujien luonti sekä määritys
@@ -86,17 +86,14 @@ public class StatisticsActivity extends AppCompatActivity {
         Log.v("DEBUG9", "INTENT_ARVO4: "+group4); //DEBUG / TESTIKOODI
         Log.v("DEBUG9", "INTENT_ARVOKAIKKI: "+groupAverage); //DEBUG / TESTIKOODI
 
-        int[] values1 = {group1/4, group2/7, group3/7, group4/2}; //Luodaan Array values1 edellisten arvojen pohjalta. Tässä myös jaetaan arvot vastausten lukumäärällä, että arvo vastaa todellisuutta
+        int[] values1 = {group1/4, group2/7, group3/7, group4/2};           //Luodaan Array values1 edellisten arvojen pohjalta. Tässä myös jaetaan arvot vastausten lukumäärällä, että arvo vastaa todellisuutta
             for (int i = 0; i < states.length; i++) {
-                dataEntries.add(new ValueDataEntry(states[i], values1[i]));
+                dataEntries.add(new ValueDataEntry(states[i], values1[i])); //Lisätään arvot dataEntries arraylistiin
             }
-            pie1.title(getString(R.string.statisticsDay));
-            Log.d("Debug", "true");
+            pie1.title(getString(R.string.statisticsDay));                  //Nimetään ensimmäinen ympyrädiagrammi
 
-        pie1.data(dataEntries);
-        Log.d("Debug", "1");
-        anyChartView.setChart(pie1);
-        Log.d("Debug", "3");
+        pie1.data(dataEntries);                                             //Asetetaan data ensimmäiseen ympyrädiagrammiin
+        anyChartView.setChart(pie1);                                        //Asetetaan ensimmäinen diagrammi näkymään
     }
 
     /**
@@ -191,8 +188,8 @@ public class StatisticsActivity extends AppCompatActivity {
 
          */
 
-        Log.v("DEBUG9", "USERLIST2: "+userList.getUserList()); //DEBUG / TESTIKOODI
-        Log.v("DEBUG9", "group1 arvo: "+group1); //DEBUG / TESTIKOODI Varmistamme rymien oikeat arvot
+        Log.v("DEBUG9", "USERLIST2: "+userList.getUserList());  //DEBUG / TESTIKOODI
+        Log.v("DEBUG9", "group1 arvo: "+group1);                //DEBUG / TESTIKOODI Varmistamme rymien oikeat arvot
         Log.v("DEBUG9", "group2 arvo: "+group2);
         Log.v("DEBUG9", "group3 arvo: "+group3);
         Log.v("DEBUG9", "group4 arvo: "+group4);
@@ -201,18 +198,18 @@ public class StatisticsActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = resultPrefs.edit();       //luodaan editor olio jolla resultPrefs editoidaan
         Gson gson3 = new Gson();                                    //luodaan uusi gson3 olio
         Type gsonType = new TypeToken<List<User>>() {}.getType();   //määritetään gson tyyppi oikeaksi listaksi
-        gsonString = gson3.toJson(userList.getUserList() ,gsonType); //muunnetaan lista oikeaan string muotoon
+        gsonString = gson3.toJson(userList.getUserList() ,gsonType);//muunnetaan lista oikeaan string muotoon
         editor.putString("USER_LIST", gsonString);                  //Lisätään stringille "USER_LIST" avain
         editor.commit();                                            //Tallennetaan vastausten arvot gson/json muotoon jotta niihin päästään muualta myös käsiksi
 
 
-        float[] values2 = {(group1/4)/divider, (group2/7)/divider, (group3/7)/divider, (group4/2)/divider };
+        float[] values2 = {(group1/4)/divider, (group2/7)/divider, (group3/7)/divider, (group4/2)/divider };    //Määritetään ja lasketaan arvot
         for (int i = 0; i < states.length; i++) {
-            dataEntries2.add(new ValueDataEntry(states[i], values2[i]));
+            dataEntries2.add(new ValueDataEntry(states[i], values2[i]));                                        //Lisätään arvot dataEntries2:een
         }
-        Log.v("DEBUG9","Jakajan arvo: " +divider);
-        pie2.title(getString(R.string.statisticsWeek));
-        pie2.data(dataEntries2);
-        anyChartView2.setChart(pie2);
+        Log.v("DEBUG9","Jakajan arvo: " +divider);                                                   //DEBUG / TESTIKOODI Varmistetaan dividerin arvo
+        pie2.title(getString(R.string.statisticsWeek));                                                                         //Nimetään toinen diagrammi
+        pie2.data(dataEntries2);                                                                               //Asetetaan data toiseen diagrammiin
+        anyChartView2.setChart(pie2);                                                                          //Asetetaan toinen diagrammi näkymään.
     }
 }
