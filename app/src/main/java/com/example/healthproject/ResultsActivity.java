@@ -27,10 +27,10 @@ import static com.example.healthproject.QuestionActivity.EXTRA_GROUP_AVERAGE;
  * @version 1.4
  */
 public class ResultsActivity extends AppCompatActivity {
-    private SharedPreferences resultPrefs;
-    private User testUser;
-    private List <User> users;
-    private UserList userList;
+    private SharedPreferences resultPrefs; //alustetaan shared preference tuloksille
+    private User testUser;                 //alustetaan User olio testUser
+    private List <User> users;             //alustetaan lista User olioista, users niminen
+    private UserList userList;             //alustetaan singleton luokan UserList, userList niminen
 
     /**
      * Suoritetaan kun aktiviteetti luodaan.
@@ -45,8 +45,8 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        Intent intent = getIntent();
-        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        Intent intent = getIntent();                                    //luodaan intent, jolla vastaanotetaan arvoja Question aktiviteetista
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);   //Asetetaan vastaanotetut int arvot muuttujiin group1, group2 etc.
         int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
         int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
@@ -55,7 +55,7 @@ public class ResultsActivity extends AppCompatActivity {
 
 
 
-        if (group1==0){
+        if (group1==0){                                                         //Verrataan int arvoisia muuttujia, eri pistemääriin ja annetaan sitä vastaava palaute tekstimuotoisena
             TextView textView1 = (TextView) findViewById(R.id.group1Text);
             textView1.setText(R.string.group_feedback_exception);
         } else if(group1 < 5) {
@@ -72,7 +72,7 @@ public class ResultsActivity extends AppCompatActivity {
             textView5.setText(R.string.group1excellent);
         }
 
-        if (group2==0){
+        if (group2==0){                                                     //Verrataan int arvoisia muuttujia, eri pistemääriin ja annetaan sitä vastaava palaute tekstimuotoisena
             TextView textView1 = (TextView) findViewById(R.id.group2Text);
             textView1.setText(R.string.group_feedback_exception);
         } else if(group2 < 8) {
@@ -92,7 +92,7 @@ public class ResultsActivity extends AppCompatActivity {
             textView6.setText(R.string.group2excellent);
         }
 
-        if (group3==0){
+        if (group3==0){                                                 //Verrataan int arvoisia muuttujia, eri pistemääriin ja annetaan sitä vastaava palaute tekstimuotoisena
             TextView textView1 = (TextView) findViewById(R.id.group3Text);
             textView1.setText(R.string.group_feedback_exception);
         } else if (group3 < 8) {
@@ -112,7 +112,7 @@ public class ResultsActivity extends AppCompatActivity {
             textView6.setText(R.string.group3excellent);
         }
 
-        if (group4==0){
+        if (group4==0){                                                 //Verrataan int arvoisia muuttujia, eri pistemääriin ja annetaan sitä vastaava palaute tekstimuotoisena
             TextView textView1 = (TextView) findViewById(R.id.group4Text);
             textView1.setText(R.string.group_feedback_exception);
         } else if(group4 < 3) {
@@ -126,7 +126,7 @@ public class ResultsActivity extends AppCompatActivity {
             textView4.setText(R.string.group4excellent);
         }
 
-        if (groupAverage==0){
+        if (groupAverage==0){                                           //Verrataan int arvoisia muuttujia, eri pistemääriin ja annetaan sitä vastaava palaute tekstimuotoisena
             TextView textView1 = (TextView) findViewById(R.id.group5Text);
             textView1.setText(R.string.group_feedback_exception);
         } else if(groupAverage < 21) {
@@ -158,33 +158,33 @@ public class ResultsActivity extends AppCompatActivity {
      */
     public void onClick(View a) {
         Intent intent = getIntent();
-        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
-        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);       //luodaan intent, jolla vastaanotetaan arvoja Question aktiviteetista
+        int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);       //Asetetaan vastaanotetut int arvot muuttujiin group1, group2 etc.
         int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
         int groupAverage = intent.getIntExtra(EXTRA_GROUP_AVERAGE, 0);
 
-        if (a == findViewById(R.id.mainMenuButton)) {
+        if (a == findViewById(R.id.mainMenuButton)) {   //tarkastetaan if lauseella mitä nappia painetaan sen ID:n perusteella
             saveData();
 
-            Intent mainIntent = new Intent(ResultsActivity.this, MainActivity.class);
-            mainIntent.putExtra(EXTRA_GROUP1, group1);
+            Intent mainIntent = new Intent(ResultsActivity.this, MainActivity.class); //luodaan uusi intent Main aktiviteettiin
+            mainIntent.putExtra(EXTRA_GROUP1, group1);                                              //siirretään jokainen muuttuja yksitellen avaimilla EXTRA_GROUP1 etc. Main aktiviteettiin
             mainIntent.putExtra(EXTRA_GROUP2, group2);
             mainIntent.putExtra(EXTRA_GROUP3, group3);
             mainIntent.putExtra(EXTRA_GROUP4, group4);
             mainIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-            startActivity(mainIntent);
+            startActivity(mainIntent);                                                              //siirrytään uuten aktiviteettiin eli Main aktiviteettiin
 
-        } else if (a == findViewById(R.id.statisticsButton)) {
+        } else if (a == findViewById(R.id.statisticsButton)) { //tarkastetaan if lauseella mitä nappia painetaan sen ID:n perusteella
             saveData();
 
-            Intent statsIntent = new Intent(ResultsActivity.this, StatisticsActivity.class);
-            statsIntent.putExtra(EXTRA_GROUP1, group1);
+            Intent statsIntent = new Intent(ResultsActivity.this, StatisticsActivity.class); //luodaan uusi intent Stats aktiviteettiin
+            statsIntent.putExtra(EXTRA_GROUP1, group1);                                                     //siirretään jokainen muuttuja yksitellen avaimilla EXTRA_GROUP1 etc. Stats aktiviteettiin
             statsIntent.putExtra(EXTRA_GROUP2, group2);
             statsIntent.putExtra(EXTRA_GROUP3, group3);
             statsIntent.putExtra(EXTRA_GROUP4, group4);
             statsIntent.putExtra(EXTRA_GROUP_AVERAGE, groupAverage);
-            startActivity(statsIntent);
+            startActivity(statsIntent);                                                                     //siirrytään uuten aktiviteettiin eli Stats aktiviteettiin
         }
     }
 
@@ -193,46 +193,46 @@ public class ResultsActivity extends AppCompatActivity {
      *
      */
     private void saveData(){
-        Intent intent = getIntent();
-        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);
+        Intent intent = getIntent();                                    //luodaan intent, jolla vastaanotetaan arvoja Question aktiviteetista
+        int group1 = intent.getIntExtra(EXTRA_GROUP1, 0);   //Asetetaan vastaanotetut int arvot muuttujiin group1, group2 etc.
         int group2 = intent.getIntExtra(EXTRA_GROUP2, 0);
         int group3 = intent.getIntExtra(EXTRA_GROUP3, 0);
         int group4 = intent.getIntExtra(EXTRA_GROUP4, 0);
 
 
-        resultPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = resultPrefs.getString("ACTIVE_USER", " ");
-        Gson gson2 = new Gson();
-        testUser = gson2.fromJson(json, User.class);
-        Type type = new TypeToken<List<User>>() {}.getType();
-        String gsonString = gson.toJson(users, type);
-        String json2 = resultPrefs.getString("USER_LIST", gsonString);
-        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());
-        //users-muuttujan sisältämät User-oliot täytyy vielä kääntää takaisin User-olioiksi eikä vain niiden toString
-        userList = UserList.getInstance();
-        userList.getUserList().clear();
-        userList.getUserList().addAll(users);
-        Log.v("DEBUG9","ADDALL: "+userList.getUserList());
-        for(int i = 0; i < userList.getUserList().size(); i++){
+
+        resultPrefs = getSharedPreferences("LOGIN_PREFS", MODE_PRIVATE); //Määritetään resultsPref tiettyyn arvoon "LOGIN_PREFS" sharedPreferencs avulla
+        Gson gson = new Gson();                                                 //Uusi Gson olio luodaan
+        String json = resultPrefs.getString("ACTIVE_USER", " ");  //json määritetään arvoon "ACTIVE_USER" avulla
+        Gson gson2 = new Gson();                                                //Toinen Gson
+        testUser = gson2.fromJson(json, User.class);                            //testUser saa arvon sharedPreferences avulla
+        Type type = new TypeToken<List<User>>() {}.getType();                   //Haetaan oikeantyyppinen lista tallennetuista arvoista
+        String gsonString = gson.toJson(users, type);                           //Muunnetaan gson json muotoon ja annetaan sille users arvo
+        String json2 = resultPrefs.getString("USER_LIST", gsonString);      //json2 saa "USER_LIST" avulla oikean arvon
+        users = new Gson().fromJson(json2, new TypeToken<List<User>>() {}.getType());   //Luodaan gson/json tallennettu lista takaisin oikeaan muotoon
+        userList = UserList.getInstance();                                      //userList saa noudetun instanssin
+        userList.getUserList().clear();                                         //userList alusteaan
+        userList.getUserList().addAll(users);                                   //userList täytetään oikealla users arvolla
+        Log.v("DEBUG9","ADDALL: "+userList.getUserList());            //DEBUG / TESTIKOODI Tällä tarkastetaan kenen lista on käytössä
+        for(int i = 0; i < userList.getUserList().size(); i++){                 //Haetaan oikea käyttäjälista ajamalla koko käyttäjälista for-loopilla läpi ja lisätään arvot oikean käyttäjän datalistalle
           if(userList.getUser(i).getUserName().equals(testUser.getUserName())){
               userList.getUser(i).getDataList().add(group1);
               userList.getUser(i).getDataList().add(group2);
               userList.getUser(i).getDataList().add(group3);
               userList.getUser(i).getDataList().add(group4);
-              Log.v("DEBUG9", "testUser lisäykset: "+userList.getUser(i).getDataList());
+              Log.v("DEBUG9", "testUser lisäykset: "+userList.getUser(i).getDataList());    //DEBUG / TESTIKOODI mitä arvoja käyttäjän listalle on lisätty
             }
 
         }
-    Log.v("DEBUG9", "USERLIST: "+userList.getUserList());
+    Log.v("DEBUG9", "USERLIST: "+userList.getUserList());            //DEBUG / TESTIKOODI Tällä tarkastetaan kenen lista on käytössä
 
 
-        SharedPreferences.Editor editor = resultPrefs.edit();
-        Gson gson3 = new Gson();
-        Type gsonType = new TypeToken<List<User>>() {}.getType();
-        gsonString = gson3.toJson(userList.getUserList() ,gsonType);
-        editor.putString("USER_LIST", gsonString);
-        editor.commit();
+        SharedPreferences.Editor editor = resultPrefs.edit();                   //luodaan editor olio jolla resultPrefs editoidaan
+        Gson gson3 = new Gson();                                                //luodaan uusi gson3 olio
+        Type gsonType = new TypeToken<List<User>>() {}.getType();               //määritetään gson tyyppi oikeaksi listaksi
+        gsonString = gson3.toJson(userList.getUserList() ,gsonType);            //muunnetaan lista oikeaan string muotoon
+        editor.putString("USER_LIST", gsonString);                              //Lisätään stringille "USER_LIST" avain
+        editor.commit();                                                        //Tallennetaan vastausten arvot gson/json muotoon jotta niihin päästään muualta myös käsiksi
 
     }
 }
